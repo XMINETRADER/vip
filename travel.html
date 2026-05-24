@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herangga Tour — Bali Tour Packages & Trusted Vehicle Rental</title>
+
+    <!-- SEO & META -->
+    <meta name="description" content="Explore Bali with Herangga Tour. Nusa Penida, Ubud, Bedugul & South Bali packages. Car rental, airport transfer, private tour with transparent pricing & 24/7 service.">
+    <meta name="keywords" content="bali tour, car rental bali, nusa penida tour, ubud tour, airport transfer bali, private tour bali, herangga tour">
+    <meta name="author" content="Herangga Tour">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://heranggatour.com">
+    <link rel="icon" type="image/svg+xml" href="image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='50' r='35' fill='none' stroke='%231a1a1a' stroke-width='8'/><path d='M30 55 L70 35 L75 45 L60 48 L55 65 L50 52 L35 58 Z' fill='%231a1a1a'/></svg>">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://heranggatour.com">
+    <meta property="og:title" content="Herangga Tour — Your Journey, Our Passion">
+    <meta property="og:description" content="Best Bali tour packages with professional drivers. Easy booking via WhatsApp.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80&fm=webp">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TravelAgency",
+        "name": "Herangga Tour",
+        "image": "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=500&fm=webp",
+        "url": "https://heranggatour.com",
+        "telephone": "+6282260327772",
+        "description": "Trusted Bali tour packages and premium vehicle rental services.",
+        "priceRange": "Rp 80.000 - Rp 2.000.000",
+        "address": { "@type": "PostalAddress", "addressLocality": "Bali", "addressCountry": "ID" },
+        "sameAs": ["https://instagram.com/heranggatour", "https://wa.me/6282260327772"]
+    }
+    </script>
+
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ============================================
+           1. VARIABLES & RESET
+           ============================================ */
+        :root {
+            --black: #1a1a1a; --dark: #2d2d2d; --gray: #6b6b6b; --silver: #c8c8c8;
+            --white: #ffffff; --bg-cream: #faf8f5;
+            --font-display: 'Playfair Display', serif; --font-body: 'Montserrat', sans-serif;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: var(--font-body); color: var(--black); background: var(--white); overflow-x: hidden; line-height: 1.6; }
+        img { max-width: 100%; height: auto; display: block; object-fit: cover; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .skip-link { position: absolute; top: -40px; left: 0; background: var(--black); color: var(--white); padding: 8px 16px; z-index: 10000; transition: top 0.3s; text-decoration: none; font-size: 14px; font-weight: 600; }
+        .skip-link:focus { top: 0; }
+        :focus-visible { outline: 3px solid var(--black); outline-offset: 2px; }
+
+        /* ============================================
+           2. NAVBAR — CLEAN & MINIMAL (LIKE REF IMAGE)
+           ============================================ */
+        .navbar {
+            position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+            padding: 14px 0; background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .navbar.scrolled {
+            padding: 10px 0;
+            background: rgba(255,255,255,0.98);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.06);
+            border-bottom-color: transparent;
+        }
+        .navbar-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--black);
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 0.5px;
+            white-space: nowrap;
+        }
+        .navbar-logo .logo-icon {
+            font-size: 20px;
+            line-height: 1;
+            transition: transform 0.3s;
+        }
+        .navbar-logo:hover .logo-icon { transform: rotate(-10deg); }
+
+        /* Nav Links — Desktop Only */
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            flex: 1;
+            justify-content: center;
+        }
+        .nav-list {
+            display: flex;
+            gap: 2px;
+            list-style: none;
+        }
+        .nav-link {
+            position: relative;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 12px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 14px;
+            transition: color 0.3s;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--black);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        .nav-link:hover, .nav-link.active { color: var(--black); }
+        .nav-link:hover::after, .nav-link.active::after { width: 60%; }
+
+        /* Right Actions */
+        .navbar-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        /* Language Toggle — Pill Style */
+        .lang-toggle {
+            display: flex;
+            background: var(--bg-cream);
+            border: 1px solid rgba(0,0,0,0.12);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .lang-btn {
+            padding: 6px 12px;
+            background: transparent;
+            border: none;
+            font-family: var(--font-body);
+            font-size: 11px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: var(--gray);
+            letter-spacing: 0.5px;
+        }
+        .lang-btn.active {
+            background: var(--black);
+            color: var(--white);
+            border-radius: 6px;
+        }
+        .lang-btn:hover:not(.active) { color: var(--black); }
+
+        /* Hamburger Menu */
+        .mobile-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 6px;
+            z-index: 1001;
+        }
+        .mobile-toggle span {
+            width: 22px;
+            height: 2px;
+            background: var(--black);
+            border-radius: 2px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transform-origin: center;
+        }
+        .mobile-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .mobile-toggle.active span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+        .mobile-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        /* Mobile Slide Menu */
+        .nav-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.4);
+            backdrop-filter: blur(4px);
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+        }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+        }
+
+        /* ============================================
+           3. HERO SECTION
+           ============================================ */
+        .hero { min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; border-bottom: 2px solid var(--black); overflow: hidden; background: linear-gradient(135deg, rgba(250,248,245,0.92) 0%, rgba(250,248,245,0.85) 50%, rgba(250,248,245,0.92) 100%), url('https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1920&q=80&fm=webp'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; }
+        .hero::after { content: ''; position: absolute; inset: 0; background: rgba(26,26,26,0.03); pointer-events: none; z-index: 1; }
+        .hero-content { position: relative; z-index: 3; padding: 40px 24px; }
+        .hero-top-tagline { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--gray); margin-bottom: 20px; }
+        .hero-title { font-family: var(--font-display); font-size: clamp(50px, 9vw, 110px); font-weight: 900; letter-spacing: 6px; text-transform: uppercase; line-height: 0.95; text-shadow: 2px 2px 0 rgba(250,248,245,0.8), 4px 4px 0 rgba(0,0,0,0.1); }
+        .hero-sub { display: inline-block; background: var(--black); color: var(--white); padding: 8px 28px; font-size: 11px; letter-spacing: 4px; text-transform: uppercase; font-weight: 600; margin-top: 16px; }
+        .hero-explore { margin: 50px 0 30px; }
+        .hero-explore h2 { font-family: var(--font-display); font-size: clamp(44px, 7vw, 90px); font-weight: 900; letter-spacing: 4px; text-transform: uppercase; line-height: 1; }
+        .hero-explore h2 .outline { -webkit-text-stroke: 2px var(--black); color: transparent; }
+        .hero-explore .the { font-size: 0.35em; letter-spacing: 8px; display: block; margin: 4px 0; }
+        .hero-line { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-top: 20px; }
+        .hero-icons { display: flex; justify-content: center; gap: 40px; margin-top: 50px; }
+        .hero-icon { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .hero-icon i { font-size: 26px; color: var(--black); }
+        .hero-icon span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+        .hero-cta { margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+        .hero-cta .btn-vintage { padding: 16px 40px; font-size: 13px; letter-spacing: 2px; }
+        .hero-particles { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; overflow: hidden; z-index: 2; }
+        .particle { position: absolute; width: 4px; height: 4px; background: var(--black); opacity: 0.15; border-radius: 50%; animation: float-particle linear infinite; }
+        @keyframes float-particle { 0% { transform: translateY(100vh) rotate(0deg); opacity: 0; } 10% { opacity: 0.15; } 90% { opacity: 0.15; } 100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; } }
+
+        /* ============================================
+           4. UTILITIES & DECORATIONS
+           ============================================ */
+        .deco-dots { display: flex; justify-content: center; gap: 6px; margin: 12px 0; }
+        .deco-dots span { width: 4px; height: 4px; background: var(--black); border-radius: 50%; }
+        .deco-line { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 16px 0; }
+        .deco-line::before, .deco-line::after { content: ''; flex: 1; max-width: 100px; height: 1px; background: var(--black); }
+        .deco-line i { font-size: 10px; }
+        .section { padding: 100px 0; }
+        .section-label { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: var(--gray); font-weight: 600; text-align: center; margin-bottom: 12px; }
+        .section-title { font-family: var(--font-display); font-size: clamp(32px, 5vw, 52px); font-weight: 900; text-transform: uppercase; letter-spacing: 4px; text-align: center; line-height: 1.1; }
+        .section-title .outline { -webkit-text-stroke: 2px var(--black); color: transparent; }
+        .section-desc { font-size: 14px; color: var(--gray); max-width: 600px; margin: 16px auto 0; line-height: 1.8; text-align: center; }
+        .marquee-section { background: var(--black); color: var(--white); padding: 12px 0; overflow: hidden; border-top: 3px solid var(--black); border-bottom: 3px solid var(--black); }
+        .marquee-track { display: flex; animation: marquee 25s linear infinite; width: max-content; }
+        .marquee-item { display: flex; align-items: center; gap: 10px; padding: 0 28px; white-space: nowrap; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* ============================================
+           5. ABOUT SECTION
+           ============================================ */
+        .about-section { background: var(--bg-cream); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); padding: 100px 0; overflow: hidden; }
+        .about-modern { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-content { z-index: 2; }
+        .about-content h2 { font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px); font-weight: 900; line-height: 1.2; margin-bottom: 24px; }
+        .about-content .desc { font-size: 15px; color: var(--gray); line-height: 1.8; margin-bottom: 16px; }
+        .about-features { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
+        .about-feature { display: flex; align-items: flex-start; gap: 14px; }
+        .about-feature-icon { width: 48px; height: 48px; min-width: 48px; border: 2px solid var(--black); background: var(--white); border-radius: 14px; display: flex; align-items: center; justify-content: center; color: var(--black); font-size: 18px; transition: all 0.3s; }
+        .about-feature:hover .about-feature-icon { background: var(--black); color: var(--white); }
+        .about-feature-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
+        .about-feature-text p { font-size: 13px; color: var(--gray); }
+        .about-stats-row { display: flex; gap: 40px; margin-top: 32px; padding-top: 24px; border-top: 2px solid var(--black); }
+        .about-stat-item .stat-number { font-family: var(--font-display); font-size: 32px; font-weight: 900; line-height: 1; }
+        .about-stat-item .stat-label { font-size: 13px; color: var(--gray); margin-top: 4px; }
+        .about-visual { position: relative; }
+        .about-image-wrapper { position: relative; border: 3px solid var(--black); border-radius: 24px; overflow: hidden; background: var(--white); }
+        .about-image-wrapper img { width: 100%; height: 500px; object-fit: cover; display: block; filter: grayscale(100%) contrast(1.1); transition: all 0.5s; }
+        .about-image-wrapper:hover img { filter: grayscale(0%) contrast(1); }
+        .float-badge { position: absolute; background: var(--white); border: 2px solid var(--black); border-radius: 16px; padding: 14px 20px; z-index: 3; animation: float-badge 3s ease-in-out infinite; box-shadow: 4px 4px 0 var(--black); }
+        @keyframes float-badge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .float-badge-destination { top: -10px; left: -20px; }
+        .float-badge-destination .fb-label { font-size: 11px; color: var(--gray); display: block; }
+        .float-badge-destination .fb-value { font-size: 14px; font-weight: 700; }
+        .float-badge-bottom { bottom: -15px; left: 20px; right: 20px; display: flex; align-items: center; justify-content: space-between; padding: 16px 24px; animation-delay: 0.5s; }
+        .float-badge-bottom .fb-left { display: flex; align-items: center; gap: 12px; }
+        .float-badge-bottom .fb-logo { width: 44px; height: 44px; border: 2px solid var(--black); background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .float-badge-bottom .fb-info h4 { font-size: 14px; font-weight: 700; }
+        .float-badge-bottom .fb-info span { font-size: 11px; color: var(--gray); }
+        .float-badge-bottom .fb-right { text-align: right; }
+        .float-badge-bottom .fb-right .fb-title { font-size: 12px; font-weight: 700; }
+        .float-badge-bottom .fb-right .fb-sub { font-size: 11px; color: var(--gray); }
+        .float-badge-trust { bottom: 30px; right: -25px; display: flex; align-items: center; gap: 10px; padding: 12px 18px; animation-delay: 1s; }
+        .float-badge-trust .fb-check { width: 36px; height: 36px; border: 2px solid var(--black); background: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 14px; }
+        .float-badge-trust .fb-text span { display: block; font-size: 10px; color: var(--gray); }
+        .float-badge-trust .fb-text strong { font-size: 13px; }
+
+        /* ============================================
+           6. DESTINATIONS SECTION (RESPONSIVE GRID)
+           ============================================ */
+        .destinations-section { background: var(--white); border-bottom: 2px solid var(--black); padding-bottom: 40px; }
+        .dest-filter-wrap { margin-bottom: 40px; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; }
+        .filter-btn { padding: 10px 22px; border: 2px solid var(--black); background: transparent; font-family: var(--font-body); font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+        .filter-btn.active, .filter-btn:hover { background: var(--black); color: var(--white); }
+        .dest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 10px; }
+        .dest-card { border: 2px solid var(--black); overflow: hidden; position: relative; transition: all 0.4s; cursor: pointer; background: var(--white); }
+        .dest-card:hover { transform: translateY(-6px); box-shadow: 6px 6px 0 var(--black); }
+        .dest-card-img { width: 100%; height: 260px; object-fit: cover; filter: grayscale(100%) contrast(1.1); transition: all 0.5s; }
+        .dest-card:hover .dest-card-img { filter: grayscale(0%) contrast(1); }
+        .dest-card-body { padding: 20px; }
+        .dest-card-body h3 { font-family: var(--font-display); font-size: 20px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 4px; }
+        .dest-card-body .country { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+        .dest-card-body .desc { font-size: 13px; color: var(--gray); line-height: 1.8; margin-top: 12px; list-style: none; padding-left: 0; }
+        .dest-card-body .desc li { position: relative; padding-left: 16px; margin-bottom: 4px; }
+        .dest-card-body .desc li::before { content: '•'; position: absolute; left: 0; color: var(--black); font-weight: bold; }
+        .dest-card-body .desc li:last-child { margin-bottom: 0; }
+        .dest-card-number { position: absolute; top: 14px; left: 14px; font-family: var(--font-display); font-size: 42px; font-weight: 900; color: var(--white); text-shadow: 2px 2px 0 rgba(0,0,0,0.6); opacity: 0.4; z-index: 2; }
+        .dest-badge { position: absolute; top: 14px; right: 14px; padding: 4px 10px; background: var(--black); color: var(--white); font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 20px; z-index: 2; }
+        .dest-card-footer { margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--silver); }
+        .btn-dest-wa { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 10px; background: transparent; border: 2px solid var(--black); color: var(--black); font-family: var(--font-body); font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; transition: 0.3s; text-decoration: none; }
+        .btn-dest-wa:hover { background: var(--black); color: var(--white); }
+
+        /* Modal */
+        .dest-modal { position: fixed; inset: 0; z-index: 2000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(0,0,0,0.85); }
+        .dest-modal.active { display: flex; }
+        .modal-content { position: relative; background: var(--white); width: 100%; max-width: 850px; max-height: 90vh; overflow-y: auto; border: 3px solid var(--black); border-radius: 20px; animation: modalIn 0.3s ease; }
+        @keyframes modalIn { from { opacity: 0; transform: translateY(20px) scale(0.98); } to { opacity: 1; transform: translateY(0) scale(1); } }
+        .modal-close { position: absolute; top: 16px; right: 20px; font-size: 32px; background: none; border: none; cursor: pointer; color: var(--black); z-index: 5; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.3s; }
+        .modal-close:hover { background: var(--bg-cream); transform: rotate(90deg); }
+        .modal-hero { width: 100%; height: 320px; object-fit: cover; border-bottom: 3px solid var(--black); }
+        .modal-info { padding: 24px; }
+        .modal-title { font-family: var(--font-display); font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+        .modal-meta { display: flex; gap: 20px; flex-wrap: wrap; margin: 12px 0 20px; font-size: 13px; color: var(--gray); }
+        .modal-meta span { display: flex; align-items: center; gap: 6px; }
+        .modal-section h4 { font-size: 16px; font-weight: 700; margin: 20px 0 10px; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--silver); padding-bottom: 6px; }
+        .modal-itinerary { list-style: none; padding-left: 0; }
+        .modal-itinerary li { position: relative; padding-left: 24px; margin-bottom: 8px; color: var(--dark); }
+        .modal-itinerary li::before { content: '✦'; position: absolute; left: 0; color: var(--black); }
+        .modal-price-box { margin-top: 24px; padding: 18px; background: var(--bg-cream); border: 2px dashed var(--black); border-radius: 12px; text-align: center; }
+        .modal-price { font-family: var(--font-display); font-size: 28px; font-weight: 900; }
+        .modal-price span { font-size: 14px; color: var(--gray); font-weight: 400; }
+        .modal-cta { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+        .btn-modal { flex: 1; padding: 14px; border: 2px solid var(--black); font-family: var(--font-body); font-size: 13px; font-weight: 700; text-transform: uppercase; cursor: pointer; transition: 0.3s; text-align: center; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+        .btn-modal.primary { background: var(--black); color: var(--white); }
+        .btn-modal.primary:hover { background: transparent; color: var(--black); }
+        .btn-modal.secondary { background: transparent; color: var(--black); }
+        .btn-modal.secondary:hover { background: var(--black); color: var(--white); }
+
+        /* ============================================
+           7. TESTIMONIALS & RENTAL
+           ============================================ */
+        .testimonials-section { background: var(--bg-cream); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); }
+        .test-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+        .test-card { background: var(--white); border: 2px solid var(--black); padding: 24px; border-radius: 16px; transition: 0.3s; }
+        .test-card:hover { transform: translateY(-4px); box-shadow: 4px 4px 0 var(--black); }
+        .test-stars { color: var(--black); font-size: 14px; letter-spacing: 2px; margin-bottom: 12px; }
+        .test-text { font-size: 14px; color: var(--dark); line-height: 1.7; margin-bottom: 16px; font-style: italic; }
+        .test-author { display: flex; align-items: center; gap: 12px; margin-top: auto; }
+        .test-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; border: 2px solid var(--black); }
+        .test-info strong { display: block; font-size: 14px; }
+        .test-info span { font-size: 11px; color: var(--gray); text-transform: uppercase; letter-spacing: 1px; }
+        .rental-section { background: var(--black); color: var(--white); border-bottom: 2px solid var(--black); padding-bottom: 60px; }
+        .rental-section .section-label { color: rgba(255,255,255,0.4); }
+        .rental-section .section-title { color: var(--white); }
+        .rental-section .section-title .outline { -webkit-text-stroke-color: var(--white); }
+        .rental-section .section-desc { color: rgba(255,255,255,0.5); }
+        .rental-section .deco-dots span { background: rgba(255,255,255,0.3); }
+        .rental-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 50px; }
+        .rental-card { border: 1px solid rgba(255,255,255,0.2); overflow: hidden; transition: all 0.4s; position: relative; }
+        .rental-card:hover { background: var(--white); color: var(--black); transform: translateY(-6px); box-shadow: 6px 6px 0 rgba(255,255,255,0.15); }
+        .rental-card-top { display: flex; align-items: center; gap: 20px; padding: 28px 28px 0; }
+        .rental-icon { width: 72px; height: 72px; border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; color: var(--white); flex-shrink: 0; transition: all 0.3s; }
+        .rental-card:hover .rental-icon { border-color: var(--black); color: var(--black); }
+        .rental-header-info { flex: 1; }
+        .rental-name { font-family: var(--font-display); font-size: 18px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s; }
+        .rental-tagline { font-size: 11px; color: rgba(255,255,255,0.4); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; transition: color 0.3s; }
+        .rental-card:hover .rental-tagline { color: var(--gray); }
+        .rental-body { padding: 20px 28px; }
+        .rental-desc { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 16px; transition: color 0.3s; }
+        .rental-card:hover .rental-desc { color: var(--gray); }
+        .rental-features { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .rental-feature { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; padding: 6px 12px; border: 1px solid rgba(255,255,255,0.2); transition: all 0.3s; }
+        .rental-card:hover .rental-feature { border-color: var(--silver); }
+        .rental-bottom { display: flex; align-items: center; justify-content: space-between; padding: 16px 28px; border-top: 1px solid rgba(255,255,255,0.1); }
+        .rental-card:hover .rental-bottom { border-top-color: #eee; }
+        .rental-price-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.35); transition: color 0.3s; }
+        .rental-card:hover .rental-price-label { color: var(--gray); }
+        .rental-price { font-family: var(--font-display); font-size: 24px; font-weight: 900; margin-top: 2px; transition: color 0.3s; }
+        .rental-card:hover .rental-price { color: var(--black); }
+        .rental-price span { font-size: 13px; font-weight: 400; opacity: 0.5; }
+        .btn-rental { display: inline-flex; align-items: center; gap: 8px; padding: 10px 22px; border: 2px solid rgba(255,255,255,0.3); background: transparent; color: var(--white); font-family: var(--font-body); font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; text-decoration: none; }
+        .btn-rental:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+        .rental-card:hover .btn-rental { background: var(--black); color: var(--white); border-color: var(--black); }
+
+        /* ============================================
+           8. CALCULATOR / FARE
+           ============================================ */
+        .fare-section { background: var(--bg-cream); border-top: 2px solid var(--black); border-bottom: 2px solid var(--black); padding: 80px 0; }
+        .fare-frame { border: 3px solid var(--black); background: var(--white); padding: 40px; position: relative; max-width: 900px; margin: 0 auto; }
+        .fare-frame::before { content: ''; position: absolute; inset: 6px; border: 1px solid var(--silver); pointer-events: none; }
+        .fare-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 24px; }
+        .fare-group label { display: block; font-size: 11px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+        .fare-input { display: flex; align-items: center; gap: 10px; padding: 12px 16px; border: 2px solid var(--black); background: var(--white); transition: all 0.3s; }
+        .fare-input:focus-within { background: var(--bg-cream); box-shadow: 0 0 0 2px rgba(0,0,0,0.1); }
+        .fare-input.error { border-color: #e74c3c; animation: shake 0.3s; }
+        @keyframes shake { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+        .fare-input i { color: var(--black); font-size: 14px; }
+        .fare-input select, .fare-input input { width: 100%; border: none; background: transparent; font-family: var(--font-body); font-size: 14px; font-weight: 500; outline: none; cursor: pointer; }
+        .fare-actions { text-align: center; }
+        .btn-calculate { display: inline-flex; align-items: center; gap: 8px; padding: 14px 32px; background: var(--black); color: var(--white); border: 2px solid var(--black); font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; cursor: pointer; transition: all 0.3s; }
+        .btn-calculate:hover { background: transparent; color: var(--black); }
+        .fare-result { margin-top: 30px; text-align: center; animation: fadeIn 0.4s ease; }
+        .result-box { border: 2px dashed var(--black); padding: 24px; background: var(--bg-cream); }
+        .result-label { display: block; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-bottom: 8px; }
+        .result-price { display: block; font-family: var(--font-display); font-size: 42px; font-weight: 900; line-height: 1; margin-bottom: 8px; }
+        .result-note { display: block; font-size: 12px; color: var(--gray); font-style: italic; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* ============================================
+           9. CTA & FOOTER
+           ============================================ */
+        .cta-section { padding: 80px 0; text-align: center; border-bottom: 2px solid var(--black); }
+        .cta-box { max-width: 600px; margin: 0 auto; padding: 50px 30px; border: 3px solid var(--black); position: relative; }
+        .cta-box::before { content: ''; position: absolute; inset: 6px; border: 1px solid var(--silver); pointer-events: none; }
+        .cta-box h2 { font-family: var(--font-display); font-size: 32px; font-weight: 900; text-transform: uppercase; letter-spacing: 4px; }
+        .cta-box .tagline { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--gray); margin-top: 6px; }
+        .cta-box p { font-size: 14px; color: var(--gray); line-height: 1.7; margin: 20px 0 24px; }
+        .cta-buttons { display: flex; gap: 12px; justify-content: center; }
+        .btn-vintage { display: inline-flex; align-items: center; gap: 8px; padding: 14px 30px; font-family: var(--font-body); font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; border: 2px solid var(--black); transition: all 0.3s; cursor: pointer; }
+        .btn-vintage.primary { background: var(--black); color: var(--white); }
+        .btn-vintage.primary:hover { background: transparent; color: var(--black); }
+        .btn-vintage.secondary { background: transparent; color: var(--black); }
+        .btn-vintage.secondary:hover { background: var(--black); color: var(--white); }
+        .cta-socials { display: flex; justify-content: center; gap: 14px; margin-top: 24px; }
+        .cta-socials a { width: 40px; height: 40px; border: 2px solid var(--black); display: flex; align-items: center; justify-content: center; color: var(--black); text-decoration: none; transition: all 0.3s; }
+        .cta-socials a:hover { background: var(--black); color: var(--white); }
+        .footer-simple { background: var(--black); color: var(--white); padding: 24px 0; border-top: 2px solid var(--dark); }
+        .footer-simple .footer-content { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+        .footer-brand .footer-logo { display: flex; align-items: center; gap: 8px; color: var(--white); text-decoration: none; font-family: var(--font-display); font-weight: 700; font-size: 16px; letter-spacing: 1px; }
+        .footer-brand p { margin: 4px 0 0; font-size: 12px; color: rgba(255,255,255,0.5); }
+        .footer-right { display: flex; align-items: center; gap: 16px; }
+        .footer-socials { display: flex; gap: 12px; }
+        .footer-socials a { color: rgba(255,255,255,0.6); font-size: 16px; transition: all 0.2s; }
+        .footer-socials a:hover { color: var(--white); transform: translateY(-2px); }
+        .copyright { margin: 0; font-size: 12px; color: rgba(255,255,255,0.4); }
+        .back-to-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; background: var(--black); color: var(--white); border: 2px solid var(--black); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 999; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover { background: var(--white); color: var(--black); transform: translateY(-5px); }
+        .animate-on-scroll { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1); }
+        .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
+
+        /* ============================================
+           10. RESPONSIVE BREAKPOINTS
+           ============================================ */
+        @media (max-width: 1024px) {
+            /* Hide desktop nav links */
+            .navbar-menu { display: none !important; }
+            /* Show hamburger */
+            .mobile-toggle { display: flex; }
+
+            /* About */
+            .about-modern { grid-template-columns: 1fr; gap: 40px; }
+            .about-visual { order: -1; }
+            .about-image-wrapper img { height: 400px; }
+            /* Rental */
+            .rental-grid { grid-template-columns: 1fr; }
+            /* Calculator */
+            .fare-grid { grid-template-columns: repeat(2, 1fr); }
+            /* Destinations: 2 Kolom */
+            .dest-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            .hero { background-attachment: scroll !important; }
+            .hero-icons { gap: 20px; }
+            .hero-icon span { display: none; }
+            .hero-cta { flex-direction: column; align-items: center; }
+            .dest-filter-wrap { flex-direction: column; }
+            /* Mobile: 1 Kolom */
+            .dest-grid { grid-template-columns: 1fr; }
+            .rental-card-top { flex-direction: column; text-align: center; }
+            .rental-features { justify-content: center; }
+            .rental-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .fare-grid { grid-template-columns: 1fr; }
+            .fare-frame { padding: 24px; }
+            .result-price { font-size: 32px; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .about-features { grid-template-columns: 1fr; }
+            .about-stats-row { gap: 24px; flex-wrap: wrap; }
+            .float-badge-destination { left: 10px; top: 10px; }
+            .float-badge-trust { right: 10px; bottom: 60px; }
+            .float-badge-bottom { left: 10px; right: 10px; bottom: 10px; }
+            .footer-simple .footer-content { flex-direction: column; text-align: center; gap: 12px; }
+            .footer-right { justify-content: center; }
+            .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { transition: none !important; animation: none !important; }
+            .hero { background-attachment: scroll !important; }
+        }
+                .marquee-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 28px;
+    white-space: nowrap;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.marquee-item:hover {
+    background: rgba(255,255,255,0.1);
+    transform: scale(1.05);
+    color: #ffd700;
+}
+    </style>
+</head>
+<body>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- ============================================
+         NAVBAR — LIKE REF IMAGE (Mobile & Tablet)
+         Left: Logo | Right: Lang Toggle + Hamburger
+         ============================================ -->
+    <header class="navbar" id="navbar" role="banner">
+        <div class="container navbar-inner">
+            <!-- Left: Logo -->
+            <a href="/" class="navbar-logo" aria-label="Herangga Tour Home">
+                <i class="fa-solid fa-plane-departure logo-icon" aria-hidden="true"></i>
+                <span class="logo-text">Herangga Tour</span>
+            </a>
+
+            <!-- Center: Nav Links (Desktop Only) -->
+            <nav class="navbar-menu" id="navbarMenu" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="#about" class="nav-link" data-section="about" data-i18n="nav.about">About</a></li>
+                    <li><a href="#destinations" class="nav-link" data-section="destinations" data-i18n="nav.destinations">Destinations</a></li>
+                    <li><a href="#rental" class="nav-link" data-section="rental" data-i18n="nav.rental">Rental</a></li>
+                    <li><a href="#calculator" class="nav-link" data-section="calculator" data-i18n="nav.calculator">Pricing</a></li>
+                    <li><a href="#contact" class="nav-link" data-section="contact" data-i18n="nav.contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Right: Language Toggle + Hamburger -->
+            <div class="navbar-actions">
+                <div class="lang-toggle" role="group" aria-label="Language selector">
+                    <button class="lang-btn" data-lang="id" aria-pressed="false">ID</button>
+                    <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
+                </div>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navbarMenu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+        <div class="nav-overlay" id="navOverlay"></div>
+    </header>
+
+    <!-- MOBILE MENU (Slide from right) -->
+                        <div id="mobileMenu" style="position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:var(--white);padding:80px 28px 40px;z-index:1000;transition:right 0.4s cubic-bezier(0.4,0,0.2,1);box-shadow:-12px 0 30px rgba(0,0,0,0.1);overflow-y:auto;">
+                    <div style="text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 2px solid var(--silver);">
+                        <p style="margin-top: 12px; font-family: var(--font-display); font-weight: 700; font-size: 18px; letter-spacing: 2px; color: var(--black);">HERANGGA TOUR</p>
+                        </div>
+
+    <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px;">
+        <li><a href="#about" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">About</a></li>
+        <li><a href="#destinations" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">Destinations</a></li>
+        <li><a href="#rental" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">Rental</a></li>
+        <li><a href="#calculator" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">Pricing</a></li>
+        <li><a href="#contact" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">Contact</a></li>
+    </ul>
+</div
+
+    <!-- HERO -->
+    <section class="hero" role="banner">
+        <div class="hero-particles" id="particles" aria-hidden="true"></div>
+        <div class="hero-content">
+            <div class="hero-top-tagline" data-i18n="hero.tagline">Travel & Tourism Community Hub</div>
+            <h1 class="hero-title">Herangga Tour</h1>
+            <div class="hero-sub" data-i18n="hero.sub">Travel & Tourism Community Hub</div>
+            <div class="deco-dots" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="hero-explore">
+                <h2><span class="outline" data-i18n="hero.explore">Explore</span><span class="the" data-i18n="hero.the">the</span><span data-i18n="hero.world">World</span></h2>
+            </div>
+            <p class="hero-line" data-i18n="hero.slogan">— Your Journey, Our Passion —</p>
+            <div class="hero-icons" role="list" aria-label="Services">
+                <div class="hero-icon" role="listitem"><i class="fas fa-plane" aria-hidden="true"></i><span data-i18n="services.flight">Flight</span></div>
+                <div class="hero-icon" role="listitem"><i class="fas fa-hotel" aria-hidden="true"></i><span data-i18n="services.hotel">Hotel</span></div>
+                <div class="hero-icon" role="listitem"><i class="fas fa-umbrella-beach" aria-hidden="true"></i><span data-i18n="services.tour">Tour</span></div>
+                <div class="hero-icon" role="listitem"><i class="fas fa-car" aria-hidden="true"></i><span data-i18n="services.rental">Rental</span></div>
+                <div class="hero-icon" role="listitem"><i class="fas fa-globe" aria-hidden="true"></i><span data-i18n="services.visa">Visa</span></div>
+            </div>
+            <div class="hero-cta">
+                <a href="#destinations" class="btn-vintage primary" data-i18n="hero.cta.primary"><i class="fas fa-compass" aria-hidden="true"></i> View Tour Packages</a>
+                <a href="https://wa.me/6282260327772" class="btn-vintage secondary" target="_blank" rel="noopener noreferrer" data-i18n="hero.cta.secondary"><i class="fab fa-whatsapp" aria-hidden="true"></i> Chat Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-section" aria-hidden="true">
+        <div class="marquee-track">
+            <a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20saya%20mau%20pesan%20Flight%20Tickets" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-plane"></i> Flight Tickets
+        </a>
+        <a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20saya%20mau%20pesan%20Hotel%20Bookings" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-hotel"></i> Hotel Bookings
+        </a>
+        <a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20saya%20mau%20lihat%20Tour%20Packages" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-map"></i> Tour Packages
+        </a>
+        <a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20saya%20mau%20sewa%20mobil" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-car"></i> Rent Car
+        </a>
+        <a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20saya%20butuh%20Airport%20Transfer" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-plane-arrival"></i> Airport Transfer
+        </a>
+        <a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20saya%20mau%20Private%20Car" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-user-shield"></i> Private Car
+        </a>
+        <a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20saya%20mau%20sewa%20Scooter" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-motorcycle"></i> Scooter Rental
+        </a>
+        <a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20mau%20bergabung%20Travel%20Community" class="marquee-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-users"></i> Travel Community
+        </a>
+    </div>
+</div>
+
+    <main id="main-content">
+        <!-- ABOUT -->
+        <section class="about-section" id="about" aria-labelledby="about-heading">
+            <div class="container">
+                <div class="about-modern">
+                    <div class="about-content animate-on-scroll">
+                        <h2 class="section-title" id="about-heading">Discover <span class="outline">BALI</span><br>with<br><span class="outline">HERANGGA</span>TOUR</h2>
+                        <p class="desc" data-i18n="about.desc1">We are your trusted partner for exploring the beauty of Indonesia. From private guided tours to comfortable transportation, we provide unforgettable experiences tailored just for you.</p>
+                        <p class="desc" data-i18n="about.desc2">Whether you're seeking hidden temples, pristine beaches, or cultural adventures, our experienced local guides will show you the authentic Indonesia that tourists rarely see.</p>
+                        <div class="about-features">
+                            <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-check" aria-hidden="true"></i></div><div class="about-feature-text"><h4 data-i18n="features.private">Private Tours</h4><p data-i18n="features.private.desc">Customized itineraries</p></div></div>
+                            <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div><div class="about-feature-text"><h4 data-i18n="features.guides">Local Guides</h4><p data-i18n="features.guides.desc">Expert knowledge</p></div></div>
+                            <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-shield-alt" aria-hidden="true"></i></div><div class="about-feature-text"><h4 data-i18n="features.safe">Safe & Reliable</h4><p data-i18n="features.safe.desc">Trusted service</p></div></div>
+                            <div class="about-feature"><div class="about-feature-icon"><i class="fas fa-clock" aria-hidden="true"></i></div><div class="about-feature-text"><h4 data-i18n="features.support">24/7 Support</h4><p data-i18n="features.support.desc">Always available</p></div></div>
+                        </div>
+                        <div class="about-stats-row">
+                            <div class="about-stat-item"><div class="stat-number" data-target="5" aria-label="5 years experience">0</div><div class="stat-label" data-i18n="stats.years">Years Experience</div></div>
+                            <div class="about-stat-item"><div class="stat-number" data-target="1000" aria-label="Over 1000 happy travelers">0<span>+</span></div><div class="stat-label" data-i18n="stats.travelers">Happy Travelers</div></div>
+                            <div class="about-stat-item"><div class="stat-number" data-target="50" aria-label="50 tour packages">0</div><div class="stat-label" data-i18n="stats.packages">Tour Packages</div></div>
+                        </div>
+                    </div>
+                    <div class="about-visual animate-on-scroll">
+                        <div class="about-image-wrapper">
+                            <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&h=500&fit=crop&fm=webp" alt="Ubud Rice Terraces - Bali" loading="lazy" width="800" height="500">
+                            <div class="float-badge float-badge-destination"><span class="fb-label" data-i18n="badge.popular">Popular Destination</span><span class="fb-value">Ubud, Bali</span></div>
+                            <div class="float-badge float-badge-bottom">
+                                <div class="fb-left"><div class="fb-logo"><i class="fas fa-paper-plane" aria-hidden="true"></i></div><div class="fb-info"><h4>HERANGGA TOUR</h4><span data-i18n="badge.partner">Trusted Partner</span></div></div>
+                                <div class="fb-right"><div class="fb-title" data-i18n="badge.packages">BALI HOLIDAY PACKAGES</div><div class="fb-sub" data-i18n="badge.price">Starting from IDR 500.000</div></div>
+                            </div>
+                            <div class="float-badge float-badge-trust"><div class="fb-check"><i class="fas fa-check" aria-hidden="true"></i></div><div class="fb-text"><span data-i18n="badge.trusted">Trusted by</span><strong>1000+ Travelers</strong></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DESTINATIONS -->
+        <section class="section destinations-section" id="destinations" aria-labelledby="destinations-heading">
+            <div class="container">
+                <div class="animate-on-scroll">
+                    <div class="section-label" data-i18n="destinations.label">Where To Go</div>
+                    <h2 class="section-title" id="destinations-heading">Featured <span class="outline" data-i18n="destinations.title">Destinations</span></h2>
+                    <div class="deco-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <p class="section-desc" data-i18n="destinations.desc">Most popular destinations chosen by our travelers</p>
+                </div>
+                <div class="dest-filter-wrap animate-on-scroll" role="group" aria-label="Filter destinations">
+                    <button class="filter-btn active" data-filter="all" aria-pressed="true" data-i18n="filter.all">All Packages</button>
+                    <button class="filter-btn" data-filter="south" aria-pressed="false" data-i18n="filter.south">South Bali</button>
+                    <button class="filter-btn" data-filter="ubud" aria-pressed="false" data-i18n="filter.ubud">Ubud</button>
+                    <button class="filter-btn" data-filter="penida" aria-pressed="false" data-i18n="filter.penida">Nusa Penida</button>
+                    <button class="filter-btn" data-filter="bedugul" aria-pressed="false" data-i18n="filter.bedugul">Bedugul</button>
+                </div>
+                <div class="dest-grid" id="destGrid" role="list" aria-label="Tour packages"></div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="section testimonials-section" id="testimonials" aria-labelledby="testimonials-heading">
+            <div class="container">
+                <div class="animate-on-scroll">
+                    <div class="section-label" data-i18n="testimonials.label">What They Say</div>
+                    <h2 class="section-title" id="testimonials-heading">Traveler <span class="outline" data-i18n="testimonials.title">Reviews</span></h2>
+                    <div class="deco-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <p class="section-desc" data-i18n="testimonials.desc">Real stories and experiences from travelers who have explored with us</p>
+                </div>
+                <div class="test-grid" role="list">
+                    <div class="test-card animate-on-scroll" role="listitem"><div class="test-stars" aria-label="5 out of 5 stars">★★★★★</div><p class="test-text" data-i18n="testimonial1.text">"The driver was very friendly, the car was clean, and the itinerary was flexible. The Nusa Penida tour was unforgettable! Highly recommended."</p><div class="test-author"><img src="https://i.pravatar.cc/150?img=12" alt="Sarah L." class="test-avatar" width="44" height="44" loading="lazy"><div class="test-info"><strong>Sarah L.</strong><span>Jakarta, Indonesia</span></div></div></div>
+                    <div class="test-card animate-on-scroll" role="listitem"><div class="test-stars" aria-label="5 out of 5 stars">★★★★★</div><p class="test-text" data-i18n="testimonial2.text">"Airport transfer on time, transparent pricing with no hidden costs. Herangga Tour is my go-to choice every time I visit Bali."</p><div class="test-author"><img src="https://i.pravatar.cc/150?img=13" alt="Arief R." class="test-avatar" width="44" height="44" loading="lazy"><div class="test-info"><strong>Arief R.</strong><span>Surabaya, Indonesia</span></div></div></div>
+                    <div class="test-card animate-on-scroll" role="listitem"><div class="test-stars" aria-label="5 out of 5 stars">★★★★★</div><p class="test-text" data-i18n="testimonial3.text">"Private car with driver is worth every penny. We visited hidden spots in Ubud that tourists usually miss. Thank you!"</p><div class="test-author"><img src="https://i.pravatar.cc/150?img=11" alt="Mike K." class="test-avatar" width="44" height="44" loading="lazy"><div class="test-info"><strong>Mike K.</strong><span>Sydney, Australia</span></div></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RENTAL -->
+        <section class="section rental-section" id="rental" aria-labelledby="rental-heading">
+            <div class="container">
+                <div class="animate-on-scroll">
+                    <div class="section-label" data-i18n="rental.label">Premium Service</div>
+                    <h2 class="section-title" id="rental-heading">Our <span class="outline" data-i18n="rental.title">Rental</span> Services</h2>
+                    <div class="deco-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <p class="section-desc" data-i18n="rental.desc">The best vehicle rental services for all your travel needs</p>
+                </div>
+                <div class="rental-grid" role="list">
+                    <div class="rental-card animate-on-scroll" role="listitem">
+                        <div class="rental-card-top"><div class="rental-icon"><i class="fas fa-car-side" aria-hidden="true"></i></div><div class="rental-header-info"><div class="rental-name" data-i18n="rental.car">Rent Car</div><div class="rental-tagline" data-i18n="rental.car.desc">Daily & Monthly Car Rental</div></div></div>
+                        <div class="rental-body"><p class="rental-desc" data-i18n="rental.car.text">Daily or monthly car rental with various vehicle options. Perfect for family vacations, business trips, or personal needs.</p><div class="rental-features"><span class="rental-feature" data-i18n="rental.f1">Key Release</span><span class="rental-feature" data-i18n="rental.f2">With Driver</span><span class="rental-feature" data-i18n="rental.f3">24 Hours</span><span class="rental-feature" data-i18n="rental.f4">All Brands</span></div></div>
+                        <div class="rental-bottom"><div><div class="rental-price-label" data-i18n="rental.from">Starting from</div><div class="rental-price">Rp 350K <span>/day</span></div></div><a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20I%20want%20to%20rent%20a%20car" class="btn-rental" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="rental.book">Book Now</span></a></div>
+                    </div>
+                    <div class="rental-card animate-on-scroll" role="listitem">
+                        <div class="rental-card-top"><div class="rental-icon"><i class="fas fa-plane-arrival" aria-hidden="true"></i></div><div class="rental-header-info"><div class="rental-name" data-i18n="rental.airport">Airport Transfer</div><div class="rental-tagline" data-i18n="rental.airport.desc">Airport Pick-up & Drop-off</div></div></div>
+                        <div class="rental-body"><p class="rental-desc" data-i18n="rental.airport.text">Comfortable and punctual airport transfer service. Professional drivers will wait for you at the arrival terminal with a name board.</p><div class="rental-features"><span class="rental-feature" data-i18n="rental.f5">Pick Up</span><span class="rental-feature" data-i18n="rental.f6">Drop Off</span><span class="rental-feature" data-i18n="rental.f7">Flight Tracking</span><span class="rental-feature" data-i18n="rental.f8">Meet & Greet</span></div></div>
+                        <div class="rental-bottom"><div><div class="rental-price-label" data-i18n="rental.from">Starting from</div><div class="rental-price">Rp 200K <span>/trip</span></div></div><a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20I%20need%20airport%20transfer" class="btn-rental" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="rental.book">Book Now</span></a></div>
+                    </div>
+                    <div class="rental-card animate-on-scroll" role="listitem">
+                        <div class="rental-card-top"><div class="rental-icon"><i class="fas fa-user-tie" aria-hidden="true"></i></div><div class="rental-header-info"><div class="rental-name" data-i18n="rental.private">Private Car</div><div class="rental-tagline" data-i18n="rental.private.desc">Private Car + Exclusive Driver</div></div></div>
+                        <div class="rental-body"><p class="rental-desc" data-i18n="rental.private.text">Enjoy an exclusive journey with a private car and professional driver. Our drivers know the best routes and are ready to be your local guide.</p><div class="rental-features"><span class="rental-feature" data-i18n="rental.f9">Professional Driver</span><span class="rental-feature" data-i18n="rental.f10">Full Day</span><span class="rental-feature" data-i18n="rental.f11">Flexible Route</span><span class="rental-feature" data-i18n="rental.f12">Premium Car</span></div></div>
+                        <div class="rental-bottom"><div><div class="rental-price-label" data-i18n="rental.from">Starting from</div><div class="rental-price">Rp 500K <span>/day</span></div></div><a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20I%20want%20to%20rent%20private%20car" class="btn-rental" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="rental.book">Book Now</span></a></div>
+                    </div>
+                    <div class="rental-card animate-on-scroll" role="listitem">
+                        <div class="rental-card-top"><div class="rental-icon"><i class="fas fa-motorcycle" aria-hidden="true"></i></div><div class="rental-header-info"><div class="rental-name" data-i18n="rental.scooter">Scooter Rental</div><div class="rental-tagline" data-i18n="rental.scooter.desc">Motorcycle / Scooter Rental</div></div></div>
+                        <div class="rental-body"><p class="rental-desc" data-i18n="rental.scooter.text">Explore every corner of your destination with the freedom to drive yourself. Motorcycles and scooters are available in prime condition and ready to use.</p><div class="rental-features"><span class="rental-feature" data-i18n="rental.f13">Free Helmet</span><span class="rental-feature" data-i18n="rental.f14">Insurance</span><span class="rental-feature" data-i18n="rental.f15">Pick-up & Drop-off</span><span class="rental-feature" data-i18n="rental.f16">Full Tank</span></div></div>
+                        <div class="rental-bottom"><div><div class="rental-price-label" data-i18n="rental.from">Starting from</div><div class="rental-price">Rp 80K <span>/day</span></div></div><a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20I%20want%20to%20rent%20a%20scooter" class="btn-rental" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="rental.book">Book Now</span></a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CALCULATOR -->
+        <section class="section fare-section" id="calculator" aria-labelledby="calculator-heading">
+            <div class="container">
+                <div class="animate-on-scroll">
+                    <div class="section-label" data-i18n="calculator.label">Instant Quote</div>
+                    <h2 class="section-title" id="calculator-heading">Calculate Your <span class="outline" data-i18n="calculator.title">Transfer Fare</span></h2>
+                    <div class="deco-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                    <p class="section-desc" data-i18n="calculator.desc">Instant estimate for airport transfer or point-to-point costs</p>
+                </div>
+                <div class="fare-frame animate-on-scroll">
+                    <div class="fare-grid">
+                        <div class="fare-group"><label for="pickup" data-i18n="calculator.pickup">Pickup Location</label><div class="fare-input"><i class="fas fa-map-marker-alt" aria-hidden="true"></i><select id="pickup" aria-required="true"><option value="" data-i18n="calculator.select">Select location...</option><option value="DPS">Ngurah Rai Airport (DPS)</option><option value="Kuta">Kuta / Seminyak</option><option value="Ubud">Ubud</option><option value="Sanur">Sanur</option><option value="NusaDua">Nusa Dua</option><option value="Canggu">Canggu</option></select></div></div>
+                        <div class="fare-group"><label for="dropoff" data-i18n="calculator.dropoff">Drop-off Location</label><div class="fare-input"><i class="fas fa-location-arrow" aria-hidden="true"></i><select id="dropoff" aria-required="true"><option value="" data-i18n="calculator.select">Select location...</option><option value="DPS">Ngurah Rai Airport (DPS)</option><option value="Kuta">Kuta / Seminyak</option><option value="Ubud">Ubud</option><option value="Sanur">Sanur</option><option value="NusaDua">Nusa Dua</option><option value="Canggu">Canggu</option></select></div></div>
+                        <div class="fare-group"><label for="vehicle" data-i18n="calculator.vehicle">Vehicle Type</label><div class="fare-input"><i class="fas fa-car" aria-hidden="true"></i><select id="vehicle"><option value="sedan" data-i18n="calculator.sedan">Sedan (Max 4 Pax)</option><option value="mpv" data-i18n="calculator.mpv">MPV / Avanza (Max 7 Pax)</option><option value="van" data-i18n="calculator.van">Hiace / Van (Max 12 Pax)</option></select></div></div>
+                        <div class="fare-group"><label for="passengers" data-i18n="calculator.passengers">Passengers</label><div class="fare-input"><i class="fas fa-users" aria-hidden="true"></i><input type="number" id="passengers" min="1" max="12" value="2" aria-describedby="passengers-help"></div></div>
+                    </div>
+                    <div class="fare-actions"><button class="btn-calculate" onclick="calculateFare()" aria-label="Calculate fare"><i class="fas fa-calculator" aria-hidden="true"></i> <span data-i18n="calculator.calculate">Calculate Fare</span></button></div>
+                    <div class="fare-result" id="fareResult" style="display:none;" role="alert" aria-live="polite"><div class="result-box"><span class="result-label" data-i18n="calculator.estimated">Estimated Transfer Fare</span><span class="result-price" id="resultPrice">Rp 0</span><span class="result-note" data-i18n="calculator.note">*Final price may vary depending on traffic conditions & peak hours</span><a href="https://wa.me/6282260327772?text=Hi%20Herangga%20Tour,%20I%20want%20to%20book%20a%20transfer%20based%20on%20the%20estimate" class="btn-rental" style="margin-top:16px; display:inline-flex;" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="calculator.book">Book via WhatsApp</span></a></div></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta-section" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <div class="cta-box animate-on-scroll">
+                    <h2 id="contact-heading">Herangga Tour</h2>
+                    <p class="tagline" data-i18n="cta.tagline">Your Journey, Our Passion</p>
+                    <div class="deco-line" aria-hidden="true"><i class="fas fa-diamond"></i></div>
+                    <p data-i18n="cta.text">Contact us for more information about tourist destinations and vehicle rental services</p>
+                    <div class="cta-buttons">
+                        <a href="https://wa.me/6282260327772" class="btn-vintage primary" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp" aria-hidden="true"></i> <span data-i18n="cta.whatsapp">WhatsApp</span></a>
+                        <a href="tel:+6282260327772" class="btn-vintage secondary"><i class="fas fa-phone" aria-hidden="true"></i> <span data-i18n="cta.call">Call Us</span></a>
+                    </div>
+                    <div class="cta-socials" aria-label="Social media links">
+                        <a href="#" aria-label="Threads"><i class="fa-brands fa-threads"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    </div>
+                    <p style="margin-top: 16px; font-size: 12px; color: var(--gray);">@heranggatour</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer-simple" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="/" class="footer-logo" aria-label="Herangga Tour Home"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i><span>HERANGGA TOUR</span></a>
+                    <p>Travel & Tourism Community Hub</p>
+                </div>
+                <div class="footer-right">
+                    <p class="copyright">M.M &copy; <span id="currentYear">2026</span> Herangga Tour</p>
+                </div>
+                                <div class="footer-center">
+                    <p class="copyright">POWER by Khalifah 47</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})" aria-label="Back to top"><i class="fas fa-chevron-up" aria-hidden="true"></i></button>
+
+    <!-- MODAL -->
+    <div class="dest-modal" id="destModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()" aria-label="Close modal">&times;</button>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU (Slide from right) -->
+    <div id="mobileMenu" style="position:fixed;top:0;right:-100%;width:80%;max-width:320px;height:100vh;background:var(--white);padding:80px 28px 40px;z-index:1000;transition:right 0.4s cubic-bezier(0.4,0,0.2,1);box-shadow:-12px 0 30px rgba(0,0,0,0.1);overflow-y:auto;">
+        <ul style="list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:0;">
+            <li><a href="#about" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">About</a></li>
+            <li><a href="#destinations" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">Destinations</a></li>
+            <li><a href="#rental" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">Rental</a></li>
+            <li><a href="#calculator" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">Pricing</a></li>
+            <li><a href="#contact" class="nav-link-mobile" style="display:block;padding:16px 0;font-size:16px;font-weight:600;color:var(--dark);text-decoration:none;border-bottom:1px solid var(--silver);letter-spacing:1px;text-transform:uppercase;">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        const translations = {
+            id: { 'nav.about': 'Tentang', 'nav.destinations': 'Destinasi', 'nav.reviews': 'Ulasan', 'nav.rental': 'Sewa', 'nav.calculator': 'Kalkulator', 'nav.contact': 'Kontak', 'hero.tagline': 'Travel & Tourism Community Hub', 'hero.sub': 'Travel & Tourism Community Hub', 'hero.explore': 'Jelajahi', 'hero.the': 'the', 'hero.world': 'Dunia', 'hero.slogan': '— Perjalanan Anda, Gairah Kami —', 'services.flight': 'Penerbangan', 'services.hotel': 'Hotel', 'services.tour': 'Wisata', 'services.rental': 'Sewa', 'services.visa': 'Visa', 'hero.cta.primary': 'Lihat Paket Wisata', 'hero.cta.secondary': 'Chat Sekarang', 'about.desc1': 'Kami adalah mitra terpercaya Anda untuk menjelajahi keindahan Indonesia. Dari tur pribadi yang dipandu hingga transportasi yang nyaman, kami memberikan pengalaman tak terlupakan yang disesuaikan khusus untuk Anda.', 'about.desc2': 'Apakah Anda mencari pura tersembunyi, pantai yang masih perawan, atau petualangan budaya, pemandu lokal berpengalaman kami akan menunjukkan Indonesia otentik yang jarang dilihat wisatawan.', 'features.private': 'Tur Pribadi', 'features.private.desc': 'Rencana perjalanan yang disesuaikan', 'features.guides': 'Pemandu Lokal', 'features.guides.desc': 'Pengetahuan ahli', 'features.safe': 'Aman & Terpercaya', 'features.safe.desc': 'Layanan terpercaya', 'features.support': 'Dukungan 24/7', 'features.support.desc': 'Selalu tersedia', 'stats.years': 'Tahun Pengalaman', 'stats.travelers': 'Wisatawan Puas', 'stats.packages': 'Paket Wisata', 'badge.popular': 'Destinasi Populer', 'badge.partner': 'Mitra Terpercaya', 'badge.packages': 'PAKET LIBURAN BALI', 'badge.price': 'Mulai dari IDR 500.000', 'badge.trusted': 'Dipercaya oleh', 'destinations.label': 'Mau Ke Mana', 'destinations.title': 'Destinasi', 'destinations.desc': 'Destinasi terpopuler pilihan traveler kami', 'filter.all': 'Semua Paket', 'filter.south': 'Selatan Bali', 'filter.ubud': 'Ubud', 'filter.penida': 'Nusa Penida', 'filter.bedugul': 'Bedugul', 'testimonials.label': 'Kata Mereka', 'testimonials.title': 'Ulasan', 'testimonials.desc': 'Cerita & pengalaman nyata dari traveler yang sudah menjelajah bersama kami', 'testimonial1.text': '"Driver sangat ramah, mobil bersih, dan itinerary fleksibel. Nusa Penida tour-nya unforgettable! Recommended banget."', 'testimonial2.text': '"Airport transfer on time, harga transparan tanpa hidden cost. Herangga Tour jadi pilihan utama setiap saya ke Bali."', 'testimonial3.text': '"Private car with driver is worth every penny. We visited hidden spots in Ubud that tourists usually miss. Thank you!"', 'rental.label': 'Layanan Premium', 'rental.title': 'Sewa', 'rental.desc': 'Pilihan layanan kendaraan terbaik untuk setiap kebutuhan perjalanan Anda', 'rental.car': 'Sewa Mobil', 'rental.car.desc': 'Sewa Mobil Harian & Bulanan', 'rental.car.text': 'Sewa mobil harian atau bulanan dengan berbagai pilihan kendaraan. Cocok untuk liburan keluarga, perjalanan bisnis, atau kebutuhan pribadi Anda.', 'rental.f1': 'Lepas Kunci', 'rental.f2': 'Dengan Supir', 'rental.f3': '24 Jam', 'rental.f4': 'All Brand', 'rental.airport': 'Airport Transfer', 'rental.airport.desc': 'Antar Jemput Bandara', 'rental.airport.text': 'Layanan antar jemput bandara yang nyaman dan tepat waktu. Driver profesional akan menunggu Anda di terminal kedatangan dengan papan nama.', 'rental.f5': 'Pick Up', 'rental.f6': 'Drop Off', 'rental.f7': 'Flight Tracking', 'rental.f8': 'Meet & Greet', 'rental.private': 'Mobil Pribadi', 'rental.private.desc': 'Mobil Pribadi + Supir Eksklusif', 'rental.private.text': 'Nikmati perjalanan eksklusif dengan mobil pribadi dan supir profesional. Supir kami mengenal rute terbaik dan siap menjadi guide lokal Anda.', 'rental.f9': 'Supir Profesional', 'rental.f10': 'Full Day', 'rental.f11': 'Flexible Route', 'rental.f12': 'Premium Car', 'rental.scooter': 'Sewa Motor', 'rental.scooter.desc': 'Sewa Motor / Scooter', 'rental.scooter.text': 'Jelajahi setiap sudut destinasi dengan kebebasan berkendara sendiri. Motor dan scooter tersedia dalam kondisi prima dan siap pakai.', 'rental.f13': 'Helm Gratis', 'rental.f14': 'Asuransi', 'rental.f15': 'Antar Jemput', 'rental.f16': 'Full Tank', 'rental.from': 'Mulai dari', 'rental.book': 'Pesan Sekarang', 'calculator.label': 'Penawaran Instan', 'calculator.title': 'Tarif Transfer', 'calculator.desc': 'Estimasi biaya transfer bandara atau point-to-point secara instan', 'calculator.pickup': 'Lokasi Pickup', 'calculator.dropoff': 'Lokasi Drop-off', 'calculator.vehicle': 'Jenis Kendaraan', 'calculator.passengers': 'Penumpang', 'calculator.select': 'Pilih lokasi...', 'calculator.sedan': 'Sedan (Max 4 Pax)', 'calculator.mpv': 'MPV / Avanza (Max 7 Pax)', 'calculator.van': 'Hiace / Van (Max 12 Pax)', 'calculator.calculate': 'Hitung Tarif', 'calculator.estimated': 'Estimasi Biaya Transfer', 'calculator.note': '*Harga final dapat menyesuaikan kondisi lalu lintas & waktu peak', 'calculator.book': 'Pesan via WhatsApp', 'cta.tagline': 'Your Journey, Our Passion', 'cta.text': 'Hubungi kami untuk informasi lebih lanjut tentang destinasi wisata dan layanan sewa kendaraan', 'cta.whatsapp': 'WhatsApp', 'cta.call': 'Telepon' },
+            en: { 'nav.about': 'About', 'nav.destinations': 'Destinations', 'nav.reviews': 'Reviews', 'nav.rental': 'Rental', 'nav.calculator': 'Pricing', 'nav.contact': 'Contact', 'hero.tagline': 'Travel & Tourism Community Hub', 'hero.sub': 'Travel & Tourism Community Hub', 'hero.explore': 'Explore', 'hero.the': 'the', 'hero.world': 'World', 'hero.slogan': '— Your Journey, Our Passion —', 'services.flight': 'Flight', 'services.hotel': 'Hotel', 'services.tour': 'Tour', 'services.rental': 'Rental', 'services.visa': 'Visa', 'hero.cta.primary': 'View Tour Packages', 'hero.cta.secondary': 'Chat Now', 'about.desc1': 'We are your trusted partner for exploring the beauty of Indonesia. From private guided tours to comfortable transportation, we provide unforgettable experiences tailored just for you.', 'about.desc2': 'Whether you\'re seeking hidden temples, pristine beaches, or cultural adventures, our experienced local guides will show you the authentic Indonesia that tourists rarely see.', 'features.private': 'Private Tours', 'features.private.desc': 'Customized itineraries', 'features.guides': 'Local Guides', 'features.guides.desc': 'Expert knowledge', 'features.safe': 'Safe & Reliable', 'features.safe.desc': 'Trusted service', 'features.support': '24/7 Support', 'features.support.desc': 'Always available', 'stats.years': 'Years Experience', 'stats.travelers': 'Happy Travelers', 'stats.packages': 'Tour Packages', 'badge.popular': 'Popular Destination', 'badge.partner': 'Trusted Partner', 'badge.packages': 'BALI HOLIDAY PACKAGES', 'badge.price': 'Starting from IDR 500.000', 'badge.trusted': 'Trusted by', 'destinations.label': 'Where To Go', 'destinations.title': 'Destinations', 'destinations.desc': 'Most popular destinations chosen by our travelers', 'filter.all': 'All Packages', 'filter.south': 'South Bali', 'filter.ubud': 'Ubud', 'filter.penida': 'Nusa Penida', 'filter.bedugul': 'Bedugul', 'testimonials.label': 'What They Say', 'testimonials.title': 'Reviews', 'testimonials.desc': 'Real stories and experiences from travelers who have explored with us', 'testimonial1.text': '"The driver was very friendly, the car was clean, and the itinerary was flexible. The Nusa Penida tour was unforgettable! Highly recommended."', 'testimonial2.text': '"Airport transfer on time, transparent pricing with no hidden costs. Herangga Tour is my go-to choice every time I visit Bali."', 'testimonial3.text': '"Private car with driver is worth every penny. We visited hidden spots in Ubud that tourists usually miss. Thank you!"', 'rental.label': 'Premium Service', 'rental.title': 'Rental', 'rental.desc': 'The best vehicle rental services for all your travel needs', 'rental.car': 'Rent Car', 'rental.car.desc': 'Daily & Monthly Car Rental', 'rental.car.text': 'Daily or monthly car rental with various vehicle options. Perfect for family vacations, business trips, or personal needs.', 'rental.f1': 'Key Release', 'rental.f2': 'With Driver', 'rental.f3': '24 Hours', 'rental.f4': 'All Brands', 'rental.airport': 'Airport Transfer', 'rental.airport.desc': 'Airport Pick-up & Drop-off', 'rental.airport.text': 'Comfortable and punctual airport transfer service. Professional drivers will wait for you at the arrival terminal with a name board.', 'rental.f5': 'Pick Up', 'rental.f6': 'Drop Off', 'rental.f7': 'Flight Tracking', 'rental.f8': 'Meet & Greet', 'rental.private': 'Private Car', 'rental.private.desc': 'Private Car + Exclusive Driver', 'rental.private.text': 'Enjoy an exclusive journey with a private car and professional driver. Our drivers know the best routes and are ready to be your local guide.', 'rental.f9': 'Professional Driver', 'rental.f10': 'Full Day', 'rental.f11': 'Flexible Route', 'rental.f12': 'Premium Car', 'rental.scooter': 'Scooter Rental', 'rental.scooter.desc': 'Motorcycle / Scooter Rental', 'rental.scooter.text': 'Explore every corner of your destination with the freedom to drive yourself. Motorcycles and scooters are available in prime condition and ready to use.', 'rental.f13': 'Free Helmet', 'rental.f14': 'Insurance', 'rental.f15': 'Pick-up & Drop-off', 'rental.f16': 'Full Tank', 'rental.from': 'Starting from', 'rental.book': 'Book Now', 'calculator.label': 'Instant Quote', 'calculator.title': 'Transfer Fare', 'calculator.desc': 'Instant estimate for airport transfer or point-to-point costs', 'calculator.pickup': 'Pickup Location', 'calculator.dropoff': 'Drop-off Location', 'calculator.vehicle': 'Vehicle Type', 'calculator.passengers': 'Passengers', 'calculator.select': 'Select location...', 'calculator.sedan': 'Sedan (Max 4 Pax)', 'calculator.mpv': 'MPV / Avanza (Max 7 Pax)', 'calculator.van': 'Hiace / Van (Max 12 Pax)', 'calculator.calculate': 'Calculate Fare', 'calculator.estimated': 'Estimated Transfer Fare', 'calculator.note': '*Final price may vary depending on traffic conditions & peak hours', 'calculator.book': 'Book via WhatsApp', 'cta.tagline': 'Your Journey, Our Passion', 'cta.text': 'Contact us for more information about tourist destinations and vehicle rental services', 'cta.whatsapp': 'WhatsApp', 'cta.call': 'Call Us' }
+        };
+
+        let currentLang = 'en';
+        function updateLanguage(lang) {
+            currentLang = lang;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    if (el.tagName === 'INPUT' || el.tagName === 'SELECT') el.placeholder = translations[lang][key];
+                    else el.textContent = translations[lang][key];
+                }
+            });
+            document.documentElement.lang = lang;
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+                btn.setAttribute('aria-pressed', btn.dataset.lang === lang);
+            });
+        }
+        document.querySelectorAll('.lang-btn').forEach(btn => btn.addEventListener('click', () => updateLanguage(btn.dataset.lang)));
+
+        const destinationsData = [
+    // Existing + New Catalog
+    { 
+        id: 1, 
+        title: "One Day Ubud Adventure", 
+        cat: "ubud", 
+        badge: "Best Seller", 
+        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 600.000", 
+        dur: "Full Day", 
+        includes: "AC Car, Driver, Rafting/ATV, Lunch", 
+        itinerary: ["Hotel Pickup", "White Water Rafting Ayung", "ATV Quad Bike", "Lunch", "Bali Swing & Coffee Plantation", "Hotel Drop-off"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20One%20Day%20Ubud%20Adventure.%20https://wa.me/p/25251497441146948/6282260327772" 
+    },
+    { 
+        id: 2, 
+        title: "East and West Nusa Penida Trip", 
+        cat: "penida", 
+        badge: "Most Popular", 
+        image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80&fm=webp", 
+        country: "Nusa Penida - Bali", 
+        price: "Rp 900.000", 
+        dur: "Full Day", 
+        includes: "Fast Boat, Car + Driver, Lunch, Snorkeling Gear", 
+        itinerary: ["Hotel Pickup", "Fast Boat to Penida", "Kelingking Beach", "Broken Beach", "Angel's Billabong", "Diamond Beach / Atuh Beach", "Hotel Drop-off"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20East%20and%20West%20Nusa%20Penida%20Trip.%20https://wa.me/p/25235335139441117/6282260327772" 
+    },
+    { 
+        id: 3, 
+        title: "West Nusa Penida Trip", 
+        cat: "penida", 
+        badge: "", 
+        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1200&q=80&fm=webp", 
+        country: "Nusa Penida - Bali", 
+        price: "Rp 800.000", 
+        dur: "Full Day", 
+        includes: "Fast Boat, Car + Driver, Lunch", 
+        itinerary: ["Hotel Pickup", "Fast Boat", "Kelingking Beach (T-Rex)", "Broken Beach", "Angel's Billabong", "Crystal Bay"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20West%20Nusa%20Penida%20Trip.%20https://wa.me/p/24780822748283984/6282260327772" 
+    },
+    { 
+        id: 4, 
+        title: "East Nusa Penida", 
+        cat: "penida", 
+        badge: "", 
+        image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80&fm=webp", 
+        country: "Nusa Penida - Bali", 
+        price: "Rp 800.000", 
+        dur: "Full Day", 
+        includes: "Fast Boat, Car + Driver, Lunch", 
+        itinerary: ["Hotel Pickup", "Fast Boat", "Diamond Beach", "Atuh Beach", "Tree House Molenteng", "Thousand Islands Viewpoint"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20East%20Nusa%20Penida.%20https://wa.me/p/25421160894146575/6282260327772" 
+    },
+    { 
+        id: 5, 
+        title: "ALL IN Trip (Custom)", 
+        cat: "south", 
+        badge: "Flexible", 
+        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 600.000", 
+        dur: "Full Day", 
+        includes: "AC Car + Driver, Fuel, Flexible Itinerary", 
+        itinerary: ["Hotel Pickup", "Custom Destination according to your choice", "Lunch", "Hotel Drop-off"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20ALL%20IN%20Trip.%20https://wa.me/p/25188962250757297/6282260327772" 
+    },
+    { 
+        id: 6, 
+        title: "Central Bali Trip", 
+        cat: "ubud", 
+        badge: "", 
+        image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 650.000", 
+        dur: "Full Day", 
+        includes: "AC Car, Driver, Entrance Fees, Lunch", 
+        itinerary: ["Hotel Pickup", "Tegalalang Rice Terrace", "Ubud Monkey Forest", "Coffee Plantation", "Traditional Village"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20Central%20Bali%20Trip.%20https://wa.me/p/25266747079614704/6282260327772" 
+    },
+    { 
+        id: 7, 
+        title: "East Bali Trip", 
+        cat: "south", 
+        badge: "", 
+        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 850.000", 
+        dur: "Full Day", 
+        includes: "AC Car, Driver, Lunch, Entrance Fees", 
+        itinerary: ["Hotel Pickup", "Lempuyang Temple", "Tirta Gangga", "Taman Ujung", "Virgin Beach"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20East%20Bali%20Trip.%20https://wa.me/p/25575538702040137/6282260327772" 
+    },
+    { 
+        id: 8, 
+        title: "West Bali Trip", 
+        cat: "south", 
+        badge: "", 
+        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 800.000", 
+        dur: "Full Day", 
+        includes: "AC Car, Driver, Lunch", 
+        itinerary: ["Hotel Pickup", "Tanah Lot Temple", "Jatiluwih Rice Terrace", "Bali Butterfly Park", "West Bali National Park area"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20West%20Bali%20Trip.%20https://wa.me/p/25045994758354963/6282260327772" 
+    },
+    { 
+        id: 9, 
+        title: "North Bali Trip", 
+        cat: "bedugul", 
+        badge: "", 
+        image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 650.000", 
+        dur: "Full Day", 
+        includes: "AC Car, Driver, Lunch", 
+        itinerary: ["Hotel Pickup", "Ulun Danu Beratan", "Gitgit Waterfall", "Lovina Beach", "Banjar Hot Spring"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20North%20Bali%20Trip.%20https://wa.me/p/24925729400445559/6282260327772" 
+    },
+    { 
+        id: 10, 
+        title: "South Bali Trip", 
+        cat: "south", 
+        badge: "Popular", 
+        image: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 650.000", 
+        dur: "10-12 Hours", 
+        includes: "AC Car, Driver, Fuel, Parking, Mineral Water", 
+        itinerary: ["Hotel Pickup", "Tanjung Benoa Watersport", "Pandawa Beach", "GWK Cultural Park", "Uluwatu Temple + Kecak Dance", "Jimbaran Seafood Dinner"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20South%20Bali%20Trip.%20https://wa.me/p/25087154500947192/6282260327772" 
+    },
+    { 
+        id: 11, 
+        title: "Bali Tour", 
+        cat: "south", 
+        badge: "", 
+        image: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 600.000", 
+        dur: "Full Day", 
+        includes: "AC Car, Driver, Entrance Fees", 
+        itinerary: ["Hotel Pickup", "Custom or Standard Highlights", "Lunch", "Hotel Drop-off"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%20Bali%20Tour.%20https://wa.me/p/24832515469713679/6282260327772" 
+    },
+    { 
+        id: 12, 
+        title: "5 Hari Bali Tour", 
+        cat: "south", 
+        badge: "Multi Day", 
+        image: "https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?w=600&q=80&fm=webp", 
+        modalImage: "https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=1200&q=80&fm=webp", 
+        country: "Bali - Indonesia", 
+        price: "Rp 700.000", 
+        dur: "5 Days", 
+        includes: "Private Car + Driver, Hotels (optional), Meals", 
+        itinerary: ["Day 1-5: Custom or Standard Itinerary", "South, Central, East, North coverage"], 
+        whatsapp: "Hi%20Herangga%20Tour,%20I'm%20interested%20in%205%20Hari%20Tour.%20https://wa.me/p/24122799133987601/6282260327772" 
+    }
+];
+
+        const destGrid = document.getElementById('destGrid');
+        function renderDestinations(filter = 'all') {
+            destGrid.innerHTML = '';
+            const filtered = filter === 'all' ? destinationsData : destinationsData.filter(d => d.cat === filter);
+            filtered.forEach(d => {
+                const card = document.createElement('div');
+                card.className = 'dest-card animate-on-scroll';
+                card.setAttribute('role', 'listitem');
+                card.innerHTML = `<img src="${d.image}" alt="${d.title} Bali" class="dest-card-img" loading="lazy" width="600" height="400"><div class="dest-card-number">${d.id < 10 ? '0' : ''}${d.id}</div>${d.badge ? `<span class="dest-badge">${d.badge}</span>` : ''}<div class="dest-card-body"><h3>${d.title}</h3><div class="country">${d.country}</div><ul class="desc">${d.itinerary.slice(0,4).map(item => `<li>${item}</li>`).join('')}</ul><div class="dest-card-footer"><a href="https://wa.me/6282260327772?text=${d.whatsapp}" target="_blank" rel="noopener noreferrer" class="btn-dest-wa" onclick="trackWA('dest-${d.id}')" aria-label="Chat WhatsApp for ${d.title}"><i class="fab fa-whatsapp" aria-hidden="true"></i> Ask About This Package</a></div></div>`;
+                card.addEventListener('click', (e) => { if(!e.target.closest('.btn-dest-wa')) openModal(d); });
+                destGrid.appendChild(card);
+            });
+            observeAnimations();
+        }
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
+                btn.classList.add('active'); btn.setAttribute('aria-pressed', 'true');
+                renderDestinations(btn.dataset.filter);
+            });
+        });
+
+        function openModal(data) {
+            document.getElementById('modalBody').innerHTML = `<img src="${data.modalImage}" alt="${data.title}" class="modal-hero" width="1200" height="800"><div class="modal-info"><h2 class="modal-title" id="modalTitle">${data.title}</h2><div class="modal-meta"><span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> ${data.country}</span><span><i class="far fa-clock" aria-hidden="true"></i> ${data.dur}</span><span><i class="fas fa-check-circle" aria-hidden="true"></i> ${data.includes}</span></div><div class="modal-section"><h4>📋 Full Itinerary</h4><ul class="modal-itinerary">${data.itinerary.map(i => `<li>${i}</li>`).join('')}</ul></div><div class="modal-price-box"><div class="modal-price">Starting from ${data.price} <span>/pax</span></div></div><div class="modal-cta"><a href="https://wa.me/6282260327772?text=${data.whatsapp}" target="_blank" rel="noopener noreferrer" class="btn-modal primary" onclick="trackWA('modal-${data.id}')" aria-label="Booking ${data.title} via WhatsApp"><i class="fab fa-whatsapp" aria-hidden="true"></i> Booking via WhatsApp</a><button class="btn-modal secondary" onclick="closeModal()"><i class="fas fa-times" aria-hidden="true"></i> Close</button></div></div>`;
+            const modal = document.getElementById('destModal');
+            modal.classList.add('active'); modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal() {
+            const modal = document.getElementById('destModal');
+            modal.classList.remove('active'); modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('destModal').addEventListener('click', (e) => { if(e.target === document.getElementById('destModal')) closeModal(); });
+        document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+        /* ============================================
+           NAVBAR INTERACTIONS (Mobile Menu)
+           ============================================ */
+        const navbar = document.getElementById('navbar');
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const navOverlay = document.getElementById('navOverlay');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileLinks = document.querySelectorAll('.nav-link-mobile');
+
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+            let currentSection = '';
+            document.querySelectorAll('section[id]').forEach(section => {
+                const sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) currentSection = section.getAttribute('id');
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('data-section') === currentSection) link.classList.add('active');
+            });
+        });
+
+        function toggleMobileMenu() {
+            const isOpen = mobileMenu.style.right === '0px';
+            mobileMenu.style.right = isOpen ? '-100%' : '0';
+            navOverlay.style.display = isOpen ? 'none' : 'block';
+            setTimeout(() => { navOverlay.style.opacity = isOpen ? '0' : '1'; navOverlay.style.visibility = isOpen ? 'hidden' : 'visible'; }, 10);
+            mobileToggle.classList.toggle('active', !isOpen);
+            mobileToggle.setAttribute('aria-expanded', !isOpen);
+            document.body.style.overflow = isOpen ? '' : 'hidden';
+        }
+
+        mobileToggle.addEventListener('click', toggleMobileMenu);
+        navOverlay.addEventListener('click', toggleMobileMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', () => { if (mobileMenu.style.right === '0px') toggleMobileMenu(); }));
+
+        const observer = new IntersectionObserver((entries) => { entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('animated'); observer.unobserve(entry.target); } }); }, { threshold: 0.1 });
+        function observeAnimations() { document.querySelectorAll('.animate-on-scroll:not(.animated)').forEach(el => observer.observe(el)); }
+        observeAnimations();
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => { anchor.addEventListener('click', function(e) { e.preventDefault(); const target = document.querySelector(this.getAttribute('href')); if (target) target.scrollIntoView({ behavior: 'smooth' }); }); });
+
+        function animateCounters() {
+            document.querySelectorAll('.about-stat-item .stat-number').forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target')), suffix = counter.querySelector('span') ? counter.querySelector('span').outerHTML : '';
+                let current = 0, step = target / 80;
+                const timer = setInterval(() => { current += step; if (current >= target) { current = target; clearInterval(timer); } counter.innerHTML = Math.floor(current) + suffix; }, 20);
+            });
+        }
+        const aboutObserver = new IntersectionObserver((entries) => { if (entries[0].isIntersecting) { animateCounters(); aboutObserver.disconnect(); } }, { threshold: 0.3 });
+        const aboutStats = document.querySelector('.about-stats-row'); if (aboutStats) aboutObserver.observe(aboutStats);
+
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div'); p.className = 'particle';
+                p.style.width = p.style.height = Math.random() * 6 + 2 + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = Math.random() * 15 + 10 + 's';
+                p.style.animationDelay = Math.random() * 10 + 's';
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => { backToTopBtn.classList.toggle('visible', window.scrollY > 500); });
+
+        function calculateFare() {
+            const pickup = document.getElementById('pickup'), dropoff = document.getElementById('dropoff'), vehicle = document.getElementById('vehicle').value;
+            const resultBox = document.getElementById('fareResult'), priceEl = document.getElementById('resultPrice');
+            document.querySelectorAll('.fare-input').forEach(el => el.classList.remove('error'));
+            if (!pickup.value || !dropoff.value) {
+                if (!pickup.value) pickup.closest('.fare-input').classList.add('error');
+                if (!dropoff.value) dropoff.closest('.fare-input').classList.add('error');
+                alert(currentLang === 'id' ? 'Please select pickup and drop-off locations first.' : 'Please select both pickup and drop-off locations.');
+                return;
+            }
+            if (pickup.value === dropoff.value) { alert(currentLang === 'id' ? 'Pickup and drop-off locations cannot be the same.' : 'Pickup and drop-off locations cannot be the same.'); return; }
+            const baseFares = { sedan: 150000, mpv: 200000, van: 350000 };
+            const zoneMultiplier = { 'DPS-Kuta': 1.0, 'DPS-Seminyak': 1.1, 'DPS-Ubud': 2.2, 'DPS-Sanur': 1.3, 'DPS-NusaDua': 1.5, 'DPS-Canggu': 1.6, 'Kuta-Ubud': 1.8, 'Kuta-Sanur': 0.8, 'Kuta-NusaDua': 1.1, 'Ubud-Sanur': 1.6, 'Ubud-Canggu': 1.4, 'Sanur-NusaDua': 0.7, 'Canggu-Ubud': 1.5, 'Canggu-Seminyak': 0.6, 'NusaDua-Ubud': 2.0 };
+            const routeKey1 = `${pickup.value}-${dropoff.value}`, routeKey2 = `${dropoff.value}-${pickup.value}`;
+            const multiplier = zoneMultiplier[routeKey1] || zoneMultiplier[routeKey2] || 1.5;
+            let fare = Math.round(baseFares[vehicle] * multiplier);
+            fare = Math.ceil(fare / 10000) * 10000;
+            priceEl.textContent = `Rp ${fare.toLocaleString('id-ID')}`;
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        function initAnalytics() { window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX'); window.gtag = gtag; }
+        function trackWA(source) { if(window.gtag) gtag('event', 'whatsapp_click', { event_category: 'conversion', event_label: source }); console.log(`WA Click tracked: ${source}`); }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateLanguage('en');
+            initAnalytics();
+            renderDestinations();
+            document.querySelectorAll('#currentYear').forEach(el => el.textContent = new Date().getFullYear());
+        });
+    </script>
+</body>
+</html>
