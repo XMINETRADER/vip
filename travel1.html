@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herangga Tour — Your Journey, Our Passion</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        :root {
+            --black: #1a1a1a;
+            --dark: #2d2d2d;
+            --gray: #6b6b6b;
+            --silver: #c8c8c8;
+            --white: #ffffff;
+            --bg-cream: #faf8f5;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: var(--font-body);
+            color: var(--black);
+            background: var(--white);
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 0; left: 0; width: 100%;
+            z-index: 1000;
+            padding: 16px 0;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--black);
+            transition: all 0.3s;
+        }
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+
+        .logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--black); }
+        .logo-icon {
+            width: 48px; height: 48px;
+            border: 3px solid var(--black); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.3s;
+        }
+        .logo-icon svg { width: 26px; height: 26px; }
+        .logo-text .brand {
+            font-family: var(--font-display); font-size: 20px;
+            font-weight: 900; letter-spacing: 2px; text-transform: uppercase; line-height: 1;
+        }
+        .logo-text .tagline {
+            font-size: 8px; letter-spacing: 3px; text-transform: uppercase; color: var(--gray); margin-top: 2px;
+        }
+
+        .nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+        .nav-links a {
+            text-decoration: none; color: var(--black);
+            font-weight: 600; font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+            padding: 10px 18px; border: 2px solid transparent; transition: all 0.3s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            background: var(--black); color: var(--white); border-color: var(--black);
+        }
+
+        .mobile-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; z-index: 1001; }
+        .mobile-toggle span { width: 24px; height: 2px; background: var(--black); transition: all 0.3s; }
+        .mobile-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .mobile-toggle.active span:nth-child(2) { opacity: 0; }
+        .mobile-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100vh;
+            display: flex; align-items: center; justify-content: center;
+            text-align: center; position: relative;
+            border-bottom: 2px solid var(--black);
+            overflow: hidden;
+        }
+        .hero-content { position: relative; z-index: 2; padding: 40px 24px; }
+        .hero-top-tagline {
+            font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+            color: var(--gray); margin-bottom: 20px;
+        }
+        .hero-title {
+            font-family: var(--font-display); font-size: clamp(50px, 9vw, 110px);
+            font-weight: 900; letter-spacing: 6px; text-transform: uppercase;
+            line-height: 0.95; text-shadow: 4px 4px 0 rgba(0,0,0,0.06);
+        }
+        .hero-sub {
+            display: inline-block; background: var(--black); color: var(--white);
+            padding: 8px 28px; font-size: 11px; letter-spacing: 4px;
+            text-transform: uppercase; font-weight: 600; margin-top: 16px;
+        }
+        .hero-explore { margin: 50px 0 30px; }
+        .hero-explore h2 {
+            font-family: var(--font-display); font-size: clamp(44px, 7vw, 90px);
+            font-weight: 900; letter-spacing: 4px; text-transform: uppercase; line-height: 1;
+        }
+        .hero-explore h2 .outline { -webkit-text-stroke: 2px var(--black); color: transparent; }
+        .hero-explore .the { font-size: 0.35em; letter-spacing: 8px; display: block; margin: 4px 0; }
+        .hero-line {
+            font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+            color: var(--gray); margin-top: 20px;
+        }
+        .hero-icons { display: flex; justify-content: center; gap: 40px; margin-top: 50px; }
+        .hero-icon { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+        .hero-icon i { font-size: 26px; color: var(--black); }
+        .hero-icon span {
+            font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray);
+        }
+
+        /* Particles */
+        .hero-particles {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+        .particle {
+            position: absolute;
+            width: 4px; height: 4px;
+            background: var(--black);
+            opacity: 0.1;
+            border-radius: 50%;
+            animation: float-particle linear infinite;
+        }
+        @keyframes float-particle {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.1; }
+            90% { opacity: 0.1; }
+            100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* ===== DECORATIVE ===== */
+        .deco-dots { display: flex; justify-content: center; gap: 6px; margin: 12px 0; }
+        .deco-dots span { width: 4px; height: 4px; background: var(--black); border-radius: 50%; }
+        .deco-line { display: flex; align-items: center; justify-content: center; gap: 12px; margin: 16px 0; }
+        .deco-line::before, .deco-line::after {
+            content: ''; flex: 1; max-width: 100px; height: 1px; background: var(--black);
+        }
+        .deco-line i { font-size: 10px; }
+
+        /* ===== SECTION COMMON ===== */
+        .section { padding: 100px 0; }
+        .section-label {
+            font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+            color: var(--gray); font-weight: 600; text-align: center; margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: var(--font-display); font-size: clamp(32px, 5vw, 52px);
+            font-weight: 900; text-transform: uppercase; letter-spacing: 4px;
+            text-align: center; line-height: 1.1;
+        }
+        .section-title .outline { -webkit-text-stroke: 2px var(--black); color: transparent; }
+        .section-desc {
+            font-size: 14px; color: var(--gray); max-width: 600px;
+            margin: 16px auto 0; line-height: 1.8; text-align: center;
+        }
+
+        /* ===== MARQUEE ===== */
+        .marquee-section {
+            background: var(--black); color: var(--white);
+            padding: 12px 0; overflow: hidden;
+            border-top: 3px solid var(--black); border-bottom: 3px solid var(--black);
+        }
+        .marquee-track { display: flex; animation: marquee 25s linear infinite; width: max-content; }
+        .marquee-item {
+            display: flex; align-items: center; gap: 10px;
+            padding: 0 28px; white-space: nowrap;
+            font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
+        }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* ===== ABOUT US ===== */
+        .about-section {
+            background: var(--bg-cream);
+            border-top: 2px solid var(--black);
+            border-bottom: 2px solid var(--black);
+            padding: 100px 0;
+            overflow: hidden;
+        }
+        .about-modern {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .about-content { z-index: 2; }
+        .about-badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: var(--white); border: 2px solid var(--black);
+            color: var(--black); padding: 8px 20px; border-radius: 50px;
+            font-size: 13px; font-weight: 700; letter-spacing: 1px;
+            text-transform: uppercase; margin-bottom: 20px;
+        }
+        .about-badge i { font-size: 12px; }
+        .about-content h2 {
+            font-family: var(--font-display); font-size: clamp(32px, 4vw, 48px);
+            font-weight: 900; line-height: 1.2; margin-bottom: 24px; color: var(--black);
+        }
+        .about-content h2 .gradient-text {
+            color: var(--black); text-decoration: underline;
+            text-decoration-thickness: 3px; text-underline-offset: 6px;
+        }
+        .about-content .desc {
+            font-size: 15px; color: var(--gray); line-height: 1.8; margin-bottom: 16px;
+        }
+        .about-features {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0;
+        }
+        .about-feature { display: flex; align-items: flex-start; gap: 14px; }
+        .about-feature-icon {
+            width: 48px; height: 48px; min-width: 48px;
+            border: 2px solid var(--black); background: var(--white);
+            border-radius: 14px; display: flex; align-items: center;
+            justify-content: center; color: var(--black); font-size: 18px;
+            transition: all 0.3s;
+        }
+        .about-feature:hover .about-feature-icon {
+            background: var(--black); color: var(--white);
+        }
+        .about-feature-text h4 {
+            font-size: 15px; font-weight: 700; color: var(--black); margin-bottom: 2px;
+        }
+        .about-feature-text p { font-size: 13px; color: var(--gray); }
+        .about-stats-row {
+            display: flex; gap: 40px; margin-top: 32px;
+            padding-top: 24px; border-top: 2px solid var(--black);
+        }
+        .about-stat-item { text-align: left; }
+        .about-stat-item .stat-number {
+            font-family: var(--font-display); font-size: 32px;
+            font-weight: 900; color: var(--black); line-height: 1;
+        }
+        .about-stat-item .stat-label {
+            font-size: 13px; color: var(--gray); margin-top: 4px;
+        }
+        .about-visual { position: relative; }
+        .about-image-wrapper {
+            position: relative; border: 3px solid var(--black);
+            border-radius: 24px; overflow: hidden; background: var(--white);
+        }
+        .about-image-wrapper img {
+            width: 100%; height: 500px; object-fit: cover; display: block;
+            filter: grayscale(100%) contrast(1.1); transition: all 0.5s;
+        }
+        .about-image-wrapper:hover img { filter: grayscale(0%) contrast(1); }
+        .float-badge {
+            position: absolute; background: var(--white);
+            border: 2px solid var(--black); border-radius: 16px;
+            padding: 14px 20px; z-index: 3;
+            animation: float-badge 3s ease-in-out infinite;
+            box-shadow: 4px 4px 0 var(--black);
+        }
+        .float-badge-destination { top: -10px; left: -20px; }
+        .float-badge-destination .fb-label {
+            font-size: 11px; color: var(--gray); display: block;
+        }
+        .float-badge-destination .fb-value {
+            font-size: 14px; font-weight: 700; color: var(--black);
+        }
+        .float-badge-bottom {
+            bottom: -15px; left: 20px; right: 20px;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 24px; animation-delay: 0.5s;
+        }
+        .float-badge-bottom .fb-left { display: flex; align-items: center; gap: 12px; }
+        .float-badge-bottom .fb-logo {
+            width: 44px; height: 44px; border: 2px solid var(--black);
+            background: var(--white); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--black); font-size: 16px;
+        }
+        .float-badge-bottom .fb-info h4 {
+            font-size: 14px; font-weight: 700; color: var(--black);
+        }
+        .float-badge-bottom .fb-info span { font-size: 11px; color: var(--gray); }
+        .float-badge-bottom .fb-right { text-align: right; }
+        .float-badge-bottom .fb-right .fb-title {
+            font-size: 12px; font-weight: 700; color: var(--black);
+        }
+        .float-badge-bottom .fb-right .fb-sub { font-size: 11px; color: var(--gray); }
+        .float-badge-trust {
+            bottom: 30px; right: -25px; display: flex;
+            align-items: center; gap: 10px; padding: 12px 18px;
+            animation-delay: 1s;
+        }
+        .float-badge-trust .fb-check {
+            width: 36px; height: 36px; border: 2px solid var(--black);
+            background: var(--white); border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--black); font-size: 14px;
+        }
+        .float-badge-trust .fb-text span {
+            display: block; font-size: 10px; color: var(--gray);
+        }
+        .float-badge-trust .fb-text strong {
+            font-size: 13px; color: var(--black);
+        }
+        @keyframes float-badge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        /* ===== DESTINATIONS ===== */
+        .destinations-section { background: var(--white); border-bottom: 2px solid var(--black); }
+        .dest-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 50px; }
+        .dest-card {
+            border: 2px solid var(--black); overflow: hidden;
+            position: relative; transition: all 0.4s; cursor: pointer;
+        }
+        .dest-card:hover { transform: translateY(-6px); box-shadow: 6px 6px 0 var(--black); }
+        .dest-card-img {
+            width: 100%; height: 260px; object-fit: cover;
+            filter: grayscale(100%) contrast(1.1); transition: all 0.5s; display: block;
+        }
+        .dest-card:hover .dest-card-img { filter: grayscale(0%) contrast(1); }
+        .dest-card-body { padding: 20px; border-top: 2px solid var(--black); }
+        .dest-card-body h3 {
+            font-family: var(--font-display); font-size: 20px;
+            font-weight: 700; text-transform: uppercase; letter-spacing: 2px;
+        }
+        .dest-card-body .country {
+            font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-top: 4px;
+        }
+        .dest-card-body .desc {
+            font-size: 13px; color: var(--gray); line-height: 1.8; margin-top: 10px;
+            list-style: none; padding-left: 0;
+        }
+        .dest-card-body .desc li {
+            position: relative; padding-left: 16px; margin-bottom: 4px;
+        }
+        .dest-card-body .desc li::before {
+            content: '•'; position: absolute; left: 0;
+            color: var(--black); font-weight: bold;
+        }
+        .dest-card-body .desc li:last-child { margin-bottom: 0; }
+        .dest-card-number {
+            position: absolute; top: 14px; left: 14px;
+            font-family: var(--font-display); font-size: 42px; font-weight: 900;
+            color: var(--white); text-shadow: 2px 2px 0 rgba(0,0,0,0.6); opacity: 0.4;
+        }
+
+        /* ===== RENTAL SERVICES ===== */
+        .rental-section {
+            background: var(--black); color: var(--white);
+            border-bottom: 2px solid var(--black);
+        }
+        .rental-section .section-label { color: rgba(255,255,255,0.4); }
+        .rental-section .section-title { color: var(--white); }
+        .rental-section .section-title .outline { -webkit-text-stroke-color: var(--white); }
+        .rental-section .section-desc { color: rgba(255,255,255,0.5); }
+        .rental-section .deco-dots span { background: rgba(255,255,255,0.3); }
+        .rental-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; margin-top: 50px; }
+        .rental-card {
+            border: 1px solid rgba(255,255,255,0.2); overflow: hidden;
+            transition: all 0.4s; position: relative;
+        }
+        .rental-card:hover {
+            background: var(--white); color: var(--black);
+            transform: translateY(-6px); box-shadow: 6px 6px 0 rgba(255,255,255,0.15);
+        }
+        .rental-card-top { display: flex; align-items: center; gap: 20px; padding: 28px 28px 0; }
+        .rental-icon {
+            width: 72px; height: 72px; border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 28px; color: var(--white);
+            flex-shrink: 0; transition: all 0.3s;
+        }
+        .rental-card:hover .rental-icon { border-color: var(--black); color: var(--black); }
+        .rental-header-info { flex: 1; }
+        .rental-name {
+            font-family: var(--font-display); font-size: 18px; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 2px; transition: color 0.3s;
+        }
+        .rental-tagline {
+            font-size: 11px; color: rgba(255,255,255,0.4);
+            letter-spacing: 1px; text-transform: uppercase; margin-top: 4px;
+            transition: color 0.3s;
+        }
+        .rental-card:hover .rental-tagline { color: var(--gray); }
+        .rental-body { padding: 20px 28px; }
+        .rental-desc {
+            font-size: 13px; color: rgba(255,255,255,0.5);
+            line-height: 1.7; margin-bottom: 16px; transition: color 0.3s;
+        }
+        .rental-card:hover .rental-desc { color: var(--gray); }
+        .rental-features { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .rental-feature {
+            font-size: 10px; letter-spacing: 1px; text-transform: uppercase;
+            padding: 6px 12px; border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s;
+        }
+        .rental-card:hover .rental-feature { border-color: var(--silver); }
+        .rental-bottom {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 16px 28px; border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        .rental-card:hover .rental-bottom { border-top-color: #eee; }
+        .rental-price-label {
+            font-size: 10px; letter-spacing: 2px; text-transform: uppercase;
+            color: rgba(255,255,255,0.35); transition: color 0.3s;
+        }
+        .rental-card:hover .rental-price-label { color: var(--gray); }
+        .rental-price {
+            font-family: var(--font-display); font-size: 24px; font-weight: 900;
+            color: var(--white); margin-top: 2px; transition: color 0.3s;
+        }
+        .rental-card:hover .rental-price { color: var(--black); }
+        .rental-price span { font-size: 13px; font-weight: 400; opacity: 0.5; }
+        .btn-rental {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 10px 22px; border: 2px solid rgba(255,255,255,0.3);
+            background: transparent; color: var(--white);
+            font-family: var(--font-body); font-size: 11px;
+            font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            cursor: pointer; transition: all 0.3s; text-decoration: none;
+        }
+        .btn-rental:hover { background: var(--white); color: var(--black); border-color: var(--white); }
+        .rental-card:hover .btn-rental {
+            background: var(--black); color: var(--white); border-color: var(--black);
+        }
+
+        /* ===== FARE CALCULATOR ===== */
+        .fare-section {
+            background: var(--bg-cream);
+            border-top: 2px solid var(--black);
+            border-bottom: 2px solid var(--black);
+            padding: 80px 0;
+        }
+        .fare-frame {
+            border: 3px solid var(--black); background: var(--white);
+            padding: 40px; position: relative; max-width: 900px; margin: 0 auto;
+        }
+        .fare-frame::before {
+            content: ''; position: absolute; inset: 6px;
+            border: 1px solid var(--silver); pointer-events: none;
+        }
+        .fare-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-bottom: 24px; }
+        .fare-group label {
+            display: block; font-size: 11px; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase;
+            color: var(--gray); margin-bottom: 8px;
+        }
+        .fare-input {
+            display: flex; align-items: center; gap: 10px;
+            padding: 12px 16px; border: 2px solid var(--black);
+            background: var(--white); transition: all 0.3s;
+        }
+        .fare-input:focus-within {
+            background: var(--bg-cream); box-shadow: 0 0 0 2px rgba(0,0,0,0.1);
+        }
+        .fare-input i { color: var(--black); font-size: 14px; }
+        .fare-input select, .fare-input input {
+            width: 100%; border: none; background: transparent;
+            font-family: var(--font-body); font-size: 14px;
+            font-weight: 500; color: var(--black); outline: none; cursor: pointer;
+        }
+        .fare-actions { text-align: center; }
+        .btn-calculate {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 32px; background: var(--black);
+            color: var(--white); border: 2px solid var(--black);
+            font-family: var(--font-body); font-size: 12px;
+            font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            cursor: pointer; transition: all 0.3s;
+        }
+        .btn-calculate:hover { background: transparent; color: var(--black); }
+        .fare-result { margin-top: 30px; text-align: center; animation: fadeIn 0.4s ease; }
+        .result-box { border: 2px dashed var(--black); padding: 24px; background: var(--bg-cream); }
+        .result-label {
+            display: block; font-size: 11px; letter-spacing: 3px;
+            text-transform: uppercase; color: var(--gray); margin-bottom: 8px;
+        }
+        .result-price {
+            display: block; font-family: var(--font-display);
+            font-size: 42px; font-weight: 900; color: var(--black);
+            line-height: 1; margin-bottom: 8px;
+        }
+        .result-note { display: block; font-size: 12px; color: var(--gray); font-style: italic; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== CTA ===== */
+        .cta-section { padding: 80px 0; text-align: center; border-bottom: 2px solid var(--black); }
+        .cta-box {
+            max-width: 600px; margin: 0 auto; padding: 50px 30px;
+            border: 3px solid var(--black); position: relative;
+        }
+        .cta-box::before {
+            content: ''; position: absolute; inset: 6px;
+            border: 1px solid var(--silver); pointer-events: none;
+        }
+        .cta-box h2 {
+            font-family: var(--font-display); font-size: 32px;
+            font-weight: 900; text-transform: uppercase; letter-spacing: 4px;
+        }
+        .cta-box .tagline {
+            font-size: 11px; letter-spacing: 4px; text-transform: uppercase;
+            color: var(--gray); margin-top: 6px;
+        }
+        .cta-box p { font-size: 14px; color: var(--gray); line-height: 1.7; margin: 20px 0 24px; }
+        .cta-buttons { display: flex; gap: 12px; justify-content: center; }
+        .btn-vintage {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 14px 30px; font-family: var(--font-body);
+            font-size: 12px; font-weight: 700; letter-spacing: 2px;
+            text-transform: uppercase; text-decoration: none;
+            border: 2px solid var(--black); transition: all 0.3s; cursor: pointer;
+        }
+        .btn-vintage.primary { background: var(--black); color: var(--white); }
+        .btn-vintage.primary:hover { background: transparent; color: var(--black); }
+        .btn-vintage.secondary { background: transparent; color: var(--black); }
+        .btn-vintage.secondary:hover { background: var(--black); color: var(--white); }
+        .cta-socials { display: flex; justify-content: center; gap: 14px; margin-top: 24px; }
+        .cta-socials a {
+            width: 40px; height: 40px; border: 2px solid var(--black);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--black); text-decoration: none; transition: all 0.3s;
+        }
+        .cta-socials a:hover { background: var(--black); color: var(--white); }
+
+        /* ===== FOOTER ===== */
+        .footer { background: var(--black); color: var(--white); padding: 40px 0; position: relative; }
+        .footer::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(90deg, var(--white) 0, var(--white) 10px, transparent 10px, transparent 16px);
+        }
+        .footer-inner { display: flex; align-items: center; justify-content: space-between; }
+        .footer .logo { color: var(--white); }
+        .footer .logo-icon { border-color: var(--white); }
+        .footer .logo-text .brand { color: var(--white); }
+        .footer .logo-text .tagline { color: rgba(255,255,255,0.4); }
+        .footer-bottom { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 20px; text-align: center; }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed; bottom: 30px; right: 30px;
+            width: 50px; height: 50px; background: var(--black);
+            color: var(--white); border: 2px solid var(--black);
+            border-radius: 50%; display: flex; align-items: center;
+            justify-content: center; font-size: 18px; cursor: pointer;
+            opacity: 0; visibility: hidden; transition: all 0.3s; z-index: 999;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .back-to-top.visible { opacity: 1; visibility: visible; }
+        .back-to-top:hover {
+            background: var(--white); color: var(--black); transform: translateY(-5px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .animate-on-scroll {
+            opacity: 0; transform: translateY(30px);
+            transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .animate-on-scroll.animated { opacity: 1; transform: translateY(0); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1024px) {
+            .about-modern { grid-template-columns: 1fr; gap: 40px; }
+            .about-visual { order: -1; }
+            .about-image-wrapper img { height: 400px; }
+            .dest-grid { grid-template-columns: repeat(2, 1fr); }
+            .rental-grid { grid-template-columns: 1fr; }
+            .fare-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            .mobile-toggle { display: flex; }
+            .nav-links {
+                position: fixed; top: 0; right: -100%;
+                width: 85%; height: 100vh; background: var(--white);
+                flex-direction: column; justify-content: center;
+                padding: 40px; transition: right 0.4s;
+                border-left: 3px solid var(--black);
+            }
+            .nav-links.active { right: 0; }
+            .nav-links a { font-size: 14px; padding: 14px 20px; width: 100%; text-align: center; }
+            .hero-icons { gap: 20px; }
+            .hero-icon span { display: none; }
+            .dest-grid { grid-template-columns: 1fr; }
+            .rental-card-top { flex-direction: column; text-align: center; }
+            .rental-features { justify-content: center; }
+            .rental-bottom { flex-direction: column; gap: 16px; text-align: center; }
+            .cta-buttons { flex-direction: column; align-items: center; }
+            .footer-inner { flex-direction: column; gap: 20px; text-align: center; }
+            .fare-grid { grid-template-columns: 1fr; }
+            .fare-frame { padding: 24px; }
+            .result-price { font-size: 32px; }
+            .back-to-top { bottom: 20px; right: 20px; width: 45px; height: 45px; }
+            .about-features { grid-template-columns: 1fr; }
+            .about-stats-row { gap: 24px; flex-wrap: wrap; }
+            .float-badge-destination { left: 10px; top: 10px; }
+            .float-badge-trust { right: 10px; bottom: 60px; }
+            .float-badge-bottom { left: 10px; right: 10px; bottom: 10px; }
+        }
+        @media (max-width: 480px) {
+            .fare-grid { grid-template-columns: 1fr; }
+            .hero-icons { gap: 15px; }
+            .hero-icon i { font-size: 20px; }
+        }
+        .nav-overlay {
+            position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+            z-index: 999; opacity: 0; visibility: hidden; transition: all 0.3s;
+        }
+        .nav-overlay.active { opacity: 1; visibility: visible; }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                        <circle cx="50" cy="50" r="40"/>
+                        <path d="M25 55 Q35 30 50 50 Q65 70 75 45" fill="none"/>
+                        <polygon points="65,30 75,25 68,40" fill="currentColor"/>
+                    </svg>
+                </div>
+                <div class="logo-text">
+                    <span class="brand">Herangga Tour</span>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#rental">Rental</a></li>
+                <li><a href="#calculator">Calculator</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-toggle" id="mobileToggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-particles" id="particles"></div>
+        <div class="hero-content">
+            <div class="hero-top-tagline">Travel & Tourism Community Hub</div>
+            <h1 class="hero-title">Herangga Tour</h1>
+            <div class="hero-sub">Travel & Tourism Community Hub</div>
+            <div class="deco-dots"><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="hero-explore">
+                <h2><span class="outline">Explore</span><span class="the">the</span>World</h2>
+            </div>
+            <p class="hero-line">— Your Journey, Our Passion —</p>
+            <div class="hero-icons">
+                <div class="hero-icon"><i class="fas fa-plane"></i><span>Flight</span></div>
+                <div class="hero-icon"><i class="fas fa-hotel"></i><span>Hotel</span></div>
+                <div class="hero-icon"><i class="fas fa-umbrella-beach"></i><span>Tour</span></div>
+                <div class="hero-icon"><i class="fas fa-car"></i><span>Rental</span></div>
+                <div class="hero-icon"><i class="fas fa-globe"></i><span>Visa</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-section">
+        <div class="marquee-track">
+            <div class="marquee-item"><i class="fas fa-plane"></i> Flight Tickets</div>
+            <div class="marquee-item"><i class="fas fa-hotel"></i> Hotel Bookings</div>
+            <div class="marquee-item"><i class="fas fa-map"></i> Tour Packages</div>
+            <div class="marquee-item"><i class="fas fa-car"></i> Rent Car</div>
+            <div class="marquee-item"><i class="fas fa-plane-arrival"></i> Airport Transfer</div>
+            <div class="marquee-item"><i class="fas fa-user-shield"></i> Private Car</div>
+            <div class="marquee-item"><i class="fas fa-motorcycle"></i> Scooter Rental</div>
+            <div class="marquee-item"><i class="fas fa-users"></i> Travel Community</div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee-item"><i class="fas fa-plane"></i> Flight Tickets</div>
+            <div class="marquee-item"><i class="fas fa-hotel"></i> Hotel Bookings</div>
+            <div class="marquee-item"><i class="fas fa-map"></i> Tour Packages</div>
+            <div class="marquee-item"><i class="fas fa-car"></i> Rent Car</div>
+            <div class="marquee-item"><i class="fas fa-plane-arrival"></i> Airport Transfer</div>
+            <div class="marquee-item"><i class="fas fa-user-shield"></i> Private Car</div>
+            <div class="marquee-item"><i class="fas fa-motorcycle"></i> Scooter Rental</div>
+            <div class="marquee-item"><i class="fas fa-users"></i> Travel Community</div>
+        </div>
+    </div>
+
+    <!-- ABOUT US -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="about-modern">
+                <div class="about-content animate-on-scroll">
+                    <h2 class="section-title">Discover <span class="outline">BALI</span><br>with<br><span class="outline">HERANGGA TOUR</span></h2>
+                    <p class="desc">We are your trusted partner for exploring the beauty of Indonesia. From private guided tours to comfortable transportation, we provide unforgettable experiences tailored just for you.</p>
+                    <p class="desc">Whether you're seeking hidden temples, pristine beaches, or cultural adventures, our experienced local guides will show you the authentic Indonesia that tourists rarely see.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon"><i class="fas fa-check"></i></div>
+                            <div class="about-feature-text"><h4>Private Tours</h4><p>Customized itineraries</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon"><i class="fas fa-map-marker-alt"></i></div>
+                            <div class="about-feature-text"><h4>Local Guides</h4><p>Expert knowledge</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="about-feature-text"><h4>Safe & Reliable</h4><p>Trusted service</p></div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon"><i class="fas fa-clock"></i></div>
+                            <div class="about-feature-text"><h4>24/7 Support</h4><p>Always available</p></div>
+                        </div>
+                    </div>
+                    <div class="about-stats-row">
+                        <div class="about-stat-item"><div class="stat-number" data-target="5">0</div><div class="stat-label">Years Experience</div></div>
+                        <div class="about-stat-item"><div class="stat-number" data-target="1000">0<span>+</span></div><div class="stat-label">Happy Travelers</div></div>
+                        <div class="about-stat-item"><div class="stat-number" data-target="50">0</div><div class="stat-label">Tour Packages</div></div>
+                    </div>
+                </div>
+                <div class="about-visual animate-on-scroll">
+                    <div class="about-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1555400038-63f5ba517a47?w=800&h=500&fit=crop" alt="Ubud Rice Terraces">
+                        <div class="float-badge float-badge-destination">
+                            <span class="fb-label">Popular Destination</span>
+                            <span class="fb-value">Ubud, Bali</span>
+                        </div>
+                        <div class="float-badge float-badge-bottom">
+                            <div class="fb-left">
+                                <div class="fb-logo"><i class="fas fa-paper-plane"></i></div>
+                                <div class="fb-info"><h4>HERANGGA TOUR</h4><span>Trusted Partner</span></div>
+                            </div>
+                            <div class="fb-right">
+                                <div class="fb-title">BALI HOLIDAY PACKAGES</div>
+                                <div class="fb-sub">Starting from IDR 500.000</div>
+                            </div>
+                        </div>
+                        <div class="float-badge float-badge-trust">
+                            <div class="fb-check"><i class="fas fa-check"></i></div>
+                            <div class="fb-text"><span>Trusted by</span><strong>1000+ Travelers</strong></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED DESTINATIONS (FIXED) -->
+    <section class="section destinations-section" id="destinations">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <div class="section-label">Where To Go</div>
+                <h2 class="section-title">Featured <span class="outline">Destinations</span></h2>
+                <div class="deco-dots"><span></span><span></span><span></span></div>
+                <p class="section-desc">Destinasi terpopuler pilihan traveler kami</p>
+            </div>
+            <div class="dest-grid">
+
+                <!-- Card 01 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Tour Selatan Bali" class="dest-card-img">
+                    <div class="dest-card-number">01</div>
+                    <div class="dest-card-body">
+                        <h3>Tour Selatan</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick up hotel</li>
+                            <li>Tanjung Benoa Watersport</li>
+                            <li>Melasti Beach / Pandawa Beach</li>
+                            <li>GWK Cultural Park</li>
+                            <li>Uluwatu Temple</li>
+                            <li>Dinner Seafood</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 02 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Ubud Tour Bali" class="dest-card-img">
+                    <div class="dest-card-number">02</div>
+                    <div class="dest-card-body">
+                        <h3>Ubud Tour</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick up hotel</li>
+                            <li>Celuk Village (Silver Craft)</li>
+                            <li>Tegenungan Waterfall</li>
+                            <li>Tegalalang Rice Terrace</li>
+                            <li>Monkey Forest Ubud</li>
+                            <li>Ubud Traditional Market</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 03 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Ubud Adventure Bali" class="dest-card-img">
+                    <div class="dest-card-number">03</div>
+                    <div class="dest-card-body">
+                        <h3>Ubud Adventure</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick up hotel</li>
+                            <li>White Water Rafting</li>
+                            <li>ATV Quad Bike</li>
+                            <li>Bali Zoo / Bird Park</li>
+                            <li>Bali Safari & Marine Park</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 04 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Ubud Culture Bali" class="dest-card-img">
+                    <div class="dest-card-number">04</div>
+                    <div class="dest-card-body">
+                        <h3>Ubud Culture</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick up hotel</li>
+                            <li>Bidadari Batik Class</li>
+                            <li>Silver Gallery Celuk</li>
+                            <li>Bali Bird Park</li>
+                            <li>Tegenungan Waterfall</li>
+                            <li>Bali Zoo</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 05 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Ubud Experience Bali" class="dest-card-img">
+                    <div class="dest-card-number">05</div>
+                    <div class="dest-card-body">
+                        <h3>Ubud Experience</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick up hotel</li>
+                            <li>Ubud Traditional Market</li>
+                            <li>Monkey Forest Sanctuary</li>
+                            <li>ATV Quad Bike Adventure</li>
+                            <li>Bali Coffee Plantation</li>
+                            <li>Bali Swing Photo Spot</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 06 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bedugul Tour Bali" class="dest-card-img">
+                    <div class="dest-card-number">06</div>
+                    <div class="dest-card-body">
+                        <h3>Bedugul Temple</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick up hotel</li>
+                            <li>Tanah Lot Temple</li>
+                            <li>Taman Ayun Temple</li>
+                            <li>Ulun Danu Beratan Temple</li>
+                            <li>Wanagiri Hidden Hills</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 07 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bedugul Nature Bali" class="dest-card-img">
+                    <div class="dest-card-number">07</div>
+                    <div class="dest-card-body">
+                        <h3>Bedugul Nature</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick up hotel</li>
+                            <li>Taman Ayun Temple</li>
+                            <li>Chocolate Factory</li>
+                            <li>Ulun Danu Beratan Temple</li>
+                            <li>Tanah Lot Sunset</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 08 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Nusa Penida West Bali" class="dest-card-img">
+                    <div class="dest-card-number">08</div>
+                    <div class="dest-card-body">
+                        <h3>Nusa Penida West</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick Up & Drop Off Hotel</li>
+                            <li>Return Fast Boat Ticket</li>
+                            <li>Kelingking Beach (T-Rex)</li>
+                            <li>Broken Beach & Angel's Billabong</li>
+                            <li>Crystal Bay Snorkeling</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 09 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Nusa Penida East Bali" class="dest-card-img">
+                    <div class="dest-card-number">09</div>
+                    <div class="dest-card-body">
+                        <h3>Nusa Penida East</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick Up & Drop Off Hotel</li>
+                            <li>Return Fast Boat Ticket</li>
+                            <li>Diamond Beach</li>
+                            <li>Atuh Beach</li>
+                            <li>Tree House Molenteng</li>
+                            <li>Thousand Islands Viewpoint</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 10 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Nusa Penida Snorkeling Bali" class="dest-card-img">
+                    <div class="dest-card-number">10</div>
+                    <div class="dest-card-body">
+                        <h3>Nusa Penida Snorkeling</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick Up & Drop Off Hotel</li>
+                            <li>Return Fast Boat Ticket</li>
+                            <li>Snorkeling 3 Locations</li>
+                            <li>Manta Bay (Manta Rays)</li>
+                            <li>Gamat Bay</li>
+                            <li>Crystal Bay</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 11 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Island Hopping Bali" class="dest-card-img">
+                    <div class="dest-card-number">11</div>
+                    <div class="dest-card-body">
+                        <h3>Island Hopping</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick Up & Drop Off Hotel</li>
+                            <li>Return Fast Boat Ticket</li>
+                            <li>Kelingking Beach</li>
+                            <li>Angel's Billabong</li>
+                            <li>Broken Beach</li>
+                            <li>Free Time at Crystal Bay</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Card 12 -->
+                <div class="dest-card animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&q=80" alt="Bali Highlights" class="dest-card-img">
+                    <div class="dest-card-number">12</div>
+                    <div class="dest-card-body">
+                        <h3>Bali Highlights</h3>
+                        <div class="country">Bali - Indonesia</div>
+                        <ul class="desc">
+                            <li>Pick Up & Drop Off Hotel</li>
+                            <li>Tanah Lot Temple</li>
+                            <li>Ubud Art Market</li>
+                            <li>Tegenungan Waterfall</li>
+                            <li>Coffee Plantation</li>
+                            <li>Traditional Dance Performance</li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- RENTAL SERVICES -->
+    <section class="section rental-section" id="rental">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <div class="section-label">Premium Service</div>
+                <h2 class="section-title">Our <span class="outline">Rental</span> Services</h2>
+                <div class="deco-dots"><span></span><span></span><span></span></div>
+                <p class="section-desc">Pilihan layanan kendaraan terbaik untuk setiap kebutuhan perjalanan Anda</p>
+            </div>
+            <div class="rental-grid">
+                <div class="rental-card animate-on-scroll">
+                    <div class="rental-card-top">
+                        <div class="rental-icon"><i class="fas fa-car-side"></i></div>
+                        <div class="rental-header-info">
+                            <div class="rental-name">Rent Car</div>
+                            <div class="rental-tagline">Sewa Mobil Harian & Bulanan</div>
+                        </div>
+                    </div>
+                    <div class="rental-body">
+                        <p class="rental-desc">Sewa mobil harian atau bulanan dengan berbagai pilihan kendaraan. Cocok untuk liburan keluarga, perjalanan bisnis, atau kebutuhan pribadi Anda.</p>
+                        <div class="rental-features">
+                            <span class="rental-feature">Lepas Kunci</span>
+                            <span class="rental-feature">Dengan Supir</span>
+                            <span class="rental-feature">24 Jam</span>
+                            <span class="rental-feature">All Brand</span>
+                        </div>
+                    </div>
+                    <div class="rental-bottom">
+                        <div>
+                            <div class="rental-price-label">Mulai dari</div>
+                            <div class="rental-price">Rp 350K <span>/hari</span></div>
+                        </div>
+                        <a href="https://wa.me/6282260327772?text=Halo%20Herangga%20Tour,%20saya%20ingin%20sewa%20mobil" class="btn-rental"><i class="fab fa-whatsapp"></i> Book Now</a>
+                    </div>
+                </div>
+                <div class="rental-card animate-on-scroll">
+                    <div class="rental-card-top">
+                        <div class="rental-icon"><i class="fas fa-plane-arrival"></i></div>
+                        <div class="rental-header-info">
+                            <div class="rental-name">Airport Transfer</div>
+                            <div class="rental-tagline">Antar Jemput Bandara</div>
+                        </div>
+                    </div>
+                    <div class="rental-body">
+                        <p class="rental-desc">Layanan antar jemput bandara yang nyaman dan tepat waktu. Driver profesional akan menunggu Anda di terminal kedatangan dengan papan nama.</p>
+                        <div class="rental-features">
+                            <span class="rental-feature">Pick Up</span>
+                            <span class="rental-feature">Drop Off</span>
+                            <span class="rental-feature">Flight Tracking</span>
+                            <span class="rental-feature">Meet & Greet</span>
+                        </div>
+                    </div>
+                    <div class="rental-bottom">
+                        <div>
+                            <div class="rental-price-label">Mulai dari</div>
+                            <div class="rental-price">Rp 200K <span>/trip</span></div>
+                        </div>
+                        <a href="https://wa.me/6282260327772?text=Halo%20Herangga%20Tour,%20saya%20butuh%20airport%20transfer" class="btn-rental"><i class="fab fa-whatsapp"></i> Book Now</a>
+                    </div>
+                </div>
+                <div class="rental-card animate-on-scroll">
+                    <div class="rental-card-top">
+                        <div class="rental-icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="rental-header-info">
+                            <div class="rental-name">Private Car</div>
+                            <div class="rental-tagline">Mobil Pribadi + Supir Eksklusif</div>
+                        </div>
+                    </div>
+                    <div class="rental-body">
+                        <p class="rental-desc">Nikmati perjalanan eksklusif dengan mobil pribadi dan supir profesional. Supir kami mengenal rute terbaik dan siap menjadi guide lokal Anda.</p>
+                        <div class="rental-features">
+                            <span class="rental-feature">Supir Profesional</span>
+                            <span class="rental-feature">Full Day</span>
+                            <span class="rental-feature">Flexible Route</span>
+                            <span class="rental-feature">Premium Car</span>
+                        </div>
+                    </div>
+                    <div class="rental-bottom">
+                        <div>
+                            <div class="rental-price-label">Mulai dari</div>
+                            <div class="rental-price">Rp 500K <span>/hari</span></div>
+                        </div>
+                        <a href="https://wa.me/6282260327772?text=Halo%20Herangga%20Tour,%20saya%20ingin%20sewa%20private%20car" class="btn-rental"><i class="fab fa-whatsapp"></i> Book Now</a>
+                    </div>
+                </div>
+                <div class="rental-card animate-on-scroll">
+                    <div class="rental-card-top">
+                        <div class="rental-icon"><i class="fas fa-motorcycle"></i></div>
+                        <div class="rental-header-info">
+                            <div class="rental-name">Scooter Rental</div>
+                            <div class="rental-tagline">Sewa Motor / Scooter</div>
+                        </div>
+                    </div>
+                    <div class="rental-body">
+                        <p class="rental-desc">Jelajahi setiap sudut destinasi dengan kebebasan berkendara sendiri. Motor dan scooter tersedia dalam kondisi prima dan siap pakai.</p>
+                        <div class="rental-features">
+                            <span class="rental-feature">Helm Gratis</span>
+                            <span class="rental-feature">Asuransi</span>
+                            <span class="rental-feature">Antar Jemput</span>
+                            <span class="rental-feature">Full Tank</span>
+                        </div>
+                    </div>
+                    <div class="rental-bottom">
+                        <div>
+                            <div class="rental-price-label">Mulai dari</div>
+                            <div class="rental-price">Rp 80K <span>/hari</span></div>
+                        </div>
+                        <a href="https://wa.me/6282260327772?text=Halo%20Herangga%20Tour,%20saya%20ingin%20sewa%20motor" class="btn-rental"><i class="fab fa-whatsapp"></i> Book Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FARE CALCULATOR -->
+    <section class="section fare-section" id="calculator">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <div class="section-label">Instant Quote</div>
+                <h2 class="section-title">Calculate Your <span class="outline">Transfer Fare</span></h2>
+                <div class="deco-dots"><span></span><span></span><span></span></div>
+                <p class="section-desc">Estimasi biaya transfer bandara atau point-to-point secara instan</p>
+            </div>
+            <div class="fare-frame animate-on-scroll">
+                <div class="fare-grid">
+                    <div class="fare-group">
+                        <label>Pickup Location</label>
+                        <div class="fare-input"><i class="fas fa-map-marker-alt"></i><select id="pickup"><option value="">Select location...</option><option value="DPS">Ngurah Rai Airport (DPS)</option><option value="Kuta">Kuta / Seminyak</option><option value="Ubud">Ubud</option><option value="Sanur">Sanur</option><option value="NusaDua">Nusa Dua</option><option value="Canggu">Canggu</option></select></div>
+                    </div>
+                    <div class="fare-group">
+                        <label>Drop-off Location</label>
+                        <div class="fare-input"><i class="fas fa-location-arrow"></i><select id="dropoff"><option value="">Select location...</option><option value="DPS">Ngurah Rai Airport (DPS)</option><option value="Kuta">Kuta / Seminyak</option><option value="Ubud">Ubud</option><option value="Sanur">Sanur</option><option value="NusaDua">Nusa Dua</option><option value="Canggu">Canggu</option></select></div>
+                    </div>
+                    <div class="fare-group">
+                        <label>Vehicle Type</label>
+                        <div class="fare-input"><i class="fas fa-car"></i><select id="vehicle"><option value="sedan">Sedan (Max 4 Pax)</option><option value="mpv">MPV / Avanza (Max 7 Pax)</option><option value="van">Hiace / Van (Max 12 Pax)</option></select></div>
+                    </div>
+                    <div class="fare-group">
+                        <label>Passengers</label>
+                        <div class="fare-input"><i class="fas fa-users"></i><input type="number" id="passengers" min="1" max="12" value="2"></div>
+                    </div>
+                </div>
+                <div class="fare-actions">
+                    <button class="btn-calculate" onclick="calculateFare()"><i class="fas fa-calculator"></i> Calculate Fare</button>
+                </div>
+                <div class="fare-result" id="fareResult" style="display:none;">
+                    <div class="result-box">
+                        <span class="result-label">Estimated Transfer Fare</span>
+                        <span class="result-price" id="resultPrice">Rp 0</span>
+                        <span class="result-note">*Harga final dapat menyesuaikan kondisi lalu lintas & waktu peak</span>
+                        <a href="https://wa.me/6282260327772?text=Halo%20Herangga%20Tour,%20saya%20ingin%20booking%20transfer%20sesuai%20estimasi" class="btn-rental" style="margin-top:16px; display:inline-flex;"><i class="fab fa-whatsapp"></i> Book via WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-box animate-on-scroll">
+                <h2>Herangga Tour</h2>
+                <p class="tagline">Your Journey, Our Passion</p>
+                <div class="deco-line"><i class="fas fa-diamond"></i></div>
+                <p>Hubungi kami untuk informasi lebih lanjut tentang destinasi wisata dan layanan sewa kendaraan</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/6282260327772" class="btn-vintage primary"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                    <a href="tel:+6282260327772" class="btn-vintage secondary"><i class="fas fa-phone"></i> Call Us</a>
+                </div>
+                <div class="cta-socials">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+                <p style="margin-top: 16px; font-size: 12px; color: var(--gray);">@heranggatour</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-inner">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="3">
+                            <circle cx="50" cy="50" r="40"/>
+                            <path d="M25 55 Q35 30 50 50 Q65 70 75 45" fill="none"/>
+                            <polygon points="65,30 75,25 68,40" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text"><span class="brand">Herangga Tour</span></div>
+                </a>
+                <span style="font-size: 12px; color: rgba(255,255,255,0.4);">© 2026 Herangga Tour</span>
+            </div>
+            <div class="footer-bottom">www.heranggatour.com</div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0, behavior:'smooth'})"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        // Mobile Menu
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+        const navOverlay = document.getElementById('navOverlay');
+        mobileToggle.addEventListener('click', () => {
+            mobileToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+            navOverlay.classList.toggle('active');
+        });
+        navOverlay.addEventListener('click', () => {
+            mobileToggle.classList.remove('active'); navLinks.classList.remove('active'); navOverlay.classList.remove('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileToggle.classList.remove('active'); navLinks.classList.remove('active'); navOverlay.classList.remove('active');
+            });
+        });
+
+        // Scroll Animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) { entry.target.classList.add('animated'); observer.unobserve(entry.target); }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Counter Animation
+        function animateCounters() {
+            document.querySelectorAll('.about-stat-item .stat-number').forEach(counter => {
+                const target = parseFloat(counter.getAttribute('data-target'));
+                const suffix = counter.querySelector('span') ? counter.querySelector('span').outerHTML : '';
+                const isDecimal = target % 1 !== 0;
+                let current = 0;
+                const step = target / 80;
+                const timer = setInterval(() => {
+                    current += step;
+                    if (current >= target) { current = target; clearInterval(timer); }
+                    const displayValue = isDecimal ? current.toFixed(0) : Math.floor(current);
+                    counter.innerHTML = displayValue + suffix;
+                }, 20);
+            });
+        }
+        const aboutObserver = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) { animateCounters(); aboutObserver.disconnect(); }
+        }, { threshold: 0.3 });
+        const aboutStats = document.querySelector('.about-stats-row');
+        if (aboutStats) aboutObserver.observe(aboutStats);
+
+        // Particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            for (let i = 0; i < 30; i++) {
+                const p = document.createElement('div');
+                p.className = 'particle';
+                p.style.width = p.style.height = Math.random() * 6 + 2 + 'px';
+                p.style.left = Math.random() * 100 + '%';
+                p.style.animationDuration = Math.random() * 15 + 10 + 's';
+                p.style.animationDelay = Math.random() * 10 + 's';
+                container.appendChild(p);
+            }
+        }
+        createParticles();
+
+        // Back to Top & Navbar Scroll
+        const backToTopBtn = document.getElementById('backToTop');
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            backToTopBtn.classList.toggle('visible', window.scrollY > 500);
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Fare Calculator
+        function calculateFare() {
+            const pickup = document.getElementById('pickup').value;
+            const dropoff = document.getElementById('dropoff').value;
+            const vehicle = document.getElementById('vehicle').value;
+            const resultBox = document.getElementById('fareResult');
+            const priceEl = document.getElementById('resultPrice');
+            if (!pickup || !dropoff) { alert('Please select both pickup and drop-off locations.'); return; }
+            if (pickup === dropoff) { alert('Pickup and drop-off locations cannot be the same.'); return; }
+            const baseFares = { sedan: 150000, mpv: 200000, van: 350000 };
+            const zoneMultiplier = {
+                'DPS-Kuta': 1.0, 'DPS-Seminyak': 1.1, 'DPS-Ubud': 2.2, 'DPS-Sanur': 1.3, 'DPS-NusaDua': 1.5, 'DPS-Canggu': 1.6,
+                'Kuta-Ubud': 1.8, 'Kuta-Sanur': 0.8, 'Kuta-NusaDua': 1.1, 'Ubud-Sanur': 1.6, 'Ubud-Canggu': 1.4, 'Sanur-NusaDua': 0.7,
+                'Canggu-Ubud': 1.5, 'Canggu-Seminyak': 0.6, 'NusaDua-Ubud': 2.0
+            };
+            const routeKey1 = `${pickup}-${dropoff}`;
+            const routeKey2 = `${dropoff}-${pickup}`;
+            const multiplier = zoneMultiplier[routeKey1] || zoneMultiplier[routeKey2] || 1.5;
+            let fare = Math.round(baseFares[vehicle] * multiplier);
+            fare = Math.ceil(fare / 10000) * 10000;
+            priceEl.textContent = `Rp ${fare.toLocaleString('id-ID')}`;
+            resultBox.style.display = 'block';
+            resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+    </script>
+</body>
+</html>
