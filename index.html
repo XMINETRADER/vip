@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  
+  <!-- ========== PRIMARY SEO ========== -->
 <title>XMINE ULTRA VIP DATABASE ENGINE</title>
-
+  <meta name="description" content="XMINE: Ekosistem trading komoditas premium dengan KYC wajib. Hubungkan seller & buyer terverifikasi untuk transaksi emas, solar, batu bara, silica sand & valuta asing. Aman, transparan, profesional.">
+  <meta name="keywords" content="trading komoditas, verified seller buyer, KYC trading, jual beli emas, solar industri, batu bara GAR, silica sand, dollar SGD, platform trading Indonesia">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <meta name="author" content="XMINE">
+  <meta name="geo.region" content="ID">
+  <meta name="geo.placename" content="Indonesia">
+  <link rel="canonical" href="https://xmine.cloud/">
+  
+  <!-- ========== OPEN GRAPH / FACEBOOK ========== -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://xmine.cloud/">
+  <meta property="og:title" content="XMINE — Trusted Seller & Buyer Network untuk Trading Komoditas">
+  <meta property="og:description" content="Platform premium untuk transaksi komoditas dengan verifikasi KYC ketat. Emas, solar, batu bara, silica sand, valuta asing.">
+  <meta property="og:image" content="https://xmine.cloud/banner.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="XMINE Platform - Verified Commodity Trading">
+  <meta property="og:site_name" content="XMINE">
+  <meta property="og:locale" content="id_ID">
+  
+  <!-- ========== TWITTER CARD ========== -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="XMINE — Trusted Commodity Trading Network">
+  <meta name="twitter:description" content="Ekosistem trading komoditas dengan seller & buyer terverifikasi. KYC wajib, transaksi aman.">
+  <meta name="twitter:image" content="https://xmine.cloud/banner.png">
+  
+  <!-- ========== PRECONNECT & PERFORMANCE ========== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.gold-api.com">
+  <link rel="preconnect" href="https://open.er-api.com">
+  <link rel="dns-prefetch" href="https://forms.gle">
+  <link rel="dns-prefetch" href="https://formsubmit.co">
+  
+  <!-- ========== FAVICON ========== -->
+  <link rel="icon" href="https://xmine.cloud/favicon.ico" sizes="any">
+  <link rel="icon" href="https://xmine.cloud/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
 /* =========================
 TOPBAR USER
@@ -1147,7 +1186,12 @@ async function loadDatabase(){
 
 try{
 
-const res=await fetch(DATABASE_URL);
+const res = await fetch(
+DATABASE_URL,
+{
+cache:'force-cache'
+}
+);
 
 const json=await res.json();
 
