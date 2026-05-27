@@ -77,8 +77,8 @@ backdrop-filter:blur(14px);
 }
 
 .user-avatar{
-width:52px;
-height:52px;
+width:46px;
+height:46px;
 
 display:flex;
 align-items:center;
@@ -94,6 +94,13 @@ linear-gradient(
 );
 
 font-size:24px;
+}
+
+.avatar-logo{
+width:50px;
+height:50px;
+object-fit:contain;
+display:block;
 }
 
 .user-detail{
@@ -814,6 +821,51 @@ font-size:16px;
 }
 
 /* =========================
+LOGIN BRAND
+========================= */
+
+.login-brand{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+margin-bottom:10px;
+}
+
+.login-brand-logo{
+width:120px;
+height:120px;
+object-fit:contain;
+margin-bottom:18px;
+
+filter:
+drop-shadow(0 0 18px rgba(0,255,213,.35));
+
+animation:logoFloat 4s ease-in-out infinite;
+}
+
+@keyframes logoFloat{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.login-logo{
+text-shadow:
+0 0 20px rgba(0,255,213,.35);
+}
+
+/* =========================
 LOGIN SUCCESS
 ========================= */
 .login-success{
@@ -890,12 +942,22 @@ animation:blink 1s infinite;
 
 <div class="login-box">
 
+<div class="login-brand">
+
+<img
+src="https://xmine.cloud/logo.png"
+alt="XMINE"
+class="login-brand-logo"
+>
+
 <div class="login-logo">
 XMINE VIP
 </div>
 
 <div class="login-subtitle">
 Secure Corporate Intelligence Access
+</div>
+
 </div>
 
 <input
@@ -960,7 +1022,9 @@ Corporate Intelligence • Minerba • AHU • Ownership • License Explorer
 <div class="user-info">
 
 <div class="user-avatar">
-👤
+
+<img src="https://xmine.cloud/logo.png"alt="XMINE"class="avatar-logo">
+
 </div>
 
 <div class="user-detail">
