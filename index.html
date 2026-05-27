@@ -1,0 +1,1929 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>XMINE ULTRA VIP DATABASE ENGINE</title>
+
+<style>
+/* =========================
+TOPBAR USER
+========================= */
+
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
+flex-wrap:wrap;
+margin-bottom:20px;
+}
+
+.user-info{
+display:flex;
+align-items:center;
+gap:14px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+padding:14px 18px;
+
+border-radius:22px;
+
+backdrop-filter:blur(14px);
+}
+
+.user-avatar{
+width:52px;
+height:52px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+border-radius:18px;
+
+background:
+linear-gradient(
+135deg,
+#00ffd5,
+#00a2ff
+);
+
+font-size:24px;
+}
+
+.user-detail{
+display:flex;
+flex-direction:column;
+}
+
+.user-label{
+font-size:11px;
+letter-spacing:1px;
+color:#94a3b8;
+margin-bottom:4px;
+}
+
+.user-email{
+font-size:14px;
+font-weight:700;
+color:#fff;
+word-break:break-all;
+}
+
+@media(max-width:768px){
+
+.topbar{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.user-info{
+width:100%;
+}
+
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins,sans-serif;
+}
+
+:root{
+--primary:#00ffd5;
+--secondary:#00a2ff;
+--bg:#020617;
+--card:#0f172a;
+--border:rgba(255,255,255,.08);
+--text:#fff;
+--muted:#94a3b8;
+}
+
+body{
+background:linear-gradient(180deg,#020617,#071224);
+color:var(--text);
+padding:20px;
+min-height:100vh;
+}
+
+.header{
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+border-radius:24px;
+padding:25px;
+margin-bottom:20px;
+backdrop-filter:blur(20px);
+}
+
+.title{
+font-size:34px;
+font-weight:800;
+background:linear-gradient(90deg,#00ffd5,#00a2ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+margin-bottom:10px;
+}
+
+.subtitle{
+color:var(--muted);
+margin-bottom:20px;
+}
+
+.search-wrap{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.search{
+flex:1;
+min-width:260px;
+background:#0f172a;
+border:1px solid var(--border);
+height:56px;
+border-radius:18px;
+padding:0 20px;
+color:#fff;
+font-size:16px;
+outline:none;
+}
+
+.btn{
+height:56px;
+padding:0 24px;
+border:none;
+border-radius:18px;
+background:linear-gradient(90deg,#00ffd5,#00a2ff);
+color:#001018;
+font-weight:800;
+cursor:pointer;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:16px;
+margin-bottom:20px;
+}
+
+.stat{
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+border-radius:22px;
+padding:22px;
+}
+
+.stat-box{
+width:100%;
+padding:15px;
+border-radius:18px;
+font-size:13px;
+text-align:center;
+}
+
+.stat h2{
+font-size:30px;
+color:var(--primary);
+margin-top:10px;
+}
+
+.results{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(340px,1fr));
+gap:18px;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+border-radius:24px;
+padding:22px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+border-color:rgba(0,255,213,.35);
+box-shadow:0 0 35px rgba(0,255,213,.08);
+}
+
+.card-title{
+font-size:22px;
+font-weight:800;
+line-height:1.5;
+margin-bottom:12px;
+color:#00ffd5;
+}
+
+.badge{
+display:inline-flex;
+padding:7px 14px;
+border-radius:999px;
+background:rgba(0,255,213,.12);
+border:1px solid rgba(0,255,213,.2);
+font-size:12px;
+font-weight:700;
+margin-bottom:16px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.label{
+font-size:12px;
+text-transform:uppercase;
+letter-spacing:.5px;
+color:#94a3b8;
+margin-bottom:6px;
+}
+
+.value{
+font-size:14px;
+line-height:1.6;
+word-break:break-word;
+}
+
+.action{
+margin-top:18px;
+width:100%;
+height:48px;
+border:none;
+border-radius:16px;
+background:linear-gradient(90deg,#00ffd5,#00a2ff);
+font-weight:800;
+cursor:pointer;
+}
+
+.pagination{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-top:30px;
+}
+
+.pagination button{
+width:42px;
+height:42px;
+border:none;
+border-radius:12px;
+background:#0f172a;
+color:#fff;
+cursor:pointer;
+}
+
+.pagination .active{
+background:#00ffd5;
+color:#000;
+font-weight:800;
+}
+
+.modal{
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.75);
+display:none;
+align-items:center;
+justify-content:center;
+padding:20px;
+z-index:999;
+}
+
+.modal-content{
+width:100%;
+max-width:1200px;
+max-height:95vh;
+overflow:auto;
+background:#071224;
+border:1px solid rgba(255,255,255,.08);
+border-radius:28px;
+padding:30px;
+animation:zoom .25s ease;
+}
+
+@keyframes zoom{
+from{opacity:0;transform:scale(.95)}
+to{opacity:1;transform:scale(1)}
+}
+
+.close{
+float:right;
+font-size:34px;
+cursor:pointer;
+margin-bottom:10px;
+}
+
+.section{
+margin-top:30px;
+}
+
+.section h2{
+margin-bottom:18px;
+color:#00ffd5;
+}
+
+.box{
+background:rgba(255,255,255,.04);
+border:1px solid var(--border);
+border-radius:20px;
+padding:18px;
+margin-bottom:15px;
+}
+
+.loading{
+position:fixed;
+inset:0;
+background:#020617;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+font-size:26px;
+font-weight:800;
+transition:.3s;
+}
+
+@media(max-width:768px){
+
+.grid{
+grid-template-columns:1fr;
+}
+
+.title{
+font-size:26px;
+}
+
+.results{
+grid-template-columns:1fr;
+}
+
+}
+
+/* =========================
+FOOTER
+========================= */
+
+.footer{
+margin-top:90px;
+position:relative;
+padding:70px 25px 35px;
+
+background:
+linear-gradient(
+180deg,
+rgba(255,255,255,0.02),
+rgba(255,255,255,0.04)
+);
+
+border-top:
+1px solid rgba(255,255,255,0.08);
+
+overflow:hidden;
+
+backdrop-filter:blur(18px);
+}
+
+.footer-glow{
+position:absolute;
+top:-120px;
+left:50%;
+transform:translateX(-50%);
+
+width:550px;
+height:250px;
+
+background:
+radial-gradient(
+circle,
+rgba(0,255,213,0.18),
+transparent 70%
+);
+}
+
+.footer-grid{
+display:grid;
+
+grid-template-columns:
+repeat(auto-fit,minmax(280px,1fr));
+
+gap:24px;
+
+position:relative;
+z-index:2;
+}
+
+.footer-box{
+background:
+rgba(255,255,255,0.04);
+
+border:
+1px solid rgba(255,255,255,0.06);
+
+padding:26px;
+
+border-radius:26px;
+
+backdrop-filter:blur(14px);
+
+box-shadow:
+0 10px 30px rgba(0,0,0,0.25);
+}
+
+.footer-title{
+font-size:18px;
+font-weight:700;
+margin-bottom:15px;
+color:#00ffd5;
+}
+
+.footer-text{
+font-size:14px;
+line-height:2;
+color:#cbd5e1;
+}
+
+.footer-bottom{
+margin-top:40px;
+text-align:center;
+font-size:13px;
+letter-spacing:2px;
+color:#94a3b8;
+}
+
+/* =========================
+RESPONSIVE FOOTER
+========================= */
+
+@media (max-width:768px){
+
+.footer{
+padding:50px 16px 30px;
+margin-top:60px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+gap:16px;
+}
+
+.footer-box{
+padding:20px;
+border-radius:20px;
+}
+
+.footer-title{
+font-size:16px;
+}
+
+.footer-text{
+font-size:13px;
+line-height:1.8;
+}
+
+.footer-bottom{
+font-size:11px;
+line-height:1.7;
+}
+
+}
+
+@media (max-width:480px){
+
+.logo{
+font-size:28px;
+}
+
+.company{
+font-size:17px;
+}
+
+.modal-content h1{
+font-size:21px !important;
+}
+
+.section-title{
+font-size:16px;
+}
+
+.box{
+padding:14px !important;
+}
+
+}
+
+/* =========================
+LOGIN SYSTEM
+========================= */
+
+.login-page{
+position:fixed;
+inset:0;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+padding:20px;
+
+background:
+radial-gradient(circle at top,
+rgba(0,255,213,.08),
+transparent 40%),
+linear-gradient(
+180deg,
+#020617,
+#071224
+);
+
+z-index:999999;
+
+overflow:hidden;
+}
+
+.login-page::before{
+content:'';
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:
+radial-gradient(
+circle,
+rgba(0,255,213,.12),
+transparent 70%
+);
+
+filter:blur(30px);
+
+animation:floatGlow 6s ease-in-out infinite;
+}
+
+@keyframes floatGlow{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.login-box{
+position:relative;
+z-index:2;
+
+width:100%;
+max-width:520px;
+
+background:
+rgba(255,255,255,.05);
+
+border:
+1px solid rgba(255,255,255,.08);
+
+padding:45px;
+
+border-radius:32px;
+
+backdrop-filter:blur(20px);
+
+display:flex;
+flex-direction:column;
+
+gap:18px;
+
+box-shadow:
+0 0 60px rgba(0,255,213,.08);
+}
+
+.login-logo{
+font-size:44px;
+font-weight:900;
+text-align:center;
+
+background:
+linear-gradient(
+90deg,
+#00ffd5,
+#00a2ff
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+.login-subtitle{
+text-align:center;
+color:#94a3b8;
+line-height:1.8;
+font-size:15px;
+margin-bottom:10px;
+}
+
+.login-input{
+width:100%;
+height:64px;
+
+background:#0f172a;
+
+border:
+1px solid rgba(255,255,255,.08);
+
+border-radius:20px;
+
+padding:0 22px;
+
+color:#fff;
+
+font-size:17px;
+
+outline:none;
+
+transition:.3s;
+}
+
+.login-input:focus{
+border-color:#00ffd5;
+
+box-shadow:
+0 0 20px rgba(0,255,213,.15);
+}
+
+.login-btn{
+width:100%;
+height:64px;
+
+border:none;
+
+border-radius:20px;
+
+background:
+linear-gradient(
+90deg,
+#00ffd5,
+#00a2ff
+);
+
+color:#001018;
+
+font-size:18px;
+font-weight:900;
+
+cursor:pointer;
+
+transition:.3s;
+
+position:relative;
+
+overflow:hidden;
+}
+
+.login-btn:hover{
+transform:translateY(-2px);
+box-shadow:
+0 10px 30px rgba(0,255,213,.18);
+}
+
+.login-btn.loading{
+pointer-events:none;
+opacity:.8;
+}
+
+.login-btn.loading::after{
+content:'';
+
+position:absolute;
+top:50%;
+left:50%;
+
+width:24px;
+height:24px;
+
+margin:-12px;
+
+border:
+3px solid rgba(0,0,0,.2);
+
+border-top:
+3px solid #001018;
+
+border-radius:50%;
+
+animation:spin .7s linear infinite;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+
+@keyframes successPop{
+
+0%{
+transform:scale(.5);
+opacity:0;
+}
+
+100%{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+@media(max-width:768px){
+
+.login-box{
+padding:30px;
+border-radius:26px;
+}
+
+.login-logo{
+font-size:34px;
+}
+
+.login-input{
+height:58px;
+font-size:16px;
+}
+
+.login-btn{
+height:58px;
+font-size:16px;
+}
+
+}
+
+/* =========================
+LOGIN SUCCESS
+========================= */
+.login-success{
+
+position:fixed;
+inset:0;
+
+display:flex;
+align-items:center;
+justify-content:center;
+flex-direction:column;
+
+background:rgba(2,6,23,.92);
+
+z-index:9999999;
+
+font-size:34px;
+font-weight:900;
+
+color:#00ffd5;
+
+opacity:0;
+pointer-events:none;
+
+transition:.4s;
+
+backdrop-filter:blur(10px);
+
+}
+
+.login-success.show{
+opacity:1;
+pointer-events:auto;
+}
+
+.success-icon{
+font-size:90px;
+margin-bottom:20px;
+animation:successPop .6s ease;
+}
+
+/* =========================
+LOGIN BUTTON LOADING
+========================= */
+
+.login-btn.loading{
+
+opacity:.7;
+pointer-events:none;
+position:relative;
+}
+
+.login-btn.loading::after{
+
+content:'...';
+
+margin-left:10px;
+
+animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+0%{opacity:.2;}
+50%{opacity:1;}
+100%{opacity:.2;}
+
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div id="loginPage" class="login-page">
+
+<div class="login-box">
+
+<div class="login-logo">
+XMINE VIP
+</div>
+
+<div class="login-subtitle">
+Secure Corporate Intelligence Access
+</div>
+
+<input
+type="email"
+id="email"
+placeholder="Email Address"
+class="login-input"
+/>
+
+<input
+type="password"
+id="password"
+placeholder="Password"
+class="login-input"
+/>
+
+<button
+id="loginBtn"
+class="btn login-btn"
+onclick="login()">
+LOGIN SISTEM
+</button>
+
+</div>
+
+</div>
+
+<div id="loginSuccess" class="login-success">
+
+<div class="success-icon">
+✅
+</div>
+
+<div>
+LOGIN SUCCESS
+</div>
+
+</div>
+
+<div id="mainApp" style="display:none;">
+
+<div id="loading" class="loading">
+LOADING DATABASE XMINE
+</div>
+
+<div class="header">
+
+<div class="topbar">
+
+<div>
+
+<div class="title">
+XMINE ULTRA VIP DATABASE ENGINE
+</div>
+
+<div class="subtitle">
+Corporate Intelligence • Minerba • AHU • Ownership • License Explorer
+</div>
+
+</div>
+
+<div class="user-info">
+
+<div class="user-avatar">
+👤
+</div>
+
+<div class="user-detail">
+
+<div class="user-label">
+LOGIN USER
+</div>
+
+<div id="userEmail" class="user-email">
+-
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="search-wrap">
+
+<input
+id="searchInput"
+class="search"
+placeholder="Cari perusahaan, NIB, NPWP, direktur, izin..."
+>
+
+<button
+class="btn"
+onclick="searchData()">
+SEARCH
+</button>
+
+<button
+onclick="logout()"
+class="btn">
+🚪 LOGOUT
+</button>
+
+</div>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+<div>📦 TOTAL DATABASE</div>
+<h2 id="totalData">0</h2>
+</div>
+
+<div class="stat">
+<div>🏢 TOTAL PT</div>
+<h2 id="totalPT">0</h2>
+</div>
+
+<div class="stat">
+<div>📡 TOTAL CV</div>
+<h2 id="totalCV">0</h2>
+</div>
+
+<div class="stat">
+<div>⚡ TOTAL KOPERASI</div>
+<h2 id="totalKoperasi">0</h2>
+</div>
+
+</div>
+
+<div id="results" class="results"></div>
+
+<div id="pagination" class="pagination"></div>
+
+<div id="modal" class="modal">
+
+<div class="modal-content">
+
+<div class="close" onclick="closeModal()">
+×
+</div>
+
+<div id="detail"></div>
+
+</div>
+
+</div>
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+<div class="footer-glow"></div>
+
+<div class="footer-grid">
+
+<div class="footer-box">
+
+<div class="footer-title">
+☁ XMINE CLOUD
+</div>
+
+<div class="footer-text">
+Minerba Intelligence System
+<br>
+Ultra VIP Corporate Database Engine
+<br>
+Realtime Corporate Monitoring System
+</div>
+
+</div>
+
+<div class="footer-box">
+
+<div class="footer-title">
+📦 DATABASE XMINE CLOUD
+</div>
+
+<div class="footer-text">
+🟢 SYSTEM ONLINE DATABASE :
+<span id="footerTotalDb">0</span>
+<br>
+📦 TOTAL Perseroan Terbatas (PT) :
+<span id="footerPT">0</span>
+<br>
+📡 TOTAL Perusahaan Komanditer (CV) :
+<span id="footerCV">0</span>
+<br>
+⚡ TOTAL Koperasi :
+<span id="footerKoperasi">0</span>
+</div>
+
+</div>
+
+<div class="footer-box">
+
+<div class="footer-title">
+🛡 SECURITY SYSTEM
+</div>
+
+<div class="footer-text">
+🔒 ENCRYPTED CONNECTION
+<br>
+🛰 PRIVATE ACCESS NETWORK
+<br>
+☁ XMINE CLOUD SERVER
+<br>
+🛡 ULTRA VIP PROTECTION
+</div>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 XMINE CLOUD — ALL RIGHTS RESERVED
+</div>
+
+</footer>
+
+</div>
+<script>
+async function checkLogin(){
+
+const {
+data:{session}
+}
+=
+await supabaseClient.auth.getSession();
+
+if(session){
+
+document.getElementById('userEmail')
+.innerText =
+session.user.email;
+
+document.getElementById('loginPage')
+.style.display='none';
+
+document.getElementById('mainApp')
+.style.display='block';
+
+loadDatabase();
+
+}
+
+}
+
+checkLogin();
+
+const SUPABASE_URL =
+'https://cjrgovbitbufddnfhvtn.supabase.co';
+
+const SUPABASE_KEY =
+'sb_publishable_57yKqCJkj_hBAR2wHrc3ag_C_W_GylS';
+
+const supabaseClient =
+supabase.createClient(
+SUPABASE_URL,
+SUPABASE_KEY
+);
+
+const DATABASE_URL='https://xmine-database-193116636319-ap-southeast-1-an.s3.ap-southeast-1.amazonaws.com/78fd6cbe7591d5eed24bf03a21d9662fd923a27a.json';
+
+let DATABASE=[];
+let FILTERED=[];
+let CURRENT_PAGE=1;
+const PER_PAGE=12;
+
+function cleanText(v){
+
+if(v===null||v===undefined||v==='') return '-';
+
+return String(v);
+
+}
+
+function formatCurrency(v){
+
+if(!v) return '-';
+
+return 'Rp '+Number(v).toLocaleString('id-ID');
+
+}
+
+async function loadDatabase(){
+
+try{
+
+const res=await fetch(DATABASE_URL);
+
+const json=await res.json();
+
+if(Array.isArray(json)){
+
+DATABASE=json;
+
+}else if(Array.isArray(json.data)){
+
+DATABASE=json.data;
+
+}else{
+
+DATABASE=[json];
+
+}
+
+FILTERED=DATABASE;
+
+renderData();
+
+updateStats();
+
+setTimeout(()=>{
+
+document.getElementById('loading')
+.style.display='none';
+
+},500);
+
+}catch(err){
+
+console.error(err);
+
+alert('Gagal membaca database JSON');
+
+}
+
+}
+
+function updateStats(){
+
+document.getElementById('totalData').innerText=
+FILTERED.length.toLocaleString('id-ID');
+
+const totalPT=FILTERED.filter(x=>
+(x.jenis_badan_usaha?.jenis_badan_usaha||'')
+.toLowerCase()
+.includes('perseroan')
+).length;
+
+const totalCV=FILTERED.filter(x=>
+(x.jenis_badan_usaha?.jenis_badan_usaha||'')
+.toLowerCase()
+.includes('cv')
+).length;
+
+
+
+const totalKoperasi=FILTERED.filter(x=>
+(x.jenis_badan_usaha?.jenis_badan_usaha||'')
+.toLowerCase()
+.includes('koperasi')
+).length;
+
+
+/* =========================
+TOP STATS
+========================= */
+
+document.getElementById('totalPT').innerText =
+totalPT.toLocaleString('id-ID');
+
+document.getElementById('totalCV').innerText =
+totalCV.toLocaleString('id-ID');
+
+document.getElementById('totalKoperasi').innerText =
+totalKoperasi.toLocaleString('id-ID');
+
+/* =========================
+FOOTER STATS
+========================= */
+
+document.getElementById('footerPT').innerText =
+totalPT.toLocaleString('id-ID');
+
+document.getElementById('footerCV').innerText =
+totalCV.toLocaleString('id-ID');
+
+document.getElementById('footerKoperasi').innerText =
+totalKoperasi.toLocaleString('id-ID');
+
+document.getElementById('footerTotalDb').innerText =
+DATABASE.length.toLocaleString('id-ID');
+
+}
+
+function searchData(){
+
+const keyword=document.getElementById('searchInput')
+.value
+.toLowerCase()
+.trim();
+
+if(!keyword){
+
+FILTERED=DATABASE;
+
+renderData();
+
+updateStats();
+
+return;
+
+}
+
+FILTERED=DATABASE.filter(item=>
+JSON.stringify(item)
+.toLowerCase()
+.includes(keyword)
+);
+
+CURRENT_PAGE=1;
+
+renderData();
+
+updateStats();
+
+}
+
+function renderData(){
+
+const container=document.getElementById('results');
+
+if(!FILTERED.length){
+
+container.innerHTML='<div class="box">Tidak ada data ditemukan</div>';
+
+return;
+
+}
+
+const start=(CURRENT_PAGE-1)*PER_PAGE;
+const end=start+PER_PAGE;
+
+const data=FILTERED.slice(start,end);
+
+container.innerHTML=data.map(item=>`
+
+<div class="card">
+
+<div class="card-title">
+🏢 ${cleanText(item.nama_badan_usaha)}
+</div>
+
+<div class="badge">
+${cleanText(item.jenis_perizinan)}
+</div>
+
+<div class="grid">
+
+<div>
+<div class="label">NIB</div>
+<div class="value">${cleanText(item.nib)}</div>
+</div>
+
+<div>
+<div class="label">NPWP</div>
+<div class="value">${cleanText(item.npwp_badan_usaha)}</div>
+</div>
+
+<div>
+<div class="label">Jenis Badan Usaha</div>
+<div class="value">${cleanText(item.jenis_badan_usaha?.jenis_badan_usaha)}</div>
+</div>
+
+<div>
+<div class="label">Alamat</div>
+<div class="value">${cleanText(item.alamat)}</div>
+</div>
+
+</div>
+
+<button class="action" onclick='showDetail(${JSON.stringify(item).replace(/'/g,"&apos;")})'>
+LIHAT DETAIL
+</button>
+
+</div>
+
+`).join('');
+
+renderPagination();
+
+}
+
+function renderPagination(){
+
+const total=Math.ceil(FILTERED.length/PER_PAGE);
+
+let html='';
+
+for(let i=1;i<=total;i++){
+
+if(i>15 && i!==total) continue;
+
+html+=`
+<button class="${i===CURRENT_PAGE?'active':''}" onclick="goPage(${i})">
+${i}
+</button>
+`;
+
+}
+
+document.getElementById('pagination').innerHTML=html;
+
+}
+
+function goPage(page){
+
+CURRENT_PAGE=page;
+
+renderData();
+
+window.scrollTo({
+top:0,
+behavior:'smooth'
+});
+
+}
+
+function showDetail(item){
+
+item.akta=[...new Map(
+(item.akta||[])
+.map(v=>[v.id_badan_usaha_akta,v])
+).values()];
+
+let direksiHTML='';
+
+(item.direksi||[]).forEach(x=>{
+
+direksiHTML+=`
+
+<div class="box">
+
+<h3>👨‍💼 ${cleanText(x.nama_direksi)}</h3>
+
+<br>
+
+<div class="grid">
+
+<div>
+<div class="label">Jabatan</div>
+<div>${cleanText(x.jabatan?.nama_jabatan)}</div>
+</div>
+
+<div>
+<div class="label">ID Jabatan</div>
+<div>${cleanText(x.id_jabatan)}</div>
+</div>
+
+<div>
+<div class="label">Tanggal Berlaku</div>
+<div>${cleanText(x.tanggal_berlaku)}</div>
+</div>
+
+<div>
+<div class="label">Tanggal Berakhir</div>
+<div>${cleanText(x.tanggal_berakhir)}</div>
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+let sahamHTML='';
+
+(item.pemegang_saham||[]).forEach(x=>{
+
+sahamHTML+=`
+
+<div class="box">
+
+<h3>💰 ${cleanText(x.nama_pemegang_saham)}</h3>
+
+<br>
+
+<div class="grid">
+
+<div>
+<div class="label">Jenis Pemegang</div>
+<div>${cleanText(x.jenis_pemegang_saham)}</div>
+</div>
+
+<div>
+<div class="label">Persentase Saham</div>
+<div>${cleanText(x.persentase_saham)}%</div>
+</div>
+
+<div>
+<div class="label">Kewarganegaraan</div>
+<div>${cleanText(x.kewarganegaraan)}</div>
+</div>
+
+<div>
+<div class="label">Negara</div>
+<div>${cleanText(x.negara)}</div>
+</div>
+
+<div>
+<div class="label">NPWP</div>
+<div>${cleanText(x.npwp)}</div>
+</div>
+
+<div>
+<div class="label">Email</div>
+<div>${cleanText(x.email)}</div>
+</div>
+
+<div>
+<div class="label">Jenis Identitas</div>
+<div>${cleanText(x.jenis_identitas)}</div>
+</div>
+
+<div>
+<div class="label">Nomor Identitas</div>
+<div>${cleanText(x.nomor_identitas)}</div>
+</div>
+
+<div>
+<div class="label">Alamat</div>
+<div>${cleanText(x.alamat)}</div>
+</div>
+
+<div>
+<div class="label">Domisili</div>
+<div>${cleanText(x.alamat_domisili)}</div>
+</div>
+
+<div>
+<div class="label">Status</div>
+<div>${cleanText(x.status)}</div>
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+let aktaHTML='';
+
+(item.akta||[]).forEach(x=>{
+
+aktaHTML+=`
+
+<div class="box">
+
+<h3>📜 AKTA ${cleanText(x.nomor_akta)}</h3>
+
+<br>
+
+<div class="grid">
+
+<div>
+<div class="label">Tanggal Akta</div>
+<div>${cleanText(x.tanggal_akta)}</div>
+</div>
+
+<div>
+<div class="label">SK KUMHAM</div>
+<div>${cleanText(x.no_sk_kumham)}</div>
+</div>
+
+<div>
+<div class="label">Nama Notaris</div>
+<div>${cleanText(x.nama_notaris)}</div>
+</div>
+
+<div>
+<div class="label">Status</div>
+<div>${cleanText(x.status)}</div>
+</div>
+
+<div>
+<div class="label">Total Modal</div>
+<div>${formatCurrency(x.total_modal)}</div>
+</div>
+
+<div>
+<div class="label">Lembar Saham</div>
+<div>${cleanText(x.total_lembar_saham)}</div>
+</div>
+
+<div>
+<div class="label">Mata Uang</div>
+<div>${cleanText(x.id_mata_uang)}</div>
+</div>
+
+<div>
+<div class="label">Keterangan</div>
+<div>${cleanText(x.keterangan)}</div>
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+let izinHTML='';
+
+(item.daftar_izin||[]).forEach(x=>{
+
+izinHTML+=`
+
+<div class="box">
+
+<h3>⛏️ ${cleanText(x.nomor_izin)}</h3>
+
+<br>
+
+<div class="grid">
+
+<div>
+<div class="label">Jenis Izin</div>
+<div>${cleanText(x.jenis_perizinan?.jenis_perizinan)}</div>
+</div>
+
+<div>
+<div class="label">Komoditas</div>
+<div>${cleanText(x.komoditas?.nama_komoditas)}</div>
+</div>
+
+<div>
+<div class="label">Golongan</div>
+<div>${cleanText(x.komoditas?.golongan?.nama_golongan)}</div>
+</div>
+
+<div>
+<div class="label">Tahap Kegiatan</div>
+<div>${cleanText(x.tahap_kegiatan?.nama_tahap_kegiatan)}</div>
+</div>
+
+<div>
+<div class="label">Luas WIUP</div>
+<div>${cleanText(x.luas_ha)} Ha</div>
+</div>
+
+<div>
+<div class="label">Lokasi</div>
+<div>${cleanText(x.lokasi_perizinan)}</div>
+</div>
+
+<div>
+<div class="label">Tanggal Berlaku</div>
+<div>${cleanText(x.tanggal_berlaku)}</div>
+</div>
+
+<div>
+<div class="label">Tanggal Berakhir</div>
+<div>${cleanText(x.tanggal_berakhir)}</div>
+</div>
+
+<div>
+<div class="label">Status CNC</div>
+<div>${cleanText(x.status_cnc?.status_cnc)}</div>
+</div>
+
+<div>
+<div class="label">WIUP</div>
+<div>${cleanText(x.wiup?.nomor_wiup)}</div>
+</div>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+const detail=`
+
+<h1 style="font-size:34px;margin-bottom:25px;color:#00ffd5;line-height:1.5;">
+🏢 ${cleanText(item.nama_badan_usaha)}
+</h1>
+
+<div class="grid">
+
+<div class="box">
+<div class="label">ID BADAN USAHA</div>
+<div>${cleanText(item.id_badan_usaha)}</div>
+</div>
+
+<div class="box">
+<div class="label">NIB</div>
+<div>${cleanText(item.nib)}</div>
+</div>
+
+<div class="box">
+<div class="label">NPWP</div>
+<div>${cleanText(item.npwp_badan_usaha)}</div>
+</div>
+
+<div class="box">
+<div class="label">Jenis Badan Usaha</div>
+<div>${cleanText(item.jenis_badan_usaha?.jenis_badan_usaha)}</div>
+</div>
+
+<div class="box">
+<div class="label">Kode Badan Usaha</div>
+<div>${cleanText(item.kode_badan_usaha)}</div>
+</div>
+
+<div class="box">
+<div class="label">Jenis Perizinan</div>
+<div>${cleanText(item.jenis_perizinan)}</div>
+</div>
+
+<div class="box">
+<div class="label">Telepon</div>
+<div>${cleanText(item.no_telp)}</div>
+</div>
+
+<div class="box">
+<div class="label">Email</div>
+<div>${cleanText(item.email)}</div>
+</div>
+
+<div class="box">
+<div class="label">Fax</div>
+<div>${cleanText(item.fax)}</div>
+</div>
+
+<div class="box">
+<div class="label">RT/RW</div>
+<div>${cleanText(item.rt)} / ${cleanText(item.rw)}</div>
+</div>
+
+<div class="box">
+<div class="label">Kode Pos</div>
+<div>${cleanText(item.kode_pos)}</div>
+</div>
+
+<div class="box">
+<div class="label">Kode Desa</div>
+<div>${cleanText(item.kode_desa)}</div>
+</div>
+
+<div class="box">
+<div class="label">Desa</div>
+<div>${cleanText(item.desa)}</div>
+</div>
+
+<div class="box">
+<div class="label">Update Database</div>
+<div>${cleanText(item.waktu_diambil)}</div>
+</div>
+
+<div class="box" style="grid-column:span 2;">
+<div class="label">Alamat</div>
+<div>${cleanText(item.alamat)}</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>👨‍💼 DIREKSI</h2>
+${direksiHTML || '<div class="box">Tidak ada data</div>'}
+</div>
+
+<div class="section">
+<h2>💰 PEMEGANG SAHAM</h2>
+${sahamHTML || '<div class="box">Tidak ada data</div>'}
+</div>
+
+<div class="section">
+<h2>📜 AKTA</h2>
+${aktaHTML || '<div class="box">Tidak ada data</div>'}
+</div>
+
+<div class="section">
+<h2>⛏️ DAFTAR IZIN</h2>
+${izinHTML || '<div class="box">Tidak ada data</div>'}
+</div>
+
+`;
+
+document.getElementById('detail').innerHTML=detail;
+
+document.getElementById('modal').style.display='flex';
+
+}
+
+function closeModal(){
+
+document.getElementById('modal').style.display='none';
+
+}
+
+async function login(){
+
+const btn =
+document.getElementById('loginBtn');
+
+btn.classList.add('loading');
+
+const email =
+document.getElementById('email').value;
+
+const password =
+document.getElementById('password').value;
+
+const { error } =
+await supabaseClient.auth
+.signInWithPassword({
+
+email,
+password
+
+});
+
+btn.classList.remove('loading');
+
+if(error){
+
+alert(error.message);
+
+return;
+
+}
+
+document
+.getElementById('loginSuccess')
+.classList.add('show');
+
+setTimeout(()=>{
+
+document.getElementById('userEmail')
+.innerText=email;
+
+document.getElementById('loginPage')
+.style.display='none';
+
+document.getElementById('mainApp')
+.style.display='block';
+
+document.getElementById('loginSuccess')
+.style.display='none';
+
+
+
+loadDatabase();;
+
+},1800);
+
+}
+
+</script>
+<script>
+
+/* =========================
+DISABLE RIGHT CLICK
+========================= */
+
+document.addEventListener(
+'contextmenu',
+function(e){
+e.preventDefault();
+}
+);
+
+/* =========================
+DISABLE DEVTOOLS
+========================= */
+
+document.addEventListener(
+'keydown',
+function(e){
+
+/* F12 */
+
+if(e.key === 'F12'){
+e.preventDefault();
+return false;
+}
+
+/* CTRL + SHIFT + I */
+
+if(
+e.ctrlKey &&
+e.shiftKey &&
+e.key === 'I'
+){
+e.preventDefault();
+return false;
+}
+
+/* CTRL + SHIFT + J */
+
+if(
+e.ctrlKey &&
+e.shiftKey &&
+e.key === 'J'
+){
+e.preventDefault();
+return false;
+}
+
+/* CTRL + SHIFT + C */
+
+if(
+e.ctrlKey &&
+e.shiftKey &&
+e.key === 'C'
+){
+e.preventDefault();
+return false;
+}
+
+/* CTRL + U */
+
+if(
+e.ctrlKey &&
+e.key === 'u'
+){
+e.preventDefault();
+return false;
+}
+
+}
+);
+
+/* =========================
+LOGOUT SYSTEM
+========================= */
+
+async function logout(){
+
+try{
+
+await supabaseClient.auth.signOut();
+
+document.getElementById('mainApp')
+.style.display='none';
+
+document.getElementById('loginPage')
+.style.display='flex';
+
+document.getElementById('email').value='';
+
+document.getElementById('password').value='';
+
+location.reload();
+
+}catch(err){
+
+alert('Logout gagal');
+
+console.error(err);
+
+}
+
+}
+</script>
+
+
+</body>
+
+</html>
