@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta http-equiv="Cache-Control" content="public,max-age=31536000">
   <link rel="stylesheet"href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1207,7 +1208,7 @@ LOGIN USER
 </div>
 
 
-<div id="results" class="results"></div>
+
 <div id="pagination" class="pagination"></div>
 <div id="modal" class="modal">
 <div class="modal-content">
@@ -1969,10 +1970,7 @@ ${izinHTML || '<div class="box">Tidak ada data</div>'}
 🗺️ GEO PORTAL MINERBA
 </h2>
 
-<button
-class="geo-btn"
-onclick="loadGeoPortal('${cleanText(item.nama_badan_usaha).replace(/'/g,"")}')"
->
+<button class="geo-btn"onclick='loadGeoPortal(${JSON.stringify({nama:item.nama_badan_usaha,izin:item.daftar_izin?.[0] || {}}).replace(/'/g,"&apos;")})'>
 🛰️ LIHAT WIUP GEO PORTAL
 </button>
 
@@ -2286,23 +2284,22 @@ function closeGeoPortal(){
 const container =
 document.getElementById('geoPortalResult');
 
-container.innerHTML = '';
+container.innerHTML='';
 
 if(geoMap){
 
 geoMap.remove();
-
-geoMap = null;
-
-}
+geoMap=null;
 
 }
 
-/* =========================
-LOAD GEO PORTAL
-========================= */
+}
 
-async function loadGeoPortal(namaPT){
+async function loadGeoPortal(dataPT){
+
+const namaPT = dataPT.nama || '';
+
+const izin = dataPT.izin || {};
 
 const container =
 document.getElementById('geoPortalResult');
@@ -2315,29 +2312,65 @@ container.innerHTML = `
 
 try{
 
-const query =
+/* =========================
+CLEAN NAMA
+========================= */
+
+const cleanNama = namaPT
+.toLowerCase()
+.replace(/^pt\.?\s*/,'')
+.trim();
+
+/* =========================
+SEARCH BY NAMA
+========================= */
+
+const where =
 encodeURIComponent(
-namaPT.toLowerCase()
+`LOWER(nama_usaha) LIKE '%${cleanNama}%'`
 );
 
 const url =
-`https://geoportal.esdm.go.id/monaresia/sharing/servers/3b305b4113384b41b7490479e0702093/rest/services/Pusat/WIUP_Publish/MapServer/0/query?f=json&where=LOWER(nama_usaha)%20LIKE%20%27${query}%25%27&returnGeometry=true&outFields=nama_usaha,objectid&outSR=4326`;
+`https://geoportal.esdm.go.id/monaresia/sharing/servers/3b305b4113384b41b7490479e0702093/rest/services/Pusat/WIUP_Publish/MapServer/0/query?f=json&where=${where}&returnGeometry=true&outFields=*&outSR=4326`;
 
 const response =
 await fetch(url);
 
-const data =
+let data =
 await response.json();
 
-console.log(data);
+/* =========================
+FALLBACK NOMOR WIUP
+========================= */
+
+if(
+(!data.features || data.features.length===0)
+&& izin.wiup?.nomor_wiup
+){
+
+const wiupWhere =
+encodeURIComponent(
+`nomor_wiup='${izin.wiup.nomor_wiup}'`
+);
+
+const wiupUrl =
+`https://geoportal.esdm.go.id/monaresia/sharing/servers/3b305b4113384b41b7490479e0702093/rest/services/Pusat/WIUP_Publish/MapServer/0/query?f=json&where=${wiupWhere}&returnGeometry=true&outFields=*&outSR=4326`;
+
+const retry =
+await fetch(wiupUrl);
+
+data =
+await retry.json();
+
+}
 
 /* =========================
-CHECK FEATURE
+NOT FOUND
 ========================= */
 
 if(
 !data.features ||
-data.features.length === 0
+data.features.length===0
 ){
 
 container.innerHTML = `
@@ -2360,7 +2393,7 @@ const geometry =
 feature.geometry || {};
 
 /* =========================
-CHECK RINGS
+CHECK GEOMETRY
 ========================= */
 
 if(
@@ -2379,7 +2412,7 @@ return;
 }
 
 /* =========================
-RENDER HTML
+RENDER RESULT
 ========================= */
 
 container.innerHTML = `
@@ -2405,16 +2438,26 @@ onclick="closeGeoPortal()"
 
 </div>
 
-<div>
-<b>Nama Usaha:</b><br>
-${attr.nama_usaha || '-'}
+<div class="grid">
+
+<div class="box">
+<div class="label">Nama Usaha</div>
+<div>${attr.nama_usaha || '-'}</div>
 </div>
 
-<br>
+<div class="box">
+<div class="label">Nomor WIUP</div>
+<div>${izin.wiup?.nomor_wiup || '-'}</div>
+</div>
 
-<div>
-<b>OBJECT ID:</b><br>
-${attr.objectid || '-'}
+<div class="box">
+<div class="label">Komoditas</div>
+<div>${izin.komoditas?.nama_komoditas || '-'}</div>
+</div>
+
+<div class="box">
+<div class="label">Luas WIUP</div>
+<div>${izin.luas_ha || '-'} Ha</div>
 </div>
 
 </div>
@@ -2427,8 +2470,9 @@ height:700px;
 border-radius:24px;
 overflow:hidden;
 margin-top:20px;
-border:1px solid rgba(255,255,255,.08);
 ">
+</div>
+
 </div>
 
 `;
@@ -2477,7 +2521,7 @@ coord[0]
 );
 
 /* =========================
-DRAW
+DRAW POLYGON
 ========================= */
 
 const polygon =
@@ -2496,13 +2540,43 @@ POPUP
 ========================= */
 
 polygon.bindPopup(`
-<b>${attr.nama_usaha}</b>
-<br>
-OBJECTID: ${attr.objectid}
-`);
+<div style="min-width:230px;font-family:Poppins,sans-serif;font-size:13px;line-height:1.4;color:#222;">
 
+<div style="font-weight:700;font-size:14px;margin-bottom:8px;color:#111;">
+🏢 WIUP INFORMATION
+</div>
+
+<hr style="border:none;border-top:1px solid #eee;margin:6px 0;">
+
+<p style="margin:4px 0;">
+<b style="color:#333;">🏢 NAMA:</b><br>
+${attr.nama_usaha || '-'}
+</p>
+
+<p style="margin:4px 0;">
+<b style="color:#333;">📄 IZIN:</b><br>
+${izin.wiup?.nomor_wiup || '-'}
+</p>
+
+<p style="margin:4px 0;">
+<b style="color:#333;">⛏️ KOMODITAS:</b><br>
+${izin.komoditas?.nama_komoditas || '-'}
+</p>
+
+<p style="margin:4px 0;">
+<b style="color:#333;">📏 LUAS:</b><br>
+${izin.luas_ha || '-'} Hektar
+</p>
+
+<p style="margin:4px 0;">
+<b style="color:#333;">📍 LOKASI:</b><br>
+${izin.lokasi_perizinan || '-'}
+</p>
+
+</div>
+`);
 /* =========================
-AUTO FIT
+FIT BOUNDS
 ========================= */
 
 geoMap.fitBounds(
