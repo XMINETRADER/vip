@@ -1,0 +1,89 @@
+{
+  "judul": "Surveyor Ekspor",
+  "data": [
+    {
+      "no": 1,
+      "barang_tertentu_ekspor": "Produk Industri dan Kehutanan",
+      "surveyor_ekspor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)"
+      ]
+    },
+    {
+      "no": 2,
+      "barang_tertentu_ekspor": "Timah",
+      "surveyor_ekspor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 3,
+      "barang_tertentu_ekspor": "Prekursor Non Farmasi",
+      "surveyor_ekspor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 4,
+      "barang_tertentu_ekspor": "Bahan Bakar Lain",
+      "surveyor_ekspor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Carsurin"
+      ]
+    },
+    {
+      "no": 5,
+      "barang_tertentu_ekspor": "Minyak Bumi dan Gas Bumi",
+      "surveyor_ekspor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Carsurin"
+      ]
+    },
+    {
+      "no": 6,
+      "barang_tertentu_ekspor": "Produk Pertambangan Hasil Pengolahan dan/atau Pemurnian",
+      "surveyor_ekspor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Carsurin",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama",
+        "PT Geoservices",
+        "PT Surveyor Carbon Consulting Indonesia",
+        "PT Triyasa Pirsa Utama",
+        "PT Surya Putra Komunika",
+        "PT Asia Trust Technovima Qualiti"
+      ]
+    },
+    {
+      "no": 7,
+      "barang_tertentu_ekspor": "Batubara",
+      "surveyor_ekspor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Carsurin",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama",
+        "PT Geoservices",
+        "PT Surveyor Carbon Consulting Indonesia",
+        "PT Jasa Mutu Mineral Indonesia",
+        "PT Triyasa Pirsa Utama",
+        "PT Asia Trust Technovima Qualiti",
+        "PT Indo Borneo Inspeksi Service",
+        "PT Surya Putra Komunika",
+        "PT Trust Certified International"
+      ]
+    },
+    {
+      "no": 8,
+      "barang_tertentu_ekspor": "Kratom",
+      "surveyor_ekspor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)"
+      ]
+    }
+  ]
+}
