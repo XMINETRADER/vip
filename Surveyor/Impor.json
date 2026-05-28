@@ -1,0 +1,384 @@
+{
+  "judul": "Surveyor Impor",
+  "data": [
+    {
+      "no": 1,
+      "barang_tertentu_impor": "Barang Modal dalam keadaan Tidak Baru (BMTB)",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 2,
+      "barang_tertentu_impor": "Tekstil dan Produk Tekstil",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 3,
+      "barang_tertentu_impor": "Nitrocellulose",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 4,
+      "barang_tertentu_impor": "Beras",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 5,
+      "barang_tertentu_impor": "Garam",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 6,
+      "barang_tertentu_impor": "Prekursor Non Farmasi",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult"
+      ]
+    },
+    {
+      "no": 7,
+      "barang_tertentu_impor": "Gula",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 8,
+      "barang_tertentu_impor": "Keramik",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 9,
+      "barang_tertentu_impor": "Mesin Multifungsi Berwarna, Mesin Fotokopi Berwarna, dan Mesin Printer Berwarna",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 10,
+      "barang_tertentu_impor": "Limbah Non B3 sebagai Bahan Baku Industri",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult"
+      ]
+    },
+    {
+      "no": 11,
+      "barang_tertentu_impor": "Kaca Lembaran dan Kaca Pengaman",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 12,
+      "barang_tertentu_impor": "Bahan Berbahaya",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 13,
+      "barang_tertentu_impor": "Bahan Perusak Lapisan Ozon (BPO)",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 14,
+      "barang_tertentu_impor": "Produk Hortikultura",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama",
+        "PT Asiatrust Technovima Qualiti"
+      ]
+    },
+    {
+      "no": 15,
+      "barang_tertentu_impor": "Bawang Putih",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 16,
+      "barang_tertentu_impor": "Telepon Seluler, Komputer Genggam (Handheld) dan Komputer Tablet",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 17,
+      "barang_tertentu_impor": "Barang Berbasis Sistem Pendingin",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 18,
+      "barang_tertentu_impor": "Tekstil dan Produk Tekstil Batik dan Motif Batik",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 19,
+      "barang_tertentu_impor": "Ban",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 20,
+      "barang_tertentu_impor": "Besi atau Baja, Baja Paduan, dan Produk Turunannya",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama",
+        "PT Asiatrust Technovima Qualiti"
+      ]
+    },
+    {
+      "no": 21,
+      "barang_tertentu_impor": "Mutiara",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 22,
+      "barang_tertentu_impor": "Sakarin, Siklamat, Preparat Bau-Bauan Mengandung Alkohol",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 23,
+      "barang_tertentu_impor": "Perkakas Tangan Setengah Jadi",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 24,
+      "barang_tertentu_impor": "Bahan Baku Minuman Beralkohol",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 25,
+      "barang_tertentu_impor": "Baterai Lithium Tidak Baru",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 26,
+      "barang_tertentu_impor": "Pakaian Jadi dan Aksesori Pakaian Jadi",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 27,
+      "barang_tertentu_impor": "Alas Kaki",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 28,
+      "barang_tertentu_impor": "Elektronik",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama",
+        "PT Asiatrust Technovima Qualiti"
+      ]
+    },
+    {
+      "no": 29,
+      "barang_tertentu_impor": "Sepeda Roda Dua dan Roda Tiga",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 30,
+      "barang_tertentu_impor": "Makanan dan Minuman",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama",
+        "PT Asiatrust Technovima Qualiti"
+      ]
+    },
+    {
+      "no": 31,
+      "barang_tertentu_impor": "Mainan",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama",
+        "PT Asiatrust Technovima Qualiti"
+      ]
+    },
+    {
+      "no": 32,
+      "barang_tertentu_impor": "Kosmetik dan Perbekalan Kesehatan Rumah Tangga",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Asiatrust Technovima Qualiti"
+      ]
+    },
+    {
+      "no": 33,
+      "barang_tertentu_impor": "Obat Tradisional dan Suplemen Kesehatan",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult"
+      ]
+    },
+    {
+      "no": 34,
+      "barang_tertentu_impor": "Barang Tekstil Sudah Jadi Lainnya",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 35,
+      "barang_tertentu_impor": "Bahan Kimia Tertentu",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 36,
+      "barang_tertentu_impor": "Tas",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama"
+      ]
+    },
+    {
+      "no": 37,
+      "barang_tertentu_impor": "Hydrofluorocarbon (HFC)",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 38,
+      "barang_tertentu_impor": "Plastik Hilir",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia",
+        "PT Anindya Wira Putra Consult",
+        "PT Tribhakti Inspektama",
+        "PT Asiatrust Technovima Qualiti"
+      ]
+    },
+    {
+      "no": 39,
+      "barang_tertentu_impor": "Katup",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 40,
+      "barang_tertentu_impor": "Bahan Baku Pelumas",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    },
+    {
+      "no": 41,
+      "barang_tertentu_impor": "Semen Clinker dan Semen",
+      "surveyor_impor": [
+        "PT Superintending Company Of Indonesia (Sucofindo)",
+        "PT Surveyor Indonesia"
+      ]
+    }
+  ]
+}
