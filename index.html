@@ -437,13 +437,35 @@ overflow:hidden;
 border:1px solid rgba(255,255,255,.08);
 }
 
-.geo-frame{
+.geo-frame,
+#geoMap{
 width:100%;
-height:700px;
-border:none;
-background:#000;
+height:60vh;   /* penting: responsive */
+min-height:320px;
+max-height:75vh;
+border-radius:18px;
 }
 
+.leaflet-container{
+touch-action: pan-x pan-y;
+}
+
+@media (max-width:480px){
+
+.geo-btn{
+font-size:13px;
+height:48px;
+}
+
+.geo-result .grid{
+grid-template-columns:1fr;
+}
+
+.modal-content{
+padding:12px;
+}
+
+}
 .geo-loading{
 padding:18px;
 text-align:center;
@@ -632,6 +654,28 @@ text-align:center;
 font-size:13px;
 letter-spacing:2px;
 color:#94a3b8;
+}
+
+@media (max-width:768px){
+
+.modal-content{
+padding:16px;
+border-radius:18px;
+max-height:92vh;
+}
+
+.geo-result{
+padding:12px;
+}
+
+.geo-topbar{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.geo-close{
+width:100%;
+}
 }
 
 /* =========================
