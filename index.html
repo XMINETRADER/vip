@@ -48,7 +48,494 @@
   <link rel="icon" href="https://xmine.cloud/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <style>
+/* =========================================================
+XMINE ULTRA VIP — LUXURY GOLD THEME
+========================================================= */
 
+:root{
+
+--gold-light:#fff4c2;
+--gold-soft:#ffe082;
+--gold-main:#ffd54f;
+--gold-deep:#ffb300;
+--gold-dark:#ff8f00;
+
+--gold-glow:rgba(255,215,64,.35);
+
+--bg-dark:#050402;
+--bg-dark-2:#120b02;
+--bg-dark-3:#1b1203;
+--bg-dark-4:#2a1a05;
+
+}
+
+/* ================= BODY ================= */
+
+body{
+
+background:
+
+radial-gradient(circle at 15% 20%,
+rgba(255,215,64,.16),
+transparent 40%),
+
+radial-gradient(circle at 85% 30%,
+rgba(255,179,0,.12),
+transparent 45%),
+
+radial-gradient(circle at 50% 90%,
+rgba(255,140,0,.10),
+transparent 50%),
+
+linear-gradient(
+180deg,
+#020202,
+#0b0701,
+#140d02,
+#1e1403
+);
+
+color:#fff8e7;
+
+}
+
+/* ================= NOISE ================= */
+
+body::before{
+opacity:.05;
+mix-blend-mode:soft-light;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+background:
+rgba(255,215,64,.04);
+
+border:
+1px solid rgba(255,215,64,.12);
+
+box-shadow:
+0 15px 50px rgba(0,0,0,.45),
+0 0 35px rgba(255,193,7,.05);
+
+}
+
+.header::before{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.18),
+transparent 70%
+);
+
+}
+
+.header:hover{
+
+box-shadow:
+0 20px 70px rgba(0,0,0,.55),
+0 0 40px rgba(255,193,7,.12);
+
+}
+
+/* ================= TITLE ================= */
+
+.title,
+.login-logo{
+
+background:
+linear-gradient(
+90deg,
+#fff8d6,
+#ffd54f,
+#ffb300
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 25px rgba(255,215,64,.25);
+
+}
+
+/* ================= SUBTITLE ================= */
+
+.subtitle,
+.login-subtitle,
+.footer-text,
+.label{
+
+color:#d7c089;
+
+}
+
+/* ================= USER PANEL ================= */
+
+.user,
+.stat,
+.box,
+.card,
+.footer-box,
+.modal-content{
+
+background:
+rgba(255,215,64,.04);
+
+border:
+1px solid rgba(255,215,64,.08);
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.40);
+
+}
+
+.card:hover{
+
+transform:
+translateY(-5px);
+
+border-color:
+rgba(255,215,64,.25);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.55),
+0 0 25px rgba(255,193,7,.10);
+
+}
+
+.card::before{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.12),
+transparent 70%
+);
+
+}
+
+/* ================= CARD TITLE ================= */
+
+.card-title,
+.footer-title,
+.stat h2{
+
+color:#ffd54f;
+
+}
+
+/* ================= BADGE ================= */
+
+.badge{
+
+background:
+rgba(255,215,64,.10);
+
+border:
+1px solid rgba(255,215,64,.18);
+
+color:#ffe082;
+
+}
+
+/* ================= INPUT ================= */
+
+.search,
+.login-input{
+
+background:#1a1205;
+
+border:
+1px solid rgba(255,215,64,.12);
+
+color:#fff5d6;
+
+}
+
+.search:focus,
+.login-input:focus{
+
+border-color:#ffd54f;
+
+box-shadow:
+0 0 20px rgba(255,193,7,.18);
+
+}
+
+/* ================= BUTTON ================= */
+
+.btn,
+.login-btn,
+.action,
+.geo-btn{
+
+background:
+linear-gradient(
+135deg,
+#fff4c2,
+#ffd54f,
+#ffb300,
+#ff8f00
+) !important;
+
+background-size:200% 200%;
+
+color:#2b1800 !important;
+
+font-weight:900;
+
+box-shadow:
+0 10px 25px rgba(255,193,7,.18),
+0 0 15px rgba(255,215,64,.08);
+
+animation:goldFlow 6s ease infinite;
+
+}
+
+/* ================= GOLD ANIMATION ================= */
+
+@keyframes goldFlow{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ================= BUTTON HOVER ================= */
+
+.btn:hover,
+.login-btn:hover,
+.action:hover,
+.geo-btn:hover{
+
+transform:
+translateY(-2px);
+
+box-shadow:
+0 18px 40px rgba(255,193,7,.30),
+0 0 30px rgba(255,200,0,.18);
+
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination button{
+
+background:#1a1205;
+
+color:#ffe082;
+
+border:
+1px solid rgba(255,215,64,.08);
+
+}
+
+.pagination .active{
+
+background:#ffd54f;
+
+color:#2b1800;
+
+}
+
+/* ================= LOGIN ================= */
+
+.login-page{
+
+background:
+
+radial-gradient(
+circle at top,
+rgba(255,215,64,.10),
+transparent 40%
+),
+
+linear-gradient(
+180deg,
+#020202,
+#0b0701,
+#140d02
+);
+
+}
+
+.login-page::before{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.18),
+transparent 70%
+);
+
+}
+
+.login-box{
+
+background:
+rgba(255,215,64,.04);
+
+border:
+1px solid rgba(255,215,64,.08);
+
+box-shadow:
+0 0 60px rgba(255,193,7,.08);
+
+}
+
+/* ================= LOGIN SUCCESS ================= */
+
+.login-success{
+
+color:#ffd54f;
+
+background:
+rgba(5,4,2,.92);
+
+}
+
+/* ================= MODAL ================= */
+
+.modal-content{
+
+background:
+rgba(12,8,2,.85);
+
+}
+
+.modal-content::before{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.12),
+transparent 70%
+);
+
+}
+
+/* ================= TABLE ================= */
+
+th{
+
+background:
+rgba(255,215,64,.08);
+
+color:#ffe082;
+
+}
+
+td{
+
+border:
+1px solid rgba(255,215,64,.08);
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+background:
+linear-gradient(
+180deg,
+rgba(255,215,64,.02),
+rgba(255,215,64,.05)
+);
+
+border-top:
+1px solid rgba(255,215,64,.08);
+
+}
+
+.footer-glow{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.18),
+transparent 70%
+);
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#120b02;
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+linear-gradient(
+180deg,
+#ffd54f,
+#ffb300
+);
+
+border-radius:20px;
+
+}
+
+/* ================= GEO MAP ================= */
+
+.geo-result{
+
+background:
+rgba(255,215,64,.04);
+
+border:
+1px solid rgba(255,215,64,.08);
+
+border-radius:24px;
+
+padding:20px;
+
+margin-top:20px;
+
+}
+
+/* ================= POLYGON COLOR ================= */
+
+.leaflet-interactive{
+
+stroke:#ffd54f !important;
+fill:#ffca28 !important;
+
+}
+
+/* ================= SELECTION ================= */
+
+::selection{
+
+background:#ffd54f;
+color:#2b1800;
+
+}
 /* ================= GLOBAL ================= */
 *{
 margin:0;
@@ -82,9 +569,12 @@ content:"";
 position:fixed;
 inset:0;
 pointer-events:none;
-background-image:url("https://www.transparenttextures.com/patterns/noise.png");
-opacity:.04;
-mix-blend-mode:overlay;
+
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Ccircle cx='10' cy='10' r='1'/%3E%3Ccircle cx='40' cy='30' r='1'/%3E%3Ccircle cx='90' cy='60' r='1'/%3E%3Ccircle cx='120' cy='100' r='1'/%3E%3Ccircle cx='70' cy='130' r='1'/%3E%3Ccircle cx='150' cy='40' r='1'/%3E%3C/g%3E%3C/svg%3E");
+
+opacity:.5;
+
+mix-blend-mode:soft-light;
 }
 
 /* ================= HEADER (ANTI KAKU) ================= */
@@ -118,7 +608,7 @@ left:50%;
 transform:translateX(-50%);
 width:400px;
 height:200px;
-background:radial-gradient(circle,rgba(0,255,213,.18),transparent 70%);
+background:radial-gradient(circle,rgba(255,215,64,.18),transparent 70%);
 filter:blur(30px);
 opacity:.6;
 }
@@ -133,17 +623,19 @@ box-shadow:
 
 /* ================= TITLE (LEBIH SOFT) ================= */
 .title{
-font-size:34px;
-font-weight:800;
+background:linear-gradient(
+90deg,
+#fff8d6,
+#ffd54f,
+#ffb300,
+#fff3a1
+);
 
-background:linear-gradient(90deg,#00ffd5,#00a2ff);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 
-margin-bottom:10px;
-
-/* glow tipis biar tidak keras */
-text-shadow:0 0 18px rgba(0,255,213,.15);
+text-shadow:
+0 0 25px rgba(255,215,64,.25);
 }
 
 /* ================= MOBILE ================= */
@@ -201,7 +693,7 @@ border:1px solid rgba(255,255,255,0.08);
 
 .login-box h2{
 text-align:center;
-color:#00ffd5;
+color:#ffd54f;
 margin-bottom:20px;
 }
 
@@ -220,7 +712,14 @@ width:100%;
 padding:14px;
 border:none;
 border-radius:12px;
-background:linear-gradient(90deg,#00ffd5,#00a2ff);
+background:
+linear-gradient(
+135deg,
+#fff4c2,
+#ffd54f,
+#ffb300,
+#ff8f00
+);
 font-weight:900;
 cursor:pointer;
 }
@@ -246,7 +745,7 @@ margin-bottom:20px;
 .title{
 font-size:26px;
 font-weight:900;
-background:linear-gradient(90deg,#00ffd5,#00a2ff);
+background:linear-gradient(90deg,#ffd54f,#ffb300);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
@@ -296,7 +795,7 @@ font-size:14px;
 letter-spacing:.5px;
 color:#001018;
 
-background:linear-gradient(135deg,#00ffd5,#00a2ff,#6366f1);
+background:linear-gradient(135deg,#ffd54f,#ffb300,#6366f1);
 background-size:200% 200%;
 
 box-shadow:
@@ -324,7 +823,7 @@ animation:btnFlow 6s ease infinite;
 .action:hover{
 transform:translateY(-2px) scale(1.01);
 box-shadow:
-0 18px 40px rgba(0,255,213,.25),
+0 18px 40px rgba(255,215,64,.25),
 0 0 25px rgba(0,162,255,.15);
 }
 
@@ -356,7 +855,7 @@ left:140%;
 }
 
 .pagination .active{
-background:#00ffd5;
+background:#ffd54f;
 color:#000;
 font-weight:800;
 }
@@ -385,7 +884,7 @@ height:56px;
 padding:0 24px;
 border:none;
 border-radius:18px;
-background:linear-gradient(90deg,#00ffd5,#00a2ff);
+background:linear-gradient(90deg,#ffd54f,#ffb300);
 color:#001018;
 font-weight:800;
 cursor:pointer;
@@ -407,7 +906,7 @@ border:1px solid rgba(255,255,255,0.08);
 }
 
 .stat h2{
-color:#00ffd5;
+color:#ffd54f;
 margin-top:6px;
 }
 
@@ -439,7 +938,7 @@ overflow:hidden;
 
 .card:hover{
 transform:translateY(-4px);
-border-color:rgba(0,255,213,.25);
+border-color:rgba(255,215,64,.25);
 
 box-shadow:
 0 18px 55px rgba(0,0,0,.35),
@@ -454,7 +953,7 @@ top:-80px;
 right:-80px;
 width:180px;
 height:180px;
-background:radial-gradient(circle,rgba(0,255,213,.10),transparent 70%);
+background:radial-gradient(circle,rgba(255,215,64,.12),transparent 70%);
 filter:blur(30px);
 opacity:.7;
 pointer-events:none;
@@ -468,7 +967,7 @@ line-height:1.4;
 
 margin-bottom:10px;
 
-color:#00ffd5;
+color:#ffd54f;
 
 word-break:break-word;
 }
@@ -481,7 +980,7 @@ align-items:center;
 padding:6px 12px;
 border-radius:999px;
 
-background:rgba(0,255,213,.10);
+background:rgba(255,215,64,.12);
 border:1px solid rgba(0,255,213,.18);
 
 font-size:11px;
@@ -599,7 +1098,7 @@ left:50%;
 transform:translateX(-50%);
 width:500px;
 height:250px;
-background:radial-gradient(circle, rgba(0,255,213,.10), transparent 70%);
+background:radial-gradient(circle, rgba(255,215,64,.12), transparent 70%);
 filter:blur(40px);
 opacity:.7;
 pointer-events:none;
@@ -640,8 +1139,8 @@ font-size:15px;
 background:
 linear-gradient(
 90deg,
-#00ffd5,
-#00a2ff
+#ffd54f,
+#ffb300
 );
 
 color:#001018;
@@ -678,6 +1177,10 @@ font-size:13px;
 /* ================= MOBILE ================= */
 @media(max-width:768px){
 .title{font-size:18px;}
+}
+
+@media(max-width:768px){ 
+.loader-logo{ width:90px; height:90px; } 
 }
 
 /* =========================
@@ -781,8 +1284,8 @@ text-align:center;
 background:
 linear-gradient(
 90deg,
-#00ffd5,
-#00a2ff
+#ffd54f,
+#ffb300
 );
 
 -webkit-background-clip:text;
@@ -820,7 +1323,7 @@ transition:.3s;
 }
 
 .login-input:focus{
-border-color:#00ffd5;
+border-color:#ffd54f;
 
 box-shadow:
 0 0 20px rgba(0,255,213,.15);
@@ -837,8 +1340,8 @@ border-radius:20px;
 background:
 linear-gradient(
 90deg,
-#00ffd5,
-#00a2ff
+#ffd54f,
+#ffb300
 );
 
 color:#001018;
@@ -997,7 +1500,7 @@ z-index:9999999;
 font-size:34px;
 font-weight:900;
 
-color:#00ffd5;
+color:#ffd54f;
 
 opacity:0;
 pointer-events:none;
@@ -1121,7 +1624,7 @@ box-shadow:
 font-size:18px;
 font-weight:700;
 margin-bottom:15px;
-color:#00ffd5;
+color:#ffd54f;
 }
 
 .footer-text{
@@ -1137,6 +1640,318 @@ font-size:13px;
 letter-spacing:2px;
 color:#94a3b8;
 }
+
+/* =========================================*/
+
+/* =========================================
+XMINE ULTRA LOADER
+========================================= */
+
+.xmine-loader{
+
+position:fixed;
+inset:0;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+background:
+radial-gradient(circle at top,
+rgba(255,215,64,.10),
+transparent 40%),
+
+linear-gradient(
+180deg,
+#020202,
+#0b0701,
+#140d02
+);
+
+z-index:999999;
+
+overflow:hidden;
+}
+
+/* ================= CORE ================= */
+
+.loader-core{
+
+position:relative;
+
+width:220px;
+height:220px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+margin-bottom:50px;
+}
+
+/* ================= RING ================= */
+
+.loader-ring{
+
+position:absolute;
+
+width:220px;
+height:220px;
+
+border-radius:50%;
+
+border:
+2px solid rgba(255,215,64,.12);
+
+border-top:
+2px solid #ffd54f;
+
+animation:
+spin 6s linear infinite;
+
+box-shadow:
+0 0 30px rgba(255,215,64,.08);
+}
+
+.ring2{
+
+width:170px;
+height:170px;
+
+animation-direction:reverse;
+animation-duration:4s;
+
+border-top-color:#ffb300;
+}
+
+.ring3{
+
+width:120px;
+height:120px;
+
+animation-duration:2.5s;
+
+border-top-color:#fff4c2;
+}
+
+/* ================= CENTER ================= */
+
+.loader-center{
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+z-index:5;
+}
+
+.loader-logo{
+width:160px; 
+height:160px; 
+object-fit:contain; 
+
+/* glow premium */ 
+filter: 
+drop-shadow(0 0 30px rgba(255,215,64,.45)) 
+drop-shadow(0 0 60px rgba(255,193,7,.18)); 
+animation: pulse 5.5s ease infinite; 
+
+/* biar lebih dominan */
+position:relative; 
+z-index:10; 
+}
+
+.loader-title{
+margin-top:14px;
+font-size:22px;
+font-weight:900;
+letter-spacing:3px;
+background:
+linear-gradient(
+90deg,
+#fff8d6,
+#ffd54f,
+#ffb300
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
+
+/* ================= TEXT ================= */
+
+.loader-text{
+
+display:flex;
+flex-direction:column;
+gap:10px;
+
+width:100%;
+max-width:500px;
+
+padding:0 30px;
+}
+
+.loader-line{
+
+font-size:13px;
+letter-spacing:2px;
+
+color:#ffe082;
+
+opacity:0;
+
+animation:
+fadeLine 1s forwards;
+}
+
+.delay1{
+animation-delay:.8s;
+}
+
+.delay2{
+animation-delay:1.6s;
+}
+
+.delay3{
+animation-delay:2.4s;
+}
+
+/* ================= PROGRESS ================= */
+
+.loader-progress{
+
+width:320px;
+height:8px;
+
+margin-top:35px;
+
+background:
+rgba(255,255,255,.05);
+
+border-radius:999px;
+
+overflow:hidden;
+
+border:
+1px solid rgba(255,215,64,.08);
+}
+
+.loader-bar{
+
+width:40%;
+height:100%;
+
+background:
+linear-gradient(
+90deg,
+#fff4c2,
+#ffd54f,
+#ffb300
+);
+
+border-radius:999px;
+
+animation:
+loadingBar 2s ease infinite;
+}
+
+/* ================= ANIMATION ================= */
+
+@keyframes spin{
+
+100%{
+transform:rotate(360deg);
+}
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(1);
+}
+
+50%{
+transform:scale(1.08);
+}
+
+100%{
+transform:scale(1);
+}
+
+}
+
+@keyframes fadeLine{
+
+to{
+opacity:1;
+transform:translateX(0);
+}
+
+from{
+opacity:0;
+transform:translateX(-15px);
+}
+
+}
+
+@keyframes loadingBar{
+
+0%{
+transform:translateX(-120%);
+}
+
+100%{
+transform:translateX(350%);
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.loader-core{
+
+width:180px;
+height:180px;
+}
+
+.loader-ring{
+
+width:180px;
+height:180px;
+}
+
+.ring2{
+
+width:140px;
+height:140px;
+}
+
+.ring3{
+
+width:100px;
+height:100px;
+}
+
+.loader-progress{
+width:85%;
+}
+
+.loader-title{
+font-size:18px;
+}
+
+.loader-line{
+font-size:11px;
+}
+
+}
+
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -1203,12 +2018,35 @@ LOGIN SUCCESS
 
 <div id="mainApp" style="display:none;">
 
-<div id="loading" class="loading">
-LOADING DATABASE XMINE
+<div id="loading" class="xmine-loader">
+<div class="loader-core">
+<div class="loader-ring"></div>
+<div class="loader-ring ring2"></div>
+<div class="loader-ring ring3"></div>
+
+<div class="loader-center">
+<img src="https://xmine.cloud/logo.png" class="loader-logo">
+<div class="loader-title">XMINE CORE</div>
 </div>
 
-<div class="header">
+</div>
 
+<div class="loader-text">
+<div class="loader-line">INITIALIZING INTELLIGENCE CORE</div>
+<div class="loader-line delay1">DECRYPTING CORPORATE DATABASE</div>
+<div class="loader-line delay2">LOADING MINERBA NETWORK</div>
+<div class="loader-line delay3">VERIFYING SECURE ACCESS</div>
+</div>
+
+<div class="loader-progress">
+<div class="loader-bar"></div>
+</div>
+
+</div>
+
+
+
+<div class="header">
 <div class="topbar">
 
 <div>
@@ -1937,7 +2775,7 @@ izinHTML+=`
 
 const detail=`
 
-<h1 style="font-size:34px;margin-bottom:25px;color:#00ffd5;line-height:1.5;">
+<h1 style="font-size:34px;margin-bottom:25px;color:#ffd54f;line-height:1.5;">
 🏢 ${cleanText(item.nama_badan_usaha)}
 </h1>
 
@@ -2500,7 +3338,7 @@ container.innerHTML = `
 <div style="
 font-size:24px;
 font-weight:800;
-color:#00ffd5;
+color:#ffd54f;
 ">
 🛰️ WIUP DITEMUKAN
 </div>
@@ -2604,9 +3442,9 @@ const polygon =
 L.polygon(
 latlngs,
 {
-color:'#00ffd5',
+color:'#ffd54f',
 weight:3,
-fillColor:'#00ffd5',
+fillColor:'#ffd54f',
 fillOpacity:.25
 }
 ).addTo(geoMap);
@@ -2680,77 +3518,6 @@ ${err}
 </script>
 <script>
 
-/* =========================
-DISABLE RIGHT CLICK
-========================= */
-
-document.addEventListener(
-'contextmenu',
-function(e){
-e.preventDefault();
-}
-);
-
-/* =========================
-DISABLE DEVTOOLS
-========================= */
-
-document.addEventListener(
-'keydown',
-function(e){
-
-/* F12 */
-
-if(e.key === 'F12'){
-e.preventDefault();
-return false;
-}
-
-/* CTRL + SHIFT + I */
-
-if(
-e.ctrlKey &&
-e.shiftKey &&
-e.key === 'I'
-){
-e.preventDefault();
-return false;
-}
-
-/* CTRL + SHIFT + J */
-
-if(
-e.ctrlKey &&
-e.shiftKey &&
-e.key === 'J'
-){
-e.preventDefault();
-return false;
-}
-
-/* CTRL + SHIFT + C */
-
-if(
-e.ctrlKey &&
-e.shiftKey &&
-e.key === 'C'
-){
-e.preventDefault();
-return false;
-}
-
-/* CTRL + U */
-
-if(
-e.ctrlKey &&
-e.key === 'u'
-){
-e.preventDefault();
-return false;
-}
-
-}
-);
 
 /* =========================
 LOGOUT SYSTEM
