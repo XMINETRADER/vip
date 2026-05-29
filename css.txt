@@ -1,0 +1,489 @@
+/* =========================================================
+XMINE ULTRA VIP — LUXURY GOLD THEME
+========================================================= */
+
+:root{
+
+--gold-light:#fff4c2;
+--gold-soft:#ffe082;
+--gold-main:#ffd54f;
+--gold-deep:#ffb300;
+--gold-dark:#ff8f00;
+
+--gold-glow:rgba(255,215,64,.35);
+
+--bg-dark:#050402;
+--bg-dark-2:#120b02;
+--bg-dark-3:#1b1203;
+--bg-dark-4:#2a1a05;
+
+}
+
+/* ================= BODY ================= */
+
+body{
+
+background:
+
+radial-gradient(circle at 15% 20%,
+rgba(255,215,64,.16),
+transparent 40%),
+
+radial-gradient(circle at 85% 30%,
+rgba(255,179,0,.12),
+transparent 45%),
+
+radial-gradient(circle at 50% 90%,
+rgba(255,140,0,.10),
+transparent 50%),
+
+linear-gradient(
+180deg,
+#020202,
+#0b0701,
+#140d02,
+#1e1403
+);
+
+color:#fff8e7;
+
+}
+
+/* ================= NOISE ================= */
+
+body::before{
+opacity:.05;
+mix-blend-mode:soft-light;
+}
+
+/* ================= HEADER ================= */
+
+.header{
+
+background:
+rgba(255,215,64,.04);
+
+border:
+1px solid rgba(255,215,64,.12);
+
+box-shadow:
+0 15px 50px rgba(0,0,0,.45),
+0 0 35px rgba(255,193,7,.05);
+
+}
+
+.header::before{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.18),
+transparent 70%
+);
+
+}
+
+.header:hover{
+
+box-shadow:
+0 20px 70px rgba(0,0,0,.55),
+0 0 40px rgba(255,193,7,.12);
+
+}
+
+/* ================= TITLE ================= */
+
+.title,
+.login-logo{
+
+background:
+linear-gradient(
+90deg,
+#fff8d6,
+#ffd54f,
+#ffb300,
+#fff3a1
+);
+
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+
+text-shadow:
+0 0 25px rgba(255,215,64,.25);
+
+}
+
+/* ================= SUBTITLE ================= */
+
+.subtitle,
+.login-subtitle,
+.footer-text,
+.label{
+
+color:#d7c089;
+
+}
+
+/* ================= USER PANEL ================= */
+
+.user,
+.stat,
+.box,
+.card,
+.footer-box,
+.modal-content{
+
+background:
+rgba(255,215,64,.04);
+
+border:
+1px solid rgba(255,215,64,.08);
+
+}
+
+/* ================= CARD ================= */
+
+.card{
+
+box-shadow:
+0 15px 45px rgba(0,0,0,.40);
+
+}
+
+.card:hover{
+
+transform:
+translateY(-5px);
+
+border-color:
+rgba(255,215,64,.25);
+
+box-shadow:
+0 20px 60px rgba(0,0,0,.55),
+0 0 25px rgba(255,193,7,.10);
+
+}
+
+.card::before{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.12),
+transparent 70%
+);
+
+}
+
+/* ================= CARD TITLE ================= */
+
+.card-title,
+.footer-title,
+.stat h2{
+
+color:#ffd54f;
+
+}
+
+/* ================= BADGE ================= */
+
+.badge{
+
+background:
+rgba(255,215,64,.10);
+
+border:
+1px solid rgba(255,215,64,.18);
+
+color:#ffe082;
+
+}
+
+/* ================= INPUT ================= */
+
+.search,
+.login-input{
+
+background:#1a1205;
+
+border:
+1px solid rgba(255,215,64,.12);
+
+color:#fff5d6;
+
+}
+
+.search:focus,
+.login-input:focus{
+
+border-color:#ffd54f;
+
+box-shadow:
+0 0 20px rgba(255,193,7,.18);
+
+}
+
+/* ================= BUTTON ================= */
+
+.btn,
+.login-btn,
+.action,
+.geo-btn{
+
+background:
+linear-gradient(
+135deg,
+#fff4c2,
+#ffd54f,
+#ffb300,
+#ff8f00
+) !important;
+
+background-size:200% 200%;
+
+color:#2b1800 !important;
+
+font-weight:900;
+
+box-shadow:
+0 10px 25px rgba(255,193,7,.18),
+0 0 15px rgba(255,215,64,.08);
+
+animation:goldFlow 6s ease infinite;
+
+}
+
+/* ================= GOLD ANIMATION ================= */
+
+@keyframes goldFlow{
+
+0%{
+background-position:0% 50%;
+}
+
+50%{
+background-position:100% 50%;
+}
+
+100%{
+background-position:0% 50%;
+}
+
+}
+
+/* ================= BUTTON HOVER ================= */
+
+.btn:hover,
+.login-btn:hover,
+.action:hover,
+.geo-btn:hover{
+
+transform:
+translateY(-2px);
+
+box-shadow:
+0 18px 40px rgba(255,193,7,.30),
+0 0 30px rgba(255,200,0,.18);
+
+}
+
+/* ================= PAGINATION ================= */
+
+.pagination button{
+
+background:#1a1205;
+
+color:#ffe082;
+
+border:
+1px solid rgba(255,215,64,.08);
+
+}
+
+.pagination .active{
+
+background:#ffd54f;
+
+color:#2b1800;
+
+}
+
+/* ================= LOGIN ================= */
+
+.login-page{
+
+background:
+
+radial-gradient(
+circle at top,
+rgba(255,215,64,.10),
+transparent 40%
+),
+
+linear-gradient(
+180deg,
+#020202,
+#0b0701,
+#140d02
+);
+
+}
+
+.login-page::before{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.18),
+transparent 70%
+);
+
+}
+
+.login-box{
+
+background:
+rgba(255,215,64,.04);
+
+border:
+1px solid rgba(255,215,64,.08);
+
+box-shadow:
+0 0 60px rgba(255,193,7,.08);
+
+}
+
+/* ================= LOGIN SUCCESS ================= */
+
+.login-success{
+
+color:#ffd54f;
+
+background:
+rgba(5,4,2,.92);
+
+}
+
+/* ================= MODAL ================= */
+
+.modal-content{
+
+background:
+rgba(12,8,2,.85);
+
+}
+
+.modal-content::before{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.12),
+transparent 70%
+);
+
+}
+
+/* ================= TABLE ================= */
+
+th{
+
+background:
+rgba(255,215,64,.08);
+
+color:#ffe082;
+
+}
+
+td{
+
+border:
+1px solid rgba(255,215,64,.08);
+
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+
+background:
+linear-gradient(
+180deg,
+rgba(255,215,64,.02),
+rgba(255,215,64,.05)
+);
+
+border-top:
+1px solid rgba(255,215,64,.08);
+
+}
+
+.footer-glow{
+
+background:
+radial-gradient(
+circle,
+rgba(255,215,64,.18),
+transparent 70%
+);
+
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#120b02;
+}
+
+::-webkit-scrollbar-thumb{
+
+background:
+linear-gradient(
+180deg,
+#ffd54f,
+#ffb300
+);
+
+border-radius:20px;
+
+}
+
+/* ================= GEO MAP ================= */
+
+.geo-result{
+
+background:
+rgba(255,215,64,.04);
+
+border:
+1px solid rgba(255,215,64,.08);
+
+border-radius:24px;
+
+padding:20px;
+
+margin-top:20px;
+
+}
+
+/* ================= POLYGON COLOR ================= */
+
+.leaflet-interactive{
+
+stroke:#ffd54f !important;
+fill:#ffca28 !important;
+
+}
+
+/* ================= SELECTION ================= */
+
+::selection{
+
+background:#ffd54f;
+color:#2b1800;
+
+}
